@@ -26,3 +26,8 @@ Route::get('/hero', 'HomeController@hero')->name('hero');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('/cj', 'HomeController@cj')->name('cj');
 Route::get('/sponsor', 'HomeController@sponsor')->name('sponsor');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

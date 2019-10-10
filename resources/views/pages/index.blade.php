@@ -425,12 +425,9 @@
                 </div>
             </div>
         </div>
-
         <div class="content-box">
             <div class="auto-container">
                 <div class="event-carousel owl-carousel owl-theme">
-
-
                     <!-- Team Block Two -->
                     <div class="team-block-two  wow fadeIn">
                         <div class="inner-box">
@@ -592,9 +589,7 @@
                         </div>
                     </div>
 
-
                 </div>
-
             </div>
         </div>
     </section>
@@ -694,8 +689,8 @@
     </section>
     <!--End Event Section Two -->
 
-    <!-- Donation Section --
-    <section class="donation-section" style="background-image: url(images/background/3.jpg);">
+    <!-- Donation Section -->
+    {{--<section class="donation-section" style="background-image: url(images/background/3.jpg);">
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="title-column col-md-6 col-sm-12 col-xs-12">
@@ -738,7 +733,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
     <!--End Donation Section -->
 
 
