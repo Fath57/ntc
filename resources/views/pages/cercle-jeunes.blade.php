@@ -1,5 +1,7 @@
 @extends('layouts.layout2')
-
+@section('title')
+    Cercle Des Jeunes
+@stop
 @section('content')
     <!--Main Slider-->
     <section class="main-slider">
@@ -247,47 +249,29 @@
                 <div class="feature-column col-lg-7 col-md-12 col-sm-12 col-xs-12">
                     <div class="inner-column">
                         <div class="sec-title">
-                            <h2>Qu'est ce que nous faisons?</h2>
-                            <div class="text">Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail.  management inside of workflows to establish a framework. Taking seamless key performance</div>
-                        </div>
-
-                        <div class="row clearfix">
-                            <!-- Feature BLock -->
-                            <div class="featrue-block col-md-6 col-sm-6 col-xs-12">
-                                <div class="inner-box">
-                                    <div class="icon-box"><span class="flaticon-pay"></span></div>
-                                    <h3><a href="#">Make Donation</a></h3>
-                                    <div class="text">Keeping your eye on the ball while performing a deep dive on the up mentality to derive</div>
-                                </div>
-                            </div>
-
-                            <!-- Feature BLock -->
-                            <div class="featrue-block col-md-6 col-sm-6 col-xs-12">
-                                <div class="inner-box">
-                                    <div class="icon-box"><span class="flaticon-system"></span></div>
-                                    <h3><a href="#">Give Scholarship</a></h3>
-                                    <div class="text">Keeping your eye on the ball while performing a deep dive on the up mentality to derive</div>
-                                </div>
-                            </div>
-
-                            <!-- Feature BLock -->
-                            <div class="featrue-block col-md-6 col-sm-6 col-xs-12">
-                                <div class="inner-box">
-                                    <div class="icon-box"><span class="flaticon-tshirt"></span></div>
-                                    <h3><a href="#">Become a Volunteer</a></h3>
-                                    <div class="text">Keeping your eye on the ball while performing a deep dive on the up mentality to derive</div>
-                                </div>
-                            </div>
-
-                            <!-- Feature BLock -->
-                            <div class="featrue-block col-md-6 col-sm-6 col-xs-12">
-                                <div class="inner-box">
-                                    <div class="icon-box"><span class="flaticon-teamwork"></span></div>
-                                    <h3><a href="#">Support our People</a></h3>
-                                    <div class="text">Keeping your eye on the ball while performing a deep dive on the up mentality to derive</div>
-                                </div>
+                            <h2 style="font-size: 20pt">A propos de l’initiative « Cercle des Jeunes - CJ »</h2>
+                            <div class="text">
+                                La Jeunesse Africaine et particulièrement celle du Bénin représente une dynamique capable
+                                d’accompagner et d’influencer le changement à la base. Cependant, elle a faiblement contribué
+                                au développement communautaire à cause d’une absence d’organisation capable de les orienter
+                                et de les former de façon continue à l’engagement communautaire. L’initiative dénommée « Cercle des Jeunes - CJ »
+                                est une réponse à cette problématique car elle se définit comme un creuset totalement apolitique et
+                                laïc qui vise à offrir une série de formations gratuites à tous les jeunes de 12 à 40 ans. Ces formations
+                                qui aborderont les sujets relatifs au changement de mentalité, au leadership, et au renforcement des
+                                capacités des jeunes au niveau décentralisé se dérouleront dans les écoles, les collèges, les lycées
+                                les maisons les jeunes, ou tout autre endroit disponible de la localité, tous les samedis par quinzaine,
+                                de 8h à 13h. Il vise également à conduire ces jeunes à se mettre ensemble et à organiser ensemble des
+                                activités communautaires et d’engagement civique (campagne de sensibilisation, de salubrité etc..) afin
+                                de contribuer à l’essor de leur localité.
+                                Le « Cercle des Jeunes - CJ » est un creuset de leadership qui vous donne l’opportunité quelque
+                                soit votre rôle dans la vie, que vous soyez à la tête d’une entreprise de plusieurs milliers de
+                                personnes ou responsable d’une petite équipe, d’apprendre à servir votre communauté. Ne plus toujours
+                                attendre d’en haut la solution devient le mode de fonctionnement. Nous sommes tous responsables.
+                                Et c’est là que le leadership par l’exemple qui est véhiculé  au sein de « Cercle des Jeunes - CJ »
+                                prend toute sa place.
                             </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -311,225 +295,68 @@
 
         <div class="auto-container">
             <div class="title">
-                <h2>Create a "CJ" in your neigborhood</h2>
-                <div class="text">Integer et diam libero. Praesent  varius nisi. Nunc vCapitalize on low hanging fruit to identify a ballpark<br> value added activity to beta test. Override.</div>
+                <h2>Créer un Cercle de Jeune dans votre Entourage</h2>
+                <!--<div class="text">Et bénéficiez de nos formations en ligne </div>-->
             </div>
             <div class=" text-center">
 
-                <button  data-toggle="modal" data-target="#modalregisterbecomentc" class="theme-btn btn-style-one">Create</button>
+                <button  data-toggle="modal" data-target="#create-cj" class="theme-btn btn-style-one">Créer votre cercle de Jeune</button>
 
             </div>
         </div>
     </section>
     <!-- End Subscribe Section -->
 
-    <!-- Organizers Section -->
-    <section class="team-section" style="margin-top: 5%">
-        <div class="title-box" style="background-image: url(images/background/5.jpg);">
-            <div class="auto-container">
-                <div class="sec-title light text-center">
-                    <h2>Organizers</h2>
-                </div>
-            </div>
-        </div>
-        <div class="team-box">
-            <div class="auto-container">
-                <div class="row clearfix">
-                    <!-- Team Block -->
-                    <div class="team-block col-md-4 col-sm-6 col-xs-12 wow fadeInUp">
-                        <div class="inner-box">
-                            <div class="image-box"><a href="team-single.html"><img src="images/resource/volunteer-1.jpg" alt=""></a></div>
-                            <div class="info-box">
-                                <ul class="social-links">
-                                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
-                                </ul>
-                                <h4 class="name"><a href="team-single.html">John Smith</a></h4>
-                                <span class="designation"></span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Team Block -->
-                    <div class="team-block col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="600ms">
-                        <div class="inner-box">
-                            <div class="image-box"><a href="team-single.html"><img src="images/resource/volunteer-2.jpg" alt=""></a></div>
-                            <div class="info-box">
-                                <ul class="social-links">
-                                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
-                                </ul>
-                                <h4 class="name"><a href="team-single.html">Nattasha</a></h4>
-                                <span class="designation"></span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Team Block -->
-                    <div class="team-block col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="1200ms">
-                        <div class="inner-box">
-                            <div class="image-box"><a href="team-single.html"><img src="images/resource/volunteer-3.jpg" alt=""></a></div>
-                            <div class="info-box">
-                                <ul class="social-links">
-                                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
-                                </ul>
-                                <h4 class="name"><a href="team-single.html">Mick chwla</a></h4>
-                                <span class="designation"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End Organizers Section -->
 
-    <!-- Event Section Two -->
-    <section class="event-section-two" style="margin-top: -10%">
+    <!--Cercle de jeune Three Column Section-->
+    <section class="blog-grid-section">
         <div class="auto-container">
-            <div class="sec-title text-center">
-                <h2>Our Activities</h2>
-            </div>
-
             <div class="row clearfix">
-                <div class="column col-md-6 col-sm-12 col-xs-12">
-                    <!-- Event Block Two -->
-                    <div class="event-block-two wow fadeIn">
-                        <div class="inner-box">
-                            <div class="date"><strong>04</strong> May</div>
-                            <h4><a href="event-single.html">Let ‘s walk the poor children Education</a></h4>
-                            <ul class="info">
-                                <li><i class="fa fa-clock-o"></i> at 5.00 pm - 7.30 pm</li>
-                                <li><i class="fa fa-map-marker"></i> 25 Newyork City</li>
-                            </ul>
-                            <div class="text">Globally incubate standards compliant  the deliverables whereas web-enabled applications. and-mortar catalysts for changbefore vertical t market-driven best practices.</div>
-                        </div>
-                    </div>
 
-                    <!-- Event Block Two -->
-                    <div class="event-block-two wow fadeIn" data-wow-delay='200ms'>
-                        <div class="inner-box">
-                            <div class="date"><strong>05</strong> May</div>
-                            <h4><a href="event-single.html">Help and Donate from poor children Education</a></h4>
-                            <ul class="info">
-                                <li><i class="fa fa-clock-o"></i> at 5.00 pm - 7.30 pm</li>
-                                <li><i class="fa fa-map-marker"></i> 25 Newyork City</li>
-                            </ul>
-                            <div class="text">Globally incubate standards compliant  the deliverables whereas web-enabled applications. and-mortar catalysts for changbefore vertical t market-driven best practices.</div>
-                        </div>
-                    </div>
-
-                    <!-- Event Block Two -->
-                    <div class="event-block-two wow fadeIn" data-wow-delay='400ms'>
-                        <div class="inner-box">
-                            <div class="date"><strong>07</strong> May</div>
-                            <h4><a href="event-single.html">Marathan 2019 Run For the Cancer people</a></h4>
-                            <ul class="info">
-                                <li><i class="fa fa-clock-o"></i> at 5.00 pm - 7.30 pm</li>
-                                <li><i class="fa fa-map-marker"></i> 25 Newyork City</li>
-                            </ul>
-                            <div class="text">Globally incubate standards compliant  the deliverables whereas web-enabled applications. and-mortar catalysts for changbefore vertical t market-driven best practices.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column col-md-6 col-sm-12 col-xs-12">
-                    <!-- Event Block Two -->
-                    <div class="event-block-two wow fadeIn" data-wow-delay='600ms'>
-                        <div class="inner-box">
-                            <div class="date"><strong>08</strong> May</div>
-                            <h4><a href="event-single.html">Food camp for childran in Africa</a></h4>
-                            <ul class="info">
-                                <li><i class="fa fa-clock-o"></i> at 5.00 pm - 7.30 pm</li>
-                                <li><i class="fa fa-map-marker"></i> 25 Newyork City</li>
-                            </ul>
-                            <div class="text">Globally incubate standards compliant  the deliverables whereas web-enabled applications. and-mortar catalysts for changbefore vertical t market-driven best practices.</div>
-                        </div>
-                    </div>
-
-                    <!-- Event Block Two -->
-                    <div class="event-block-two wow fadeIn" data-wow-delay='800ms'>
-                        <div class="inner-box">
-                            <div class="date"><strong>09</strong> May</div>
-                            <h4><a href="event-single.html">Donate from poor children Education</a></h4>
-                            <ul class="info">
-                                <li><i class="fa fa-clock-o"></i> at 5.00 pm - 7.30 pm</li>
-                                <li><i class="fa fa-map-marker"></i> 25 Newyork City</li>
-                            </ul>
-                            <div class="text">Globally incubate standards compliant  the deliverables whereas web-enabled applications. and-mortar catalysts for changbefore vertical t market-driven best practices.</div>
-                        </div>
-                    </div>
-
-                    <!-- Event Block Two -->
-                    <div class="event-block-two wow fadeIn" data-wow-delay='1000ms'>
-                        <div class="inner-box">
-                            <div class="date"><strong>10</strong> May</div>
-                            <h4><a href="event-single.html">2019 Run For the Cancer people</a></h4>
-                            <ul class="info">
-                                <li><i class="fa fa-clock-o"></i> at 5.00 pm - 7.30 pm</li>
-                                <li><i class="fa fa-map-marker"></i> 25 Newyork City</li>
-                            </ul>
-                            <div class="text">Globally incubate standards compliant  the deliverables whereas web-enabled applications. and-mortar catalysts for changbefore vertical t market-driven best practices.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End Event Section Two -->
-
-
-
-    <!-- Success story Section -->
-    <section class="causes-section-two" style="margin-top: -10%">
-        <div class="auto-container">
-            <div class="sec-title text-center">
-                <h2>Success stories</h2>
-                <div class="text">You can help lots of people by donating little.Leverage agile frameworks to provide a robust synopsis for <br> Organically grow the holistic world view of disruptive innovation via workplace</div>
-            </div>
-
-            <div class="causes-carousel owl-carousel owl-theme">
-
-            @for($i=0;$i<4;$i++)
-                <!-- Cause Block Two -->
-                    <div class="cause-block-two">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure><img src="images/resource/cause-4.jpg" alt=""></figure>
-                                <div class="overlay-box"><a href="#" class="link">Sponsor Now</a></div>
-                                <div class="title-box">
-                                    <div class="progress-bar">
-                                        <div class="bar-inner"><div class="bar progress-line" data-width="65"><div class="bar-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="85">0</span>%</div></div></div></div>
+                @foreach($cjs as $cj)
+                <!-- Single -->
+                <div class="gallery-block-two col-lg-4 col-md-4 col-sm-6 col-xs-12 wow fadeIn" >
+                    <div class="inner-box" >
+                        <div class="image" style="min-height: 350px">
+                            <img src="{{asset('storage/'.$cj->image)}}" alt="" />
+                            <div class="overlay-box">
+                                <div class="content">
+                                    <div class="post-date">{{$cj->name}}</div>
+                                    <a href="{{asset('storage/'.$cj->image)}}" data-fancybox="images" data-caption="" class="plus-icon lightbox-image"></a>
+                                    <div class="lower-content">
+                                        <h3><a href="{{route('cj.detail',$cj->slug)}}">{!! \Illuminate\Support\Str::limit($cj->about,100)!!}</a></h3>
+                                        <ul class="post-info">
+                                            <li><a href="{{route('cj.detail',$cj->slug)}}"><span class="icon fa fa-user"></span>Par <br> {{$cj->coordonnateur->name}}</a></li>
+                                            <!--<li><a href="blog-single-1.html"><span class="icon fa fa-heart-o"></span>35 <br> Likes</a></li>-->
+                                            <li><a href="{{route('cj.detail',$cj->slug)}}"><span class="icon fa fa-newspaper-o"></span>{{$cj->events->count()}} <br> Événements</a></li>
+                                        </ul>
                                     </div>
-                                    <h3><a href="#">Help 1014 people for education</a></h3>
                                 </div>
                             </div>
-                            <div class="lower-content">
-                                <div class="text">Integer et diam libero. Praesent  varius nisi. Nunc vCapitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override .</div>
-                                <h3 class=" text-center">
-                                    <a href="#" class="theme-btn btn-style-three" style="border-radius: 0">Read More</a>
-                                </h3>
-                            </div>
                         </div>
                     </div>
+                </div>
 
-                @endfor
-
+                @endforeach
 
             </div>
+            <!--Styled Pagination-->
+            <ul class="styled-pagination text-center">
+                <li><a href="#" class="active">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li class="next"><a href="#">Next</a></li>
+            </ul>
+            <!--End Styled Pagination-->
+
         </div>
     </section>
-    <!-- End Success story Section -->
+    <!--End Blog Three Column Section-->
 
     <!-- Testimonial Section Two -->
-    <section class="testimonial-section-two" style="padding: 15px">
+    {{--<section class="testimonial-section-two" style="padding: 15px">
         <div class="auto-container">
             <div class="testimonial-carousel owl-carousel owl-theme">
                 <!-- Testimonial Block Two -->
@@ -560,62 +387,341 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
     <!--End Testimonial Section Two -->
 
-  {{--  <!-- Donation Form Section -->
-    <section class="donation-form-section">
-        <div class="auto-container">
-            <!-- Donation Form -->
-            <div class="donation-form">
-                <form  method="post" action="http://t.commonsupport.com/incles/index-2.html">
-                    <div class="row clearfix">
-                        <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                            <input type="radio" name="one-time" id="one-time">
-                            <label for="one-time">One Time</label>
-                            <input type="radio" name="one-time" id="recurring">
-                            <label for="recurring">Recurring</label>
-                        </div>
+@endsection
 
-                        <div class="form-group col-md-3 col-sm-12 col-xs-12">
-                            <h4>I Want to Donate for</h4>
-                            <select class="custom-select-box">
-                                <option>Educated Childrens</option>
-                                <option>Educated Childrens</option>
-                                <option>Educated Childrens</option>
-                                <option>Educated Childrens</option>
-                            </select>
-                        </div>
+@section('modals')
+    <div class="modal fade" id="create-cj" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center bg-primary">
+                    <h4 class="modal-title w-100 font-weight-bold">Créer un Cercle de Jeune</h4>
+                    <a style="color: #fff;float: right"  data-dismiss="modal" aria-label="Close">
+                        Fermer
+                    </a>
+                </div>
+                <form id="quiz-form">
+                    <div class="modal-body mx-3">
 
-                        <div class="form-group col-md-3 col-sm-6 col-xs-12">
-                            <h4>Currency</h4>
-                            <select class="custom-select-box">
-                                <option>USD , Us dollers</option>
-                                <option>USD , Us dollers</option>
-                                <option>USD , Us dollers</option>
-                                <option>USD , Us dollers</option>
-                                <option>USD , Us dollers</option>
-                            </select>
-                        </div>
+                        <section id="section-1-cj">
+                            <h3 class="text-center" style="margin: 15px;text-decoration: underline">Questionnaire</h3>
 
-                        <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                            <h4>How much do you want to donate?</h4>
-                            <select class="custom-select-box">
-                                <option>$1200</option>
-                                <option>$1000</option>
-                                <option>$800</option>
-                                <option>$500</option>
-                                <option>$100</option>
-                            </select>
-                        </div>
+                            <div class="md-form mb-5">
+                                <h4>Désirez-vous contribuer bénévolement à la formation des jeunes de votre quartier ?</h4>
+                               <br>
+                                <input type="radio" name="q1" id="q1-yes" required class="validate" value="1"> <label for="q1-yes" style="margin-right: 2%">Oui</label>
+                                <input type="radio" name="q1" id="q1-no" required class="validate" value="0"> <label for="q1-no">Non</label>
+                            </div>
 
-                        <div class="form-group col-md-2 col-sm-12 col-xs-12 btn-box">
-                            <button type="submit" class="theme-btn btn-style-two">Donate Now</button>
-                        </div>
+
+                            <hr>
+                            <div class="md-form mb-5">
+                                <h4>Y-a-t-il une ou plusieurs écoles secondaires (privée ou publique) dans votre quartier ?</h4>
+                              <br>
+                                <input type="radio" name="q2" id="q2-yes" required class="validate" value="1"> <label for="q2-yes" style="margin-right: 2%">Oui</label>
+                                <input type="radio" name="q2" id="q2-no" required class="validate" value="0"> <label  for="q2-no">Non</label>
+                            </div>
+
+                            <hr>
+
+                            <div class="md-form mb-5">
+                                <h4>
+                                    Pourriez-vous dédier quatre heures deux samedis, chaque mois pour organiser des
+                                    formations au profit des jeunes de votre quartier ?
+                                </h4>
+                                <br>
+                                <input type="radio" name="q3" id="q3-yes" required class="validate" value="1"> <label for="q3-yes" style="margin-right: 2%">Oui</label>
+                                <input type="radio" name="q3" id="q3-no" required class="validate" value="0"> <label  for="q3-no">Non</label>
+                            </div>
+
+
+                            <hr>
+                            <div class="md-form mb-5">
+                                <h4>
+                                    Pourriez-vous convaincre quatre amis de se joindre à vous pour vous aider à organiser
+                                    des activités au profit des jeunes de votre quartier ?
+                                </h4>
+                                <br>
+                                <input type="radio" name="q4" id="q4-yes" required class="validate" value="1"> <label for="q4-yes" style="margin-right: 2%">Oui</label>
+                                <input type="radio" name="q4" id="q4-no" required class="validate" value="0"> <label  for="q4-no">Non</label>
+                            </div>
+
+                            <hr>
+
+                            <div class="md-form mb-5">
+                                <h4>
+                                    Pourriez-vous ensemble avec vos amis suivre une formation en ligne de quatre heures
+                                    par semaine pendant un mois pour devenir Coordonnateur CJ ?
+                                </h4>
+                                <br>
+                                <input type="radio" name="q5" id="q5-yes" required class="validate" value="1"> <label for="q5-yes" style="margin-right: 2%">Oui</label>
+                                <input type="radio" name="q5" id="q5-no" required class="validate" value="0"> <label  for="q5-no">Non</label>
+                            </div>
+
+                            <div class="alert form-error-viewer alert-danger" style="display: none"></div>
+
+                            <div class=" text-center">
+                                <button  id="submit-quiz" class="btn btn-primary waves-effect text-left section-btn" style="padding: 10px;border-radius: 0px;margin: 10px" type="submit">
+                                <span class="form-submit-btn">
+                                     Soumettre
+                                </span>
+                                    <span class="form-loader" style="display: none">
+                                   <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                Soumission en cours...
+                               </span>
+                                </button>
+                            </div>
+
+                        </section>
+
+
+
+
+                    </div>
+                </form>
+                <section id="success-section" style="text-align: center;display: none">
+                    <img src="{{asset('images/Checkmark.gif')}}" style="width: 30%;margin: auto" alt="success">
+
+                    <p>
+                        Connectez vous ou créer un compte pour avoir accès aux cours destinés aux  coordonnateur CJ en vue de démarrer
+                        l’initiative CJ dans votre quartier.
+                    </p>
+                    <br>
+                    <button  data-toggle="modal" data-target="#login-modal" class="choice-btn btn btn-primary" style="padding: 10px;border-radius: 0px;margin: 10px">Connexion</button>
+                    <button  data-toggle="modal" data-target="#modalregisterbecomentc" class="choice-btn_ btn btn-primary" style="padding: 10px;border-radius: 0px;margin: 10px">S'inscrire</button>
+
+                </section>
+                {{--<div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-unique">Sign Up <i class="fa fa-send ml-1"></i></button>
+                </div>--}}
+            </div>
+        </div>
+    </div>
+
+    <!-- register become-ntc modal -->
+    <div class="modal fade" id="modalregisterbecomentc" tabindex="-1" role="dialog" aria-labelledby="SignUp"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center bg-primary">
+                    <h4 class="modal-title w-100 font-weight-bold">Devenir NTC | Inscription</h4>
+                    <a style="color: #fff;float: right"  data-dismiss="modal" aria-label="Close">
+                        Fermer
+                    </a>
+                </div>
+                <form id="register-form">
+                    <input type="hidden" value="cj" name="cj">
+                    <div class="modal-body mx-3">
+
+                        <div class="alert form-error-viewer alert-danger" style="display: none"></div>
+
+                        <section id="section-1">
+                            <h3>Informations personnelles</h3>
+
+                            <div class="md-form mb-5 form-group">
+                                <label data-error="" data-success="" for="nom">Votre nom</label>
+                                <input type="text" id="nom" required class="form-control validate">
+                                <small id="nomHelp" class="form-text"  style="color: red"></small>
+
+                            </div>
+                            <div class="md-form mb-5 form-group">
+                                <label data-error="" data-success="" for="prenom">Votre prénom</label>
+                                <input type="text"  id="prenom" name="prenom" class="form-control validate">
+                                <small id="prenomHelp" class="form-text"  style="color: red"></small>
+
+                            </div>
+
+                            <div class="md-form mb-5 form-group">
+                                <label data-error="" data-success="" for="dateNaissance">Date de naissance</label>
+                                <input type="date" id="dateNaissance"  name="date_naissance" class="form-control validate">
+                                <small id="dateNaissanceHelp" class="form-text"  style="color: red"></small>
+
+                            </div>
+
+                            <div class="md-form mb-5 form-group">
+                                <label data-error="" data-success="" for="lieuNaissance">Lieu de naissance</label>
+                                <input type="text" id="lieuNaissance" name="lieu_naissance" class="form-control validate">
+                                <small id="lieuNaissanceHelp" class="form-text"  style="color: red"></small>
+
+                            </div>
+
+                            <div class="md-form mb-5 form-group">
+                                <select type="text" id="pays" class="form-control validate">
+                                    <option>Pays de naissance</option>
+                                    <option>Algerie</option>
+                                    <option>Bénin</option>
+                                    <option>Togo</option>
+                                    <option>Gabon</option>
+                                    <option>Guinée</option>
+                                </select>
+                                <small id="paysHelp" class="form-text"  style="color: red"></small>
+                            </div>
+
+
+                            <div class="md-form mb-5 form-group">
+                                <label data-error="" data-success="" for="tel">Tel</label>
+                                <input type="number" name="tel" id="tel" class="form-control validate">
+                                <small id="telHelp" class="form-text"  style="color: red"></small>
+
+                            </div>
+
+                            <div class="md-form mb-5">
+                                <label data-error="" data-success="" for="numeroWhat">Numéro WhatsApp</label>
+                                <input type="number" id="numeroWhat"  class="form-control validate">
+                                <small id="numeroWhatHelp" class="form-text"  style="color: red"></small>
+
+                            </div>
+
+                            <br>
+                            <div class=" text-center form-group ">
+                                <button class="btn btn-primary section-btn" id="next1">Suivant</button>
+                            </div>
+
+                        </section>
+
+                        <section id="section-2"  style="display: none">
+                            <h3>Adresse</h3>
+                            <div class="md-form mb-5 form-group">
+                                <label  data-error="" data-success="" for="adress1">Adresse 1*</label>
+                                <input id="adress1" type="text"  class="form-control validate">
+                                <small id="adress1Help" class="form-text"  style="color: red"></small>
+
+                            </div>
+
+                            <div class="md-form mb-5 form-group">
+                                <label  data-error="" data-success="" for="adress2">Adresse 2</label>
+                                <input id="adress2" type="text"  class="form-control validate">
+                            </div>
+
+
+                            <div class="md-form mb-5 form-group">
+                                <label data-error="" data-success="" for="arrondissement">Arrondissement</label>
+                                <input id="arrondissement" name="arrondissement" type="text"  class="form-control validate">
+                                <small id="arrondissementHelp" class="form-text"  style="color: red"></small>
+
+                            </div>
+
+
+                            <div class="md-form mb-5 form-group">
+                                <label data-error="" data-success="" for="quartier">Quartier</label>
+                                <input type="text" id="quartier" name="quartier" class="form-control validate">
+                                <small id="quartierHelp" class="form-text"  style="color: red"></small>
+
+                            </div>
+                            <div class="md-form mb-5 form-group">
+                                <label data-error="" data-success="" for="profession">Profession</label>
+                                <input type="text" name="profession" id="profession"  class="form-control validate">
+                                <small id="professionHelp" class="form-text"  style="color: red"></small>
+                            </div>
+                            <div class="md-form mb-5 form-group">
+                                <label data-error="" data-success="" for="centre_interet">Centres d'intérêts</label>
+                                <input type="text" name="centre_interet" id="centre_interet" class="form-control validate">
+                                <small id="centre_interetHelp" class="form-text"  style="color: red"></small>
+                            </div>
+
+                            <div class="text-center form-group">
+                                <button class="btn btn-dark section-btn" id="prev2">Retour</button>
+                                <button class="btn btn-primary section-btn" id="next2">Suivant</button>
+                            </div>
+
+                        </section>
+
+                        <section id="section-3"  style="display: none">
+                            <h3>Informations de connexion</h3>
+
+
+                            <div class="md-form mb-5 form-group">
+                                <label data-error="" data-success="" for="username">Nom d'utilisateur/Email</label>
+                                <input type="email" name="username" id="username" class="form-control validate">
+                                <small id="usernameHelp" class="form-text"  style="color: red"></small>
+                            </div>
+
+                            <div class="md-form mb-5 form-group">
+                                <label data-error=""  data-success="" for="password">Mot de passe</label>
+                                <input type="password" name="password" id="password" class="form-control validate">
+                                <small id="passwordHelp" class="form-text"  style="color: red"></small>
+                            </div>
+
+                            <div class="md-form mb-5 form-group">
+                                <label data-error="" data-success="" for="confirm_password">Confirmer mot de password</label>
+                                <input type="password" name="confirm_password" id="confirm_password" class="form-control validate">
+                                <small id="confirm_passwordHelp" class="form-text"  style="color: red"></small>
+                            </div>
+
+                            <div class=" text-center">
+                                <button class="btn btn-dark section-btn" id="prev3">Retour</button>
+                                <button  id="submit-btn" class="btn btn-info waves-effect text-left section-btn" type="submit">
+                                <span class="form-submit-btn">
+                                     S'inscrire
+                                </span>
+                                    <span class="form-loader" style="display: none">
+                                   <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                Inscription en cours...
+                               </span>
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- login become-ntc modal -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center bg-primary">
+                    <h4 class="modal-title w-100 font-weight-bold">Devenir NTC | Connexion</h4>
+                    <a style="color: #fff;float: right"  data-dismiss="modal" aria-label="Close">
+                        Fermer
+                    </a>
+                </div>
+                <form id="login-form">
+                    <div class="modal-body mx-3">
+                        <section id="section-3" >
+                            <h3>Informations de connexion</h3>
+
+                            <div class="alert form-error-viewer alert-danger" style="display: none"></div>
+
+                            <div class="md-form mb-5">
+                                <label data-error="" data-success="" for="username">Nom d'utilisateur/Email</label>
+                                <input type="email" name="username" id="username" class="form-control validate">
+                                <small id="usernameHelp" class="form-text"  style="color: red"></small>
+                            </div>
+
+                            <div class="md-form mb-5 form-group">
+                                <label data-error=""  data-success="" for="password">Mot de passe</label>
+                                <input type="password" name="password" id="password" class="form-control validate">
+                                <small id="passwordHelp" class="form-text"  style="color: red"></small>
+                            </div>
+
+
+                            <div class=" text-center form-group">
+                                <button  id="submit-btn" class="btn btn-primary waves-effect text-left section-btn" type="submit">
+                                <span class="form-submit-btn">
+                                     Connexion
+                                </span>
+                                    <span class="form-loader" style="display: none">
+                                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                       Connexion en cours...
+                                    </span>
+                                </button>
+                            </div>
+                        </section>
                     </div>
                 </form>
             </div>
         </div>
-    </section>
-    <!--En Donation Form Section -->--}}
-@endsection
+    </div>
+
+@stop
+@section('scripts')
+   @include('scripts.cj')
+   @include('scripts.scripts')
+    @stop

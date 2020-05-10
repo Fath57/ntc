@@ -23,10 +23,10 @@
     <section class="page-title" style="background-image:url(images/background/19.jpg);">
         <div class="auto-container">
             <div class="title-box">
-                <h1>Agir</h1>
+                <h1>S’impliquer</h1>
                 <ul class="bread-crumb clearfix">
                     <li><a href="/">Accueil </a></li>
-                    <li>Agir</li>
+                    <li>S’impliquer dans la communauté</li>
                 </ul>
             </div>
         </div>
@@ -38,44 +38,44 @@
         <div class="auto-container">
 
             <div class="sec-title text-center">
-                <h2>Problèmes récents</h2>
+                <h2>Préoccupations des citoyens</h2>
                 <div class="text">You can help lots of people by donating little.Leverage agile frameworks to provide a robust synopsis for <br> Organically grow the holistic world view of disruptive innovation via workplace</div>
             </div>
 
             <div class="row clearfix">
 
-                @for($i=0;$i<6;$i++)
+                @foreach($problems as $problem)
                 <!-- Cause Block Two -->
-                <div class="cause-block-two col-md-4 col-sm-6 col-xs-12 wow fadeIn">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure><img src="images/resource/cause-15.jpg" alt=""></figure>
-                            <!--<div class="overlay-box"><a href="causes-single.html" class="link">Donate Now</a></div>-->
-                            <div class="title-box">
-                                <div class="progress-bar">
-                                    <div class="bar-inner"><div class="bar progress-line" data-width="85"><div class="bar-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="85">0</span>%</div></div></div></div>
+                <div class="row wow fadeIn">
+                    <div class="cause-block-two col-md-4 col-sm-12 col-xs-12 ">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure><img src="{{asset('storage/'.$problem->image)}}" alt="{{$problem->title}}"></figure>
+                                <!--<div class="overlay-box"><a href="causes-single.html" class="link">Donate Now</a></div>-->
+                                <div class="title-box">
+                                    <!--<div class="progress-bar">
+                                        <div class="bar-inner"><div class="bar progress-line" data-width="85"><div class="bar-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="85">0</span>%</div></div></div></div>
+                                    </div>-->
+                                    <h3><a href="#">{{$problem->title}}</a></h3>
                                 </div>
-                                <h3><a href="causes-single.html">Drought And Hunger</a></h3>
                             </div>
-                        </div>
-                        <div class="lower-content">
-                            <div class="text">Integer et diam libero. Praesent  varius nisi. Nunc vCapitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override .</div>
 
                         </div>
                     </div>
+
+                    <div class="col-md-8 col-sm-12 ">
+                        <div class="text">{!!$problem->description !!}</div>
+                    </div>
                 </div>
 
-                    @endfor
+                    <hr>
+
+                @endforeach
 
             </div>
 
             <!--Styled Pagination-->
-            <ul class="styled-pagination text-center">
-                <li><a href="#" class="active">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li class="next"><a href="#">Suivant</a></li>
-            </ul>
+            {{$problems->links()}}
             <!--End Styled Pagination-->
 
         </div>
@@ -90,13 +90,14 @@
                 <h2></h2>
             </div>
 
-            <div class="btn-column text-center">
-                <select class="form-control" style="">
-                    <option value="1">Engager les mairies</option>
-                    <option value="2">Engager la HAAC</option>
-                    <option value="3">Engager le Parlement</option>
-                </select>
-            </div>
+            <p class="btn-column text-center text-white">
+                rien
+
+            </p>
+            <center style="margin-top: 1%">
+                <a href="{{route('voyager.rapports-activismes.create')}}" class="btn btn-primary btn-lg text-center" style="border-radius: 0;padding: 15px;font-size: 15pt">Faire votre rapport</a>
+            </center>
+
         </div>
 
         <div>
@@ -204,18 +205,10 @@
                     </ul>
             </div>
 
-                <center style="margin-top: 10%">
-                    <button class="btn btn-primary btn-lg text-center" data-toggle="modal" data-target="#modalContactForm" style="border-radius: 0;padding: 15px;font-size: 15pt">Faire un rapport</button>
-
-                </center>
-
-
             </div>
         </div>
     </section>
     <!--End engage Section -->
-
-
 
 
     <!-- press section -->
@@ -232,39 +225,94 @@
                 </div>
 
 
-                    <div class="row "style="margin-left:10%;text-align: center">
-                        @for($i=0;$i<3;$i++)
+                <div class="row "style="margin-left:10%;text-align: center">
+                    @foreach($presses as $press)
+                        @php
+                            $image = $press->logo;
+                            $imagename = \Illuminate\Support\Str::replaceLast('.','-medium.',$image)
+                        @endphp
                         <div class="col-md-3" style="margin: 10px;padding: 10px">
                             <div class="cours row">
-                                <div class="col-md-3 col-sm-12" style="background: url('{{asset('images/logo-ctn.jpeg')}}');background-size: contain;background-repeat: no-repeat;background-position: center; height: 150px;">
+                                <div class="col-md-3 col-sm-12" style="background: url('{{asset('storage/'.$imagename)}}');background-size: contain;background-repeat: no-repeat;background-position: center; height: 150px;">
                                 </div>
-                                <div class="col-md-9 col-sm-12 pt-2 pb-2">
-                                    <h2 style="color: #4f5e6b;">ORTB</h2>
+                                <div class="col-md-9 col-sm-12 pt-2">
+                                    <h3 style="color: #4f5e6b;">{{$press->name}}</h3>
                                     <ul class="list-unstyled">
-                                        <li><a href="mailto:example@email.com"><i class="fa fa-envelope"></i>&nbsp; example@email.com</a></li>
-                                        <li><a href="#"><i class="fa fa-bookmark"></i>&nbsp; BP 872 Gbegamey</a></li>
-                                        <li><a href="#"><i class="fa fa-map-pin"></i>&nbsp; Cotonou/Gbegamey</a></li>
+                                        <li><a style="font-size: 11pt" href="mailto:{{$press->email}}"><i style="font-size: 15pt;margin-right: 5px" class="fa fa-envelope"></i>&nbsp;{{$press->email}}</a></li>
+                                        <li><a style="font-size: 11pt" href="tel:{{$press->phone}}">   <i style="font-size: 15pt;margin-right: 5px" class="fa fa-phone"></i>&nbsp; {{$press->phone}}</a></li>
                                     </ul>
-
                                 </div>
-
+                                <div class=" badge-primary col-md-12" style="margin-top: -10%">Adresse : {{$press->adress}}</div>
                             </div>
+
                         </div>
-                        @endfor
+
+                    @endforeach
+
+                </div>
 
                     </div>
                 </div>
-
-
-
-
-
             </div>
         </div>
     </section>
     <!--End engage Section -->
-
-
-
-
 @endsection
+
+@section('modals')
+    <!-- report result modal -->
+    <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center bg-primary">
+                    <h2 class="modal-title w-100 font-weight-bold">Engager</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="form-group md-form mb-5">
+                        <!-- <i class="fa fa-user prefix grey-text"></i>-->
+                        <label for="targerts">Qui engager?</label>
+                        <select id="targerts" class="form-control" style="">
+                            <option value="1">Engager les mairies</option>
+                            <option value="2">Engager la HAAC</option>
+                            <option value="3">Engager le Parlement</option>
+                        </select>
+                        <!--<label data-error="wrong" data-success="right" for="form34">Your name</label>-->
+                    </div>
+
+                    <div class="form-group md-form mb-5">
+                        <label data-error="wrong" data-success="right" for="form34">Votre nom</label>
+                        <input type="text" id="form34" class="form-control validate">
+                    </div>
+
+                    <div class="form-group md-form mb-5">
+                        <label data-error="wrong" data-success="right" for="form29">Votre email</label>
+                        <input type="email" id="form29" class="form-control validate">
+                    </div>
+
+                    <div class="form-group md-form mb-5">
+                        <label data-error="wrong" data-success="right" for="form32">Sujet</label>
+                        <input type="text" id="form32" class="form-control validate">
+                    </div>
+
+                    <div class="form-group md-form">
+                        <label data-error="wrong" data-success="right" for="form8">Votre message</label>
+                        <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+                    </div>
+
+                    <div class="md-form">
+                        <input type="file" id="form32" class="form-control validate">
+                        <!-- <label data-error="wrong" data-success="right" for="form8">Join a document</label>-->
+                    </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-unique">Reporter <i class="fa fa-send ml-1"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+@stop

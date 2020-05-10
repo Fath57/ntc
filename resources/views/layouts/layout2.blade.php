@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from t.commonsupport.com/ntc/# by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Jul 2019 13:13:52 GMT -->
 <head>
     <meta charset="utf-8">
-    <title>Become NTC</title>
+    <title>@yield('title')</title>
 
     <!-- Font Awesome -->
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">-->
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/css/mdb.min.css" rel="stylesheet">
     <!-- Stylesheets -->
     <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
     <link href="{{asset('plugins/revolution/css/settings.css')}}" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
@@ -26,12 +23,15 @@
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js')}}"></script><![endif]-->
     <!--[if lt IE 9]><script src="{{asset('js/respond.js')}}"></script><![endif]-->
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 
+    <meta name="csrf-token" content="{{csrf_token()}}">
 
-
+    @yield('css')
 </head>
 
 <body>
+@yield('modals')
 
 <div class="page-wrapper">
     <!-- Preloader -->
@@ -51,7 +51,7 @@
                     </div>
                     <div class="top-right clearfix">
                         <ul class="clearfix">
-                            <li>Language ; </li>
+                          <!--  <li>Language ; </li>
                             <li class="language dropdownn"><a class="btn btn-default dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" href="#">Eng <span class="icon fa fa-caret-down"></span></a>
                                 <ul class="dropdown-menu style-one" aria-labelledby="dropdownMenu1">
                                     <li><a href="#">Arabic</a></li>
@@ -59,7 +59,8 @@
                                     <li><a href="#">German</a></li>
                                     <li><a href="#">French</a></li>
                                 </ul>
-                            </li>
+                            </li>-->
+                                @include('auth.buttons')
                         </ul>
                     </div>
                 </div>
@@ -116,14 +117,14 @@
                                             <li><a href="causes-single.html">Cause Details</a></li>
                                         </ul>-->
                                     </li>
-                                    <li ><a href="{{route('take')}}">Agir</a>
+                                    <li ><a href="{{route('take')}}">S'impliquer</a>
                                         <!--<ul>
                                             <li><a href="event-list.html">Event List View</a></li>
                                             <li><a href="event-grid.html">Event Grid View</a></li>
                                             <li><a href="event-single.html">Event Details</a></li>
                                         </ul>-->
                                     </li>
-                                    <li><a href="{{route('empower')}}">Habiliter les citoyens</a>
+                                    <li><a href="{{route('empower')}}">Education Citoyenne</a>
                                         <!-- <ul>
                                              <li><a href="about.html">About Us</a></li>
                                              <li class="dropdown"><a href="#">Services</a>
@@ -224,14 +225,14 @@
                                         <li><a href="causes-single.html">Cause Details</a></li>
                                     </ul>-->
                                 </li>
-                                <li ><a href="{{route('take')}}">Agir</a>
+                                <li ><a href="{{route('take')}}">S'impliquer</a>
                                     <!--<ul>
                                         <li><a href="event-list.html">Event List View</a></li>
                                         <li><a href="event-grid.html">Event Grid View</a></li>
                                         <li><a href="event-single.html">Event Details</a></li>
                                     </ul>-->
                                 </li>
-                                <li><a href="{{route('empower')}}">Habiliter les citoyens</a>
+                                <li><a href="{{route('empower')}}">Education Citoyenne</a>
                                     <!-- <ul>
                                          <li><a href="about.html">About Us</a></li>
                                          <li class="dropdown"><a href="#">Services</a>
@@ -311,52 +312,6 @@
                             </div>
                         </div>
 
-                        {{--
-                                                <div class="big-column col-md-7 col-sm-12 col-xs-12">
-                                                    <div class="row clearfix">
-                                                        <div class="footer-column col-md-6 col-sm-6 col-xs-12">
-                                                            <!-- Post Widget -->
-                                                            <div class="footer-widget post-widget">
-                                                                <h3>Recent Posts </h3>
-                                                                <ul>
-                                                                    <li class="recent-post">
-                                                                        <span class="date">14 May 2019</span>
-                                                                        <div class="text"><a href="blog-single-1.html">Malnutrition is the major cause of infant mortality</a></div>
-                                                                    </li>
-
-                                                                    <li class="recent-post">
-                                                                        <span class="date">14 May 2019</span>
-                                                                        <div class="text"><a href="blog-single-1.html">Malnutrition is the major cause of infant mortality</a></div>
-                                                                    </li>
-
-                                                                    <li class="recent-post">
-                                                                        <span class="date">14 May 2019</span>
-                                                                        <div class="text"><a href="blog-single-1.html">Malnutrition is the major cause of infant mortality</a></div>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-
-                                                        <!--Footer Column-->
-                                                        <div class="footer-column col-md-6 col-sm-6 col-xs-12">
-                                                            <div class="footer-widget tweet-widget">
-                                                                <h3>Tweets</h3>
-                                                                <div class="twitter-post">
-                                                                    <div class="name"><span class="fa fa-twitter"></span>@Company_text</div>
-                                                                    <div class="text">Iferei te compoen iusquam re,vid eperius aus <span>terravera</span> teri fauten it. Supienitui sente ad fac vesil tatiostrim <span>#escreissimiu</span></div>
-                                                                    <span class="date">15 May 2019</span>
-                                                                </div>
-
-                                                                <div class="twitter-post">
-                                                                    <div class="name"><span class="fa fa-twitter"></span>@Company_text</div>
-                                                                    <div class="text">Iferei te compoen iusquam re,vid eperius aus <span>terravera</span>. Supienitui sente ad fac vesil tatiostrim <span>#donate</span></div>
-                                                                    <span class="date">12 May 2019</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                        --}}
                     </div>
                 </div>
 
@@ -387,158 +342,6 @@
 </div>
 
 
-<!-- register become-ntc modal -->
-<div class="modal fade" id="modalregisterbecomentc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Sign Up</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body mx-3">
-
-                <section id="section-1">
-                    <h3>Informations personnelles</h3>
-
-
-                    <div class="md-form mb-5">
-                        <input type="text" id="form34" class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="form34">Votre nom</label>
-                    </div>
-                    <div class="md-form mb-5">
-                        <input type="text"  class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="form34">Votre prénom</label>
-                    </div>
-
-                    <div class="md-form mb-5">
-                        <input type="date"  class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="form34">Date de naissance</label>
-                    </div>
-
-                    <div class="md-form mb-5">
-                        <input type="text"  class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="form34">Lieu de naissance</label>
-                    </div>
-
-                    <div class="md-form mb-5">
-                        <select type="text"  class="form-control validate">
-                            <option>Pays de naissance</option>
-                            <option>Algerie</option>
-                            <option>Bénin</option>
-                            <option>Togo</option>
-                            <option>Gabon</option>
-                            <option>Guinée</option>
-                        </select>
-                    </div>
-
-
-                    <div class="md-form mb-5">
-                        <input type="number"  class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="form34">Tel</label>
-                    </div>
-
-                    <div class="md-form mb-5">
-                        <input type="number"  class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="form34">Numéro WhatsApp</label>
-                    </div>
-
-                    <div class=" text-center">
-                        <button class="btn btn-primary section-btn" id="next1">Suivant</button>
-                    </div>
-
-                </section>
-
-                <section id="section-2"  style="display: none">
-                    <h3>Adresse</h3>
-
-
-                    <div class="md-form mb-5">
-                        <input type="text"  class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="form34">Adresse 1*</label>
-                    </div>
-
-                    <div class="md-form mb-5">
-                        <input type="text"  class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="form34">Adresse 2</label>
-                    </div>
-
-
-                    <div class="md-form mb-5">
-                        <input type="text"  class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="form34">Arrondissement</label>
-                    </div>
-
-
-                    <div class="md-form mb-5">
-                        <input type="text"  class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="form34">Quartier</label>
-                    </div>
-
-                    <div class="text-center">
-                        <button class="btn btn-dark section-btn" id="prev2">Retour</button>
-                        <button class="btn btn-primary section-btn" id="next2">Suivant</button>
-                    </div>
-
-                </section>
-
-                <section id="section-3"  style="display: none">
-                    <h3>Autres Informations</h3>
-
-
-                    <div class="md-form mb-5">
-                        <input type="email" id="form29" class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="form29">Votre mail</label>
-                    </div>
-
-                    <div class="md-form mb-5">
-                        <input type="text"  class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="form34">Profession</label>
-                    </div>
-
-                    <div class="md-form mb-5">
-                        <input type="text"  class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="form34">Centres d'intérêts</label>
-                    </div>
-
-                    <div class="text-center">
-                        <button class="btn btn-dark section-btn" id="prev3">Retour</button>
-                        <button class="btn btn-primary section-btn" id="next3">Suivant</button>
-                    </div>
-                </section>
-
-              <section id="section-4" style="display: none">
-                  <h3>Informations de connexion</h3>
-                  <div class="md-form mb-5">
-                      <input type="text"  class="form-control validate">
-                      <label data-error="wrong" data-success="right" for="form34">Nom d'utilisateur</label>
-                  </div>
-
-                  <div class="md-form mb-5">
-                      <input type="text"  class="form-control validate">
-                      <label data-error="wrong" data-success="right" for="form34">Mot de passe</label>
-                  </div>
-
-                  <div class="md-form mb-5">
-                      <input type="text"  class="form-control validate">
-                      <label data-error="wrong" data-success="right" for="form34">Confirmer mot de password</label>
-                  </div>
-
-                  <div class=" text-center">
-                      <button class="btn btn-dark section-btn" id="prev4">Retour</button>
-                      <button class="btn btn-primary " >S'inscrire</button>
-                  </div>
-              </section>
-
-            </div>
-            {{--<div class="modal-footer d-flex justify-content-center">
-                <button class="btn btn-unique">Sign Up <i class="fa fa-send ml-1"></i></button>
-            </div>--}}
-        </div>
-    </div>
-</div>
 <!--End pagewrapper-->
 
 <!--Scroll to top-->
@@ -566,89 +369,36 @@
 <script src="{{asset('js/knob.js')}}"></script>
 <script src="{{asset('js/appear.js')}}"></script>
 <script src="{{asset('js/script.js')}}"></script>
+<script src="{{asset('js/sweetalert2.all.min.js')}}"></script>
 <!-- JQuery -->
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/js/mdb.min.js"></script>
 
 
-<!-- sections control start -->
+<!-- Cookie policy -->
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<!--<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#166d95"
+    },
+    "button": {
+      "background": "transparent",
+      "border": "#fff",
+      "text": "#fff"
+    }
+  },
+  "content": {
+    "message": "Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site.",
+    "dismiss": "D'accord",
+    "link": "En savoir plus"
 
-<script>
-    let sectionOne = $('#section-1');
-    let sectionTwo = $('#section-2');
-    let sectionThree = $('#section-3');
-    let sectionFour = $('#section-4');
-
-
-
-    $('.section-btn').click(function (e) {
-        e.preventDefault();
-        let id = $(this).attr('id');
-
-        switch (id){
-            case  'next1' :
-
-                sectionOne.fadeOut('slow',function () {
-                    sectionTwo.fadeIn('slow');
-                });
-
-                break;
-
-            case 'next2' :
-
-
-                    sectionTwo.fadeOut('slow',function () {
-                        sectionThree.fadeIn('slow');
-                    });
-
-
-
-                break;
-
-
-                case 'next3' :
-
-
-                    sectionThree.fadeOut('slow',function () {
-                        sectionFour.fadeIn('slow');
-                    });
-
-
-
-                break;
-
-            case 'prev2' :
-
-                sectionTwo.fadeOut('slow',function () {
-                    sectionOne.fadeIn('slow');
-                });
-
-                break;
-
-            case 'prev3' :
-
-                sectionThree.fadeOut('slow',function () {
-                    sectionTwo.fadeIn('slow');
-                });
-
-                break;
-            case 'prev4' :
-
-                sectionFour.fadeOut('slow',function () {
-                    sectionThree.fadeIn('slow');
-                });
-
-                break;
-
-        }
-    })
-</script>
-
-<!-- sections control end -->
+  }
+});
+</script>-->
+@yield('scripts')
 
 </body>
 
-<!-- Mirrored from t.commonsupport.com/ntc/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Jul 2019 13:10:58 GMT -->

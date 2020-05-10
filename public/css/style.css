@@ -47,7 +47,7 @@
 
 **********************************************/
 
-/*** 
+/***
 
 ====================================================================
 			Fonts
@@ -74,7 +74,7 @@ font-family: "Times New Roman", serif;
 @import url('jquery.bootstrap-touchspin.css');
 @import url('jquery.mCustomScrollbar.min.css');
 
-/*** 
+/***
 
 ====================================================================
 	Reset
@@ -89,7 +89,7 @@ font-family: "Times New Roman", serif;
 	outline:none;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Global Settings
@@ -98,7 +98,7 @@ font-family: "Times New Roman", serif;
  ***/
 
 body {
-	
+
 	font-size:14px;
 	color:#166d95;
 	line-height:1.7em;
@@ -132,7 +132,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 textarea{
-	overflow:hidden;	
+	overflow:hidden;
 }
 
 p,.text{
@@ -166,7 +166,7 @@ p,.text{
 ul,li{
 	list-style:none;
 	padding:0px;
-	margin:0px;	
+	margin:0px;
 }
 
 .theme-btn{
@@ -373,26 +373,26 @@ ul,li{
 	color:#3e9807;
 }
 
-.preloader{ 
-	position:fixed; 
-	left:0px; 
-	top:0px; 
-	width:100%; 
-	height:100%; 
-	z-index:999999; 
-	background-color:#ffffff; 
-	background-position:center center; 
-	background-repeat:no-repeat; 
+.preloader{
+	position:fixed;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	z-index:999999;
+	background-color:#ffffff;
+	background-position:center center;
+	background-repeat:no-repeat;
 	background-image:url(../images/icons/preloader.svg);
 }
 
 img{
 	display:inline-block;
 	max-width:100%;
-	height:auto;	
+	height:auto;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Scroll To Top style
@@ -419,14 +419,14 @@ img{
 	-moz-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
-	transition:all 300ms ease;		
+	transition:all 300ms ease;
 }
 
 .scroll-to-top:hover{
 	background:#3e9807;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Main Header style
@@ -674,7 +674,7 @@ img{
 	-moz-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .main-header .header-upper .nav-outer{
@@ -715,7 +715,7 @@ img{
 }
 
 .main-menu .navbar-collapse{
-	padding:0px;	
+	padding:0px;
 }
 
 .main-menu .navigation{
@@ -798,7 +798,7 @@ img{
 	line-height:30px;
 	font-size:16px;
 	text-align:center;
-	z-index:5;	
+	z-index:5;
 }
 
 .main-menu .navigation > li > ul{
@@ -825,7 +825,7 @@ img{
 }
 
 .main-menu .navigation > li > ul > li:last-child{
-	border-bottom:none;	
+	border-bottom:none;
 }
 
 .main-menu .navigation > li > ul > li > a{
@@ -863,11 +863,11 @@ img{
 	line-height:20px;
 	font-size:16px;
 	text-align:center;
-	z-index:5;	
+	z-index:5;
 }
 
 .main-menu .navigation > li > ul > li.dropdown:hover > a:after{
-	color:#ffffff;	
+	color:#ffffff;
 }
 
 .main-menu .navigation > li > ul > li > ul{
@@ -894,7 +894,7 @@ img{
 }
 
 .main-menu .navigation > li > ul > li > ul > li:last-child{
-	border-bottom:none;	
+	border-bottom:none;
 }
 
 .main-menu .navigation > li > ul > li > ul > li > a{
@@ -932,17 +932,17 @@ img{
 	font-size:16px;
 	font-weight:normal;
 	text-align:center;
-	z-index:5;	
+	z-index:5;
 }
 
 .main-menu .navigation > li > ul > li > ul > li.dropdown:hover > a:after{
-	color:#ffffff;	
+	color:#ffffff;
 }
 
 .main-menu .navigation > li.dropdown:hover > ul{
 	visibility:visible;
 	opacity:1;
-	top:100%;	
+	top:100%;
 	-webkit-transition: all 300ms ease;
 	-moz-transition: all 300ms ease;
 	-ms-transition: all 300ms ease;
@@ -957,7 +957,7 @@ img{
 	-moz-transition:all 300ms ease;
 	-webkit-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
-	-o-transition:all 300ms ease;	
+	-o-transition:all 300ms ease;
 	transition:all 300ms ease;
 }
 
@@ -1030,7 +1030,7 @@ img{
 	top:100%;
 	right:0px;
 	left:auto;
-	width:170px;	
+	width:170px;
 	border-radius:0px;
 	background-color:#222222;
 	border:none;
@@ -1054,7 +1054,7 @@ img{
 }
 
 .main-header.header-style-three .language > a{
-	color:#000000 !important;	
+	color:#000000 !important;
 }
 
 .main-header .language > a .flag{
@@ -1104,7 +1104,7 @@ img{
 }
 
 .main-header .language .dropdown-menu > li:last-child{
-	border-bottom:none;	
+	border-bottom:none;
 }
 
 .main-header .language .dropdown-menu > li > a{
@@ -1135,12 +1135,11 @@ img{
 .sticky-header{
 	position:fixed;
 	visibility:hidden;
-	opacity:0;
 	left:0px;
 	top:0px;
 	width:100%;
 	padding:0px 0px;
-    background: rgba(47,46,50,.80);
+    background: #fff;
 	z-index:0;
 	-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.1);
 	-moz-box-shadow: 0 5px 10px rgba(0,0,0,.1);
@@ -1162,7 +1161,7 @@ img{
 	z-index:99999;
 	opacity:1;
 	visibility:visible;
-	 background: rgba(47,46,50,.90);
+	 background: #fff;
 }
 
 .main-header .sticky-header .main-menu .navigation > li{
@@ -1172,7 +1171,7 @@ img{
 }
 
 .main-header .sticky-header .main-menu .navigation > li > a{
-	color:#ffffff;
+	color: #166d95;
 	padding:20px 15px;
 	line-height:30px;
 	font-size:16px;
@@ -1384,7 +1383,7 @@ img{
 	display:none;
 }
 
-/*** 
+/***
 
 ====================================================================
 				Header Styl Six
@@ -1393,7 +1392,7 @@ img{
 ***/
 
 .header-style-six{
-	position:fixed;	
+	position:fixed;
 	top: 40px;
 	z-index: 9999;
 }
@@ -1405,7 +1404,7 @@ img{
 
 .header-style-six .btn-box{
 	position:relative;
-	margin-top:10px;	
+	margin-top:10px;
 }
 
 .header-style-six .btn-box .menu-btn{
@@ -1421,7 +1420,7 @@ img{
 
 .with-side-navigation{
 	position:relative;
-	padding-left:300px;	
+	padding-left:300px;
 }
 
 .sidenav-bar{
@@ -1436,7 +1435,7 @@ img{
 	-moz-transition: all 500ms ease;
 	-ms-transition: all 500ms ease;
 	-o-transition: all 500ms ease;
-	transition: all 500ms ease;	
+	transition: all 500ms ease;
 }
 
 .sidenav-bar .toggle-btn{
@@ -1449,7 +1448,7 @@ img{
 	line-height:50px;
 	text-align:center;
 	color:#ffffff;
-	cursor:pointer;	
+	cursor:pointer;
 	z-index:10;
 }
 
@@ -1464,7 +1463,7 @@ img{
 .sidenav-bar .social-links li{
 	position:relative;
 	display:inline-block;
-	margin:0px 0px 10px;	
+	margin:0px 0px 10px;
 }
 
 .sidenav-bar .social-links li a{
@@ -1511,7 +1510,7 @@ img{
 }
 
 .sidenav-bar .toggle-btn{
-	display:block;	
+	display:block;
 }
 
 .sidenav-bar .toggle-btn .closer{
@@ -1536,7 +1535,7 @@ img{
 .sidenav-bar .side-nav-wrapper{
 	position:relative;
 	padding:40px 30px;
-		
+
 }
 
 .sidenav-bar .logo{
@@ -1547,22 +1546,22 @@ img{
 
 .sidenav-bar .side-nav{
 	position:relative;
-	margin-bottom:30px;	
+	margin-bottom:30px;
 }
 
 .sidenav-bar .side-nav .navigation > li,
 .sidenav-bar .side-nav .navigation > li > ul > li{
 	position:relative;
 	display:block;
-	border-bottom:1px solid rgba(0,0,0,0.05);	
+	border-bottom:1px solid rgba(0,0,0,0.05);
 }
 
 .sidenav-bar .side-nav .navigation > li.dropdown > ul > li:last-child{
-	border-bottom:none;	
+	border-bottom:none;
 }
 
 .sidenav-bar .side-nav .navigation > li.dropdown > ul > li:first-child{
-	border-top:1px solid rgba(0,0,0,0.05);	
+	border-top:1px solid rgba(0,0,0,0.05);
 }
 
 .sidenav-bar .side-nav .navigation > li > a{
@@ -1590,7 +1589,7 @@ img{
 
 .sidenav-bar .side-nav .navigation > li > ul > li,
 .sidenav-bar .side-nav .navigation > li > ul > li > ul > li{
-	margin-bottom:0px;	
+	margin-bottom:0px;
 }
 
 .sidenav-bar .side-nav .navigation > li > ul > li:last-child,
@@ -1606,7 +1605,7 @@ img{
 }
 
 .sidenav-bar .side-nav .navigation > li.dropdown > a{
-	padding-right:30px;	
+	padding-right:30px;
 }
 
 .sidenav-bar .side-nav .navigation > li.dropdown > a:before{
@@ -1659,7 +1658,7 @@ img{
 	transform:scaleY(1);
 	-webkit-transition: all 0.7s ease;
 	-ms-transition: all 0.7s ease;
-	transition: all 0.7s ease;	
+	transition: all 0.7s ease;
 }
 
 .sidenav-bar .side-nav .navigation li.dropdown .dropdown-btn{
@@ -1700,7 +1699,7 @@ img{
 .sidenav-bar .social-links li{
 	position:relative;
 	display:inline-block;
-	margin:0px 3px;	
+	margin:0px 3px;
 }
 
 .sidenav-bar .social-links li a{
@@ -1725,7 +1724,7 @@ img{
 }
 
 
-/*** 
+/***
 
 ====================================================================
 			Main Slider style
@@ -1734,7 +1733,7 @@ img{
 ***/
 
 .main-slider{
-	position:relative;	
+	position:relative;
 	z-index:10;
 }
 
@@ -1742,14 +1741,14 @@ img{
 	z-index:5 ;
 }
 
-.main-slider h4{	
+.main-slider h4{
 	font-size:34px;
 	line-height:1.2em;
 	color: #ffffff;
 	font-weight:700;
 }
 
-.main-slider h2{	
+.main-slider h2{
 	display: inline-block;
 	font-size:64px;
 	line-height:1.2em;
@@ -1779,7 +1778,7 @@ img{
 }
 
 .main-slider .tp-dottedoverlay{
-	background:rgba(0,0,0,0.50);
+	/*background:rgba(0,0,0,0.50);*/
 }
 
 .main-slider.style-six .tparrows{
@@ -1805,11 +1804,11 @@ img{
 }
 
 .main-slider.no-controls .tparrows{
-	display:none !important;	
+	display:none !important;
 }
 
 
-/*** 
+/***
 
 ====================================================================
 	Hidden Sidebar style
@@ -1818,7 +1817,7 @@ img{
 ***/
 
 .has-side-nav .page-wrapper{
-	padding-left:300px;	
+	padding-left:300px;
 }
 
 .hidden-bar .nav-toggler{
@@ -1828,7 +1827,7 @@ img{
 	width:48px;
 	height:42px;
 	background:#3e9807 url(../images/icons/menu-btn.png) center center no-repeat;
-	cursor:pointer;	
+	cursor:pointer;
 }
 
 .hidden-bar .nav-toggler .hidden-bar-opener{
@@ -1836,7 +1835,7 @@ img{
 	display:block;
 	width:48px;
 	height:42px;
-	background:none;	
+	background:none;
 }
 
 .hidden-bar{
@@ -1856,15 +1855,15 @@ img{
 .hidden-bar .logo-box{
 	position:relative;
 	text-align:center;
-	margin-bottom:50px;	
+	margin-bottom:50px;
 }
 
 .hidden-bar .mCSB_inside > .mCSB_container{
-	margin-right:10px;	
+	margin-right:10px;
 }
 
 .hidden-bar .mCS_no_scrollbar .mCSB_inside > .mCSB_container{
-	margin-right:0px;	
+	margin-right:0px;
 }
 
 .hidden-bar.left-align {
@@ -1872,7 +1871,7 @@ img{
 }
 
 .visible-sidebar .hidden-bar.left-align{
-	left:0px;	
+	left:0px;
 }
 
 .hidden-bar .hidden-bar-closer {
@@ -1910,7 +1909,7 @@ img{
 
 .hidden-bar .hidden-bar-closer,
 .hidden-bar .nav-toggler{
-	display:none;	
+	display:none;
 }
 
 .hidden-bar-wrapper {
@@ -1920,7 +1919,7 @@ img{
 
 .hidden-bar .logo-box img{
 	display:inline-block;
-	max-width:100%;	
+	max-width:100%;
 }
 
 .hidden-bar .side-menu {
@@ -1944,7 +1943,7 @@ img{
 .hidden-bar .side-menu ul li{
 	position:relative;
 	display:block;
-	border-bottom: 1px solid rgba(255,255,255,0.10);	
+	border-bottom: 1px solid rgba(255,255,255,0.10);
 }
 
 .hidden-bar .side-menu ul.navigation > li > ul > li:first-child{
@@ -1979,7 +1978,7 @@ img{
 }
 
 .hidden-bar .side-menu ul.navigation > li.dropdown > a{
-	font-size:15px;	
+	font-size:15px;
 }
 
 .hidden-bar .side-menu ul li a:hover,
@@ -1999,14 +1998,14 @@ img{
 	text-align:center;
 	font-size:15px;
 	line-height:20px;
-	color:#999999;	
+	color:#999999;
 }
 
 .hidden-bar .social-links li{
 	position:relative;
 	display:inline-block;
 	line-height:24px;
-	margin:0px 2px;	
+	margin:0px 2px;
 }
 
 .hidden-bar .social-links li a{
@@ -2022,7 +2021,7 @@ img{
 
 .hidden-bar .social-links li a:hover{
 	color:#ffffff;
-	background:#212121;	
+	background:#212121;
 }
 
 .hidden-bar .search-box{
@@ -2034,12 +2033,12 @@ img{
 	text-align:center;
 	font-size:13px;
 	line-height:20px;
-	color:#999999;	
+	color:#999999;
 }
 
 .hidden-bar .search-box .form-group{
 	position:relative;
-	margin:0px;	
+	margin:0px;
 }
 
 .hidden-bar .search-box .form-group input[type="text"],
@@ -2085,11 +2084,11 @@ img{
 }
 
 .hidden-bar .side-menu ul li .dropdown-btn{
-	display:none;	
+	display:none;
 }
 
 
-/*** 
+/***
 
 ====================================================================
 				Homne Banner
@@ -2275,7 +2274,7 @@ img{
 	background-image: url(../images/icons/arrow-right-2.png);
 }
 
-.banner-carousel .owl-prev, 
+.banner-carousel .owl-prev,
 .banner-carousel .owl-next {
 	position: absolute;
 	display: inline-block;
@@ -2293,7 +2292,7 @@ img{
 	right: 60px;
 }
 
-/*** 
+/***
 
 ====================================================================
 				Section Title
@@ -2355,7 +2354,7 @@ img{
 	margin-bottom:50px;
 }
 
-/*** 
+/***
 
 ====================================================================
 					Page Title
@@ -2418,7 +2417,7 @@ img{
 
 .page-title .bread-crumb li a:hover{
 	color:#3e9807;
-	text-decoration: underline;	
+	text-decoration: underline;
 }
 
 .page-title .bread-crumb li:after{
@@ -2833,7 +2832,7 @@ img{
 	font-weight: 700;
 	padding: 20px 35px;
 	margin-bottom: 3px;
-	background-color: #e55a47;
+	background-color: #166d95;
 	cursor: pointer;
 	-webkit-transition: all 300ms ease;
 	-moz-transition: all 300ms ease;
@@ -2954,7 +2953,7 @@ img{
 
 
 
-/*** 
+/***
 
 ====================================================================
 				Why Choose Us
@@ -3097,11 +3096,11 @@ img{
 
 .accordion-box .block .acc-content{
 	position:relative;
-	display:none;	
+	display:none;
 }
 
 .accordion-box .block .acc-content.current{
-	display:block;	
+	display:block;
 }
 
 .accordion-box .block .content{
@@ -3112,7 +3111,7 @@ img{
 	border-left: 1px solid #e1e1e1;
 	border-right: 1px solid #e1e1e1;
 	padding-bottom: 20px;
-}	
+}
 
 .accordion-box .block .content p{
 	position: relative;
@@ -3120,7 +3119,7 @@ img{
 	line-height: 26px;
 	color: #777777;
 }
-	
+
 .accordion-box .block .acc-btn .icon-outer{
     position: absolute;
     bottom: 0px;
@@ -3324,7 +3323,7 @@ img{
 
 .event-block .image a{
 	display: block;
-} 
+}
 
 .event-block .image img{
 	width: 100%;
@@ -3481,10 +3480,10 @@ img{
 	opacity: .1;
 }
 
-/*** 
+/***
 
 ====================================================================
-					Event Section Two								
+					Event Section Two
 ====================================================================
 
 ***/
@@ -3604,10 +3603,10 @@ img{
 	font-weight: 400;
 }
 
-/*** 
+/***
 
 ====================================================================
-					Event Section Three								
+					Event Section Three
 ====================================================================
 
 ***/
@@ -3748,10 +3747,10 @@ img{
 	margin-bottom: 10px;
 }
 
-/*** 
+/***
 
 ====================================================================
-					Event Section Four								
+					Event Section Four
 ====================================================================
 
 ***/
@@ -3909,10 +3908,10 @@ img{
 	margin-bottom: 0;
 }
 
-/*** 
+/***
 
 ====================================================================
-					Video Section								
+					Video Section
 ====================================================================
 
 ***/
@@ -3942,13 +3941,13 @@ img{
 
 .video-section .video-column{
 	position: relative;
-} 
+}
 
 .video-section .video-column .inner-column{
 	position: relative;
 	margin-left: -100px;
 	padding-right: 40px;
-}	
+}
 
 .video-section .video-column .image{
 	position: relative;
@@ -4030,7 +4029,7 @@ img{
 }
 
 
-/*** 
+/***
 
 ====================================================================
 			Fun Facts Section
@@ -4131,7 +4130,7 @@ img{
 	font-weight: 400;
 }
 
-/*** 
+/***
 
 ====================================================================
 			Fun Facts Section Two
@@ -4226,7 +4225,7 @@ img{
 	color: #3e9807;
 }
 
-/*** 
+/***
 
 ====================================================================
 				Causes Section
@@ -4243,7 +4242,7 @@ img{
 .progress-bar{
 	position:relative;
 	width:100%;
-	height:1px;	
+	height:1px;
 }
 
 .progress-bar .bar-inner{
@@ -4275,7 +4274,7 @@ img{
 	width:15px;
 	height:15px;
 	background:#ff8a00;
-	border-radius:50%;	
+	border-radius:50%;
 }
 
 .progress-bar .bar-percentage{
@@ -4332,7 +4331,7 @@ img{
 }
 
 .cause-block .overlay-box{
-	position: absolute;	
+	position: absolute;
 	left: 0;
 	top: 0;
 	height: 100%;
@@ -4361,7 +4360,7 @@ img{
 	width: 100%;
 }
 
-.cause-block .overlay-box a{	
+.cause-block .overlay-box a{
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -4371,28 +4370,28 @@ img{
 	font-weight: 700;
 	text-transform: capitalize;
 	text-decoration: underline;
-	-webkit-transform: translate(-50% , -50%) scale(0);	
-	-moz-transform: translate(-50% , -50%) scale(0);	
-	-ms-transform: translate(-50% , -50%) scale(0);	
-	-o-transform: translate(-50% , -50%) scale(0);	
-	transform: translate(-50% , -50%) scale(0);	
+	-webkit-transform: translate(-50% , -50%) scale(0);
+	-moz-transform: translate(-50% , -50%) scale(0);
+	-ms-transform: translate(-50% , -50%) scale(0);
+	-o-transform: translate(-50% , -50%) scale(0);
+	transform: translate(-50% , -50%) scale(0);
 }
 
 .cause-block .overlay-box a:hover{
 	color: #f6a710;
-}	
+}
 
-.cause-block:hover .overlay-box a{	
+.cause-block:hover .overlay-box a{
 	-webkit-transition: all 300ms ease;
 	-moz-transition: all 300ms ease;
 	-ms-transition: all 300ms ease;
 	-o-transition: all 300ms ease;
 	transition: all 300ms ease;
-	-webkit-transform: translate(-50% , -50%) scale(1);	
-	-moz-transform: translate(-50% , -50%) scale(1);	
-	-ms-transform: translate(-50% , -50%) scale(1);	
-	-o-transform: translate(-50% , -50%) scale(1);	
-	transform: translate(-50% , -50%) scale(1);	
+	-webkit-transform: translate(-50% , -50%) scale(1);
+	-moz-transform: translate(-50% , -50%) scale(1);
+	-ms-transform: translate(-50% , -50%) scale(1);
+	-o-transform: translate(-50% , -50%) scale(1);
+	transform: translate(-50% , -50%) scale(1);
 }
 
 .cause-block .overlay-box .theme-btn{
@@ -4418,11 +4417,11 @@ img{
 
 .cause-block .lower-content h3 a{
 	color: #166d95;
-	-webkit-transition: all 300ms ease;	
-	-moz-transition: all 300ms ease;	
-	-ms-transition: all 300ms ease;	
-	-o-transition: all 300ms ease;	
-	transition: all 300ms ease;	
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
 }
 
 .cause-block .lower-content h3 a:hover{
@@ -4603,7 +4602,7 @@ img{
 
 
 
-/*** 
+/***
 
 ====================================================================
 				Causes Section
@@ -4694,11 +4693,11 @@ img{
 
 .cause-block-two .title-box h3 a{
 	color: #ffffff;
-	-webkit-transition: all 300ms ease;	
-	-moz-transition: all 300ms ease;	
-	-ms-transition: all 300ms ease;	
-	-o-transition: all 300ms ease;	
-	transition: all 300ms ease;	
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
 }
 
 .cause-block-two .title-box h3 a:hover{
@@ -4706,7 +4705,7 @@ img{
 }
 
 .cause-block-two .overlay-box{
-	position: absolute;	
+	position: absolute;
 	left: 0;
 	top: 0;
 	height: 100%;
@@ -4735,7 +4734,7 @@ img{
 	width: 100%;
 }
 
-.cause-block-two .overlay-box a{	
+.cause-block-two .overlay-box a{
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -4745,28 +4744,28 @@ img{
 	font-weight: 700;
 	text-transform: capitalize;
 	text-decoration: underline;
-	-webkit-transform: translate(-50% , -50%) scale(0);	
-	-moz-transform: translate(-50% , -50%) scale(0);	
-	-ms-transform: translate(-50% , -50%) scale(0);	
-	-o-transform: translate(-50% , -50%) scale(0);	
-	transform: translate(-50% , -50%) scale(0);	
+	-webkit-transform: translate(-50% , -50%) scale(0);
+	-moz-transform: translate(-50% , -50%) scale(0);
+	-ms-transform: translate(-50% , -50%) scale(0);
+	-o-transform: translate(-50% , -50%) scale(0);
+	transform: translate(-50% , -50%) scale(0);
 }
 
 .cause-block-two .overlay-box a:hover{
 	color: #f6a710;
-}	
+}
 
-.cause-block-two:hover .overlay-box a{	
+.cause-block-two:hover .overlay-box a{
 	-webkit-transition: all 300ms ease;
 	-moz-transition: all 300ms ease;
 	-ms-transition: all 300ms ease;
 	-o-transition: all 300ms ease;
 	transition: all 300ms ease;
-	-webkit-transform: translate(-50% , -50%) scale(1);	
-	-moz-transform: translate(-50% , -50%) scale(1);	
-	-ms-transform: translate(-50% , -50%) scale(1);	
-	-o-transform: translate(-50% , -50%) scale(1);	
-	transform: translate(-50% , -50%) scale(1);	
+	-webkit-transform: translate(-50% , -50%) scale(1);
+	-moz-transform: translate(-50% , -50%) scale(1);
+	-ms-transform: translate(-50% , -50%) scale(1);
+	-o-transform: translate(-50% , -50%) scale(1);
+	transform: translate(-50% , -50%) scale(1);
 }
 
 .cause-block-two .lower-content{
@@ -4847,7 +4846,7 @@ img{
 	color: #ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 				Causes Section Three
@@ -4948,11 +4947,11 @@ img{
 
 .cause-block-three .title-box h3 a{
 	color: #ffffff;
-	-webkit-transition: all 300ms ease;	
-	-moz-transition: all 300ms ease;	
-	-ms-transition: all 300ms ease;	
-	-o-transition: all 300ms ease;	
-	transition: all 300ms ease;	
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
 }
 
 .cause-block-three .title-box h3 a:hover{
@@ -4960,7 +4959,7 @@ img{
 }
 
 .cause-block-three .overlay-box{
-	position: absolute;	
+	position: absolute;
 	left: 0;
 	top: 0;
 	height: 100%;
@@ -4989,7 +4988,7 @@ img{
 	width: 100%;
 }
 
-.cause-block-three .overlay-box a{	
+.cause-block-three .overlay-box a{
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -4999,28 +4998,28 @@ img{
 	font-weight: 700;
 	text-transform: capitalize;
 	text-decoration: underline;
-	-webkit-transform: translate(-50% , -50%) scale(0);	
-	-moz-transform: translate(-50% , -50%) scale(0);	
-	-ms-transform: translate(-50% , -50%) scale(0);	
-	-o-transform: translate(-50% , -50%) scale(0);	
-	transform: translate(-50% , -50%) scale(0);	
+	-webkit-transform: translate(-50% , -50%) scale(0);
+	-moz-transform: translate(-50% , -50%) scale(0);
+	-ms-transform: translate(-50% , -50%) scale(0);
+	-o-transform: translate(-50% , -50%) scale(0);
+	transform: translate(-50% , -50%) scale(0);
 }
 
 .cause-block-three .overlay-box a:hover{
 	color: #3e9807;
-}	
+}
 
-.cause-block-three:hover .overlay-box a{	
+.cause-block-three:hover .overlay-box a{
 	-webkit-transition: all 300ms ease;
 	-moz-transition: all 300ms ease;
 	-ms-transition: all 300ms ease;
 	-o-transition: all 300ms ease;
 	transition: all 300ms ease;
-	-webkit-transform: translate(-50% , -50%) scale(1);	
-	-moz-transform: translate(-50% , -50%) scale(1);	
-	-ms-transform: translate(-50% , -50%) scale(1);	
-	-o-transform: translate(-50% , -50%) scale(1);	
-	transform: translate(-50% , -50%) scale(1);	
+	-webkit-transform: translate(-50% , -50%) scale(1);
+	-moz-transform: translate(-50% , -50%) scale(1);
+	-ms-transform: translate(-50% , -50%) scale(1);
+	-o-transform: translate(-50% , -50%) scale(1);
+	transform: translate(-50% , -50%) scale(1);
 }
 
 .cause-block-three .lower-content{
@@ -5134,7 +5133,7 @@ img{
 	background-color: #166d95;
 }
 
-/*** 
+/***
 
 ====================================================================
 				Causes Section Four
@@ -5199,7 +5198,7 @@ img{
 
 
 .cause-block-four .overlay-box{
-	position: absolute;	
+	position: absolute;
 	left: 0;
 	top: 0;
 	height: 100%;
@@ -5228,7 +5227,7 @@ img{
 	bottom: 25px;
 }
 
-.cause-block-four .overlay-box a{	
+.cause-block-four .overlay-box a{
 	position: absolute;
 	left: 0;
 	bottom: 25px;
@@ -5245,9 +5244,9 @@ img{
 
 .cause-block-four .overlay-box a:hover{
 	color: #f6a710;
-}	
+}
 
-.cause-block-four:hover .overlay-box a{	
+.cause-block-four:hover .overlay-box a{
 	opacity: 1;
 	-webkit-transition: all 300ms ease;
 	-moz-transition: all 300ms ease;
@@ -5277,11 +5276,11 @@ img{
 
 .cause-block-four .lower-content h3 a{
 	color: #ffffff;
-	-webkit-transition: all 300ms ease;	
-	-moz-transition: all 300ms ease;	
-	-ms-transition: all 300ms ease;	
-	-o-transition: all 300ms ease;	
-	transition: all 300ms ease;	
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
 }
 
 .cause-block-four .lower-content h3 a:hover{
@@ -5401,13 +5400,13 @@ img{
 
 
 
-/*** 
+/***
 
 ====================================================================
 			Video Section Three
 ====================================================================
 
-***/	
+***/
 
 .video-section-two{
 	position: relative;
@@ -5469,10 +5468,10 @@ img{
 	line-height: 24px;
 	font-weight: 300;
 	color: #ffffff;
-} 
+}
 
 .video-section-two .content-box .link .icon{
-	position: relative;	
+	position: relative;
 	display: inline-block;
 	height: 105px;
 	width: 105px;
@@ -5494,7 +5493,7 @@ img{
 
 
 
-/*** 
+/***
 
 ====================================================================
 				Donation Section
@@ -5612,7 +5611,7 @@ img{
 	color: #ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 				Testimonial Section
@@ -5631,12 +5630,12 @@ img{
 	padding-right: 15px;
 }
 
-.testimonial-section .image-column .image{ 
+.testimonial-section .image-column .image{
 	position: relative;
 	margin-left: -30px;
 }
 
-.testimonial-section .image:before{
+/*.testimonial-section .image:before{
 	position: absolute;
 	left: -85px;
 	bottom: 40px;
@@ -5644,7 +5643,7 @@ img{
 	width: 85px;
 	background-color: #000000;
 	content: "";
-}
+}*/
 
 .testimonial-section .image{
 	position: relative;
@@ -5748,7 +5747,7 @@ img{
 	color: #3e9807;
 }
 
-/*** 
+/***
 
 ====================================================================
 				Testimonial Section Two
@@ -5864,7 +5863,7 @@ img{
 }
 
 
-/*** 
+/***
 
 ====================================================================
 			Testimonial Section Three
@@ -5920,7 +5919,7 @@ img{
 .testimonial-block-three .thumb img{
 	display: block;
 	width: 100%;
-	height: auto; 
+	height: auto;
 }
 
 .testimonial-block-three .info{
@@ -5959,7 +5958,7 @@ img{
 	font-style: italic;
 }
 
-/*** 
+/***
 
 ====================================================================
 				Testimonial Section Four
@@ -6096,7 +6095,7 @@ img{
 	color: #3e9807;
 }
 
-/*** 
+/***
 
 ====================================================================
 				Testimonial Section Five
@@ -6204,7 +6203,7 @@ img{
 	color: #3e9807;
 }
 
-/*** 
+/***
 
 ====================================================================
 				Help Section
@@ -6279,7 +6278,7 @@ img{
 	color: #222222;
 }
 
-/*** 
+/***
 
 ====================================================================
 				News Section
@@ -6476,7 +6475,7 @@ img{
 	color: #3e9807;
 }
 
-/*** 
+/***
 
 ====================================================================
 						News Section Two
@@ -6653,7 +6652,7 @@ img{
 	color: #ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 						Subscribe Section
@@ -6764,7 +6763,7 @@ img{
 }
 
 
-/*** 
+/***
 
 ====================================================================
 					Become Volunteer
@@ -6777,7 +6776,7 @@ img{
 	padding-top: 130px;
 	counter-reset:count;
 	overflow: hidden;
-}	
+}
 
 .become-volunteer .sec-title{
 	margin-bottom: 25px;
@@ -6808,7 +6807,7 @@ img{
 	transition: all 300ms ease;
 }
 
-.featrue-block .inner-box:hover .icon-box{	
+.featrue-block .inner-box:hover .icon-box{
 	color: #3e9807;
 }
 
@@ -6876,7 +6875,7 @@ img{
 .work-block-two .inner-box{
 	position: relative;
 	padding:45px 45px 50px;
-	background: #2e2e2e;  
+	background: #2e2e2e;
 }
 
 .work-block-two .inner-box::before {
@@ -6963,7 +6962,7 @@ img{
 	color: #ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 				Team Section
@@ -7139,7 +7138,7 @@ img{
 }
 
 
-/*** 
+/***
 
 ====================================================================
 				Team Section Two
@@ -7198,7 +7197,7 @@ img{
 	color: #ffffff;
 	font-weight: 700;
 	font-family: "Lato", sans-serif;
-	margin-bottom: 14px; 
+	margin-bottom: 14px;
 }
 
 .team-section-two .title-colum .text{
@@ -7434,7 +7433,7 @@ img{
 	color: #ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 				Team Section Three
@@ -7467,7 +7466,7 @@ img{
 }
 
 
-/*** 
+/***
 
 ====================================================================
 				Donation Form Section
@@ -7585,7 +7584,7 @@ img{
 }
 
 .ui-menu .ui-menu-item:last-child{
-	border:none;	
+	border:none;
 }
 
 .ui-menu .ui-menu-item-wrapper{
@@ -7618,7 +7617,7 @@ img{
 	color: #ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 				Donation Form Two
@@ -7683,7 +7682,7 @@ img{
 	top: -10px;
 }
 
-/*** 
+/***
 
 ====================================================================
 					Gallery Section
@@ -7734,7 +7733,7 @@ img{
 
 .gallery-block:hover .caption-box{
   	-webkit-animation: jump 900ms ease 0s normal ;
- 	animation: jump 900ms ease 0s normal ;	
+ 	animation: jump 900ms ease 0s normal ;
 }
 
 .gallery-block .caption-box .content{
@@ -7763,7 +7762,7 @@ img{
 	-ms-transform: translateY(0);
 	-o-transform: translateY(0);
 	transform: translateY(0);
-}	
+}
 
 .gallery-block .caption-box .content h3{
 	position: relative;
@@ -7836,7 +7835,7 @@ img{
 }
 
 
-/*** 
+/***
 
 ====================================================================
 					Clients Section
@@ -7897,7 +7896,7 @@ img{
 	transform: scale(1.2);
 }
 
-/*** 
+/***
 
 ====================================================================
 				Call To Action
@@ -7970,7 +7969,7 @@ img{
 
 
 
-/*** 
+/***
 
 ====================================================================
 				Main Footer
@@ -7980,8 +7979,8 @@ img{
 
 .main-footer{
 	position: relative;
-	background-color: #1b1c1e;
-	color: #cccccc;
+	background-color: #166d95;
+	color: #FFFFFF;
 }
 
 .main-footer .footer-upper{
@@ -8028,7 +8027,7 @@ img{
 	display: block;
 	font-size: 16px;
 	line-height: 26px;
-	color: #cccccc;
+	color: #FFFFFF;
 	font-weight: 400;
 	margin-bottom: 30px;
 }
@@ -8044,7 +8043,7 @@ img{
 .main-footer .adress-widget ul li{
 	position: relative;
 	display: block;
-	font-size: 16px;
+	/*font-size: 16px;*/
 	line-height: 26px;
 	color: #cccccc;
 	font-weight: 400;
@@ -8074,13 +8073,13 @@ img{
 	position: relative;
 	font-size: 16px;
 	line-height: 24px;
-	color: #cccccc;
+	color: #FFFFFF;
 	font-weight: 400;
 	margin-bottom: 20px;
 }
 
 .main-footer .footer-links li a{
-	color: #cccccc;
+	color: #FFFFFF;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -8220,7 +8219,7 @@ img{
 	color: #3e9807;
 	font-weight: 400;
 	margin-right: 10px;
-} 
+}
 
 .tweet-widget .twitter-post .date{
 	display: block;
@@ -8366,7 +8365,7 @@ img{
 	color: #3e9807;
 }
 
-/*** 
+/***
 
 ====================================================================
 			coming Soon
@@ -8473,7 +8472,7 @@ img{
 	margin:	0px 7px 7px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Event List Section
@@ -8491,7 +8490,7 @@ img{
 	margin-top:50px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Styled Pagination
@@ -8542,7 +8541,7 @@ img{
 	background-color:#166d95;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Events Grid Section
@@ -8695,7 +8694,7 @@ img{
 	margin-bottom: 22px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Sidebar Page Container
@@ -8840,7 +8839,7 @@ img{
 
 .sidebar .search-box .form-group{
 	position:relative;
-	margin:0px;	
+	margin:0px;
 }
 
 .sidebar .search-box .form-group input[type="text"],
@@ -9099,7 +9098,7 @@ img{
 .sidebar .popular-tags a:hover{
 	border-color:#3e9807;
 	background-color:#3e9807;
-	color:#ffffff;	
+	color:#ffffff;
 }
 
 /*Related Events*/
@@ -9122,7 +9121,7 @@ img{
 	border-top:1px solid #d6d6d6;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Causes Grid Section
@@ -9401,7 +9400,7 @@ img{
 	font-family: 'Lato', sans-serif;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Accordion Style Two
@@ -9441,7 +9440,7 @@ img{
     -moz-transform: translateY(0%);
     -ms-transform: translateY(0%);
     -o-transform: translateY(0%);
-     transform: translateY(0%); 
+     transform: translateY(0%);
 }
 
 .accordion-box.style-two .block .acc-btn .icon-outer .icon{
@@ -9455,7 +9454,7 @@ img{
 	line-height:32px;
 	text-align:center;
 	border-radius:50%;
-	border:1px solid #cecece;	
+	border:1px solid #cecece;
 }
 
 .accordion-box.style-two .block .content{
@@ -9468,7 +9467,7 @@ img{
 	content:'\f068';
 }
 
-/*** 
+/***
 
 ====================================================================
 	Shop Page Section
@@ -9672,7 +9671,7 @@ img{
 	background-color:#3e9807;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Shop Page Section
@@ -9687,7 +9686,7 @@ img{
 
 .product-details .image-column .owl-dots,
 .product-details .image-column .owl-nav{
-	display:none;	
+	display:none;
 }
 
 .product-details .image-column .image-carousel{
@@ -9729,7 +9728,7 @@ img{
 
 .product-details .info-column .rating .fa{
 	display:inline-block;
-	margin-right:1px;	
+	margin-right:1px;
 }
 
 .product-details .info-column .rating .fa.light{
@@ -9819,7 +9818,7 @@ img{
 .product-details .basic-details .text{
 	color:#555555;
 	font-size:16px;
-	line-height:1.8em;	
+	line-height:1.8em;
 	margin-bottom:30px;
 }
 
@@ -9862,21 +9861,21 @@ img{
 	line-height:24px;
 	padding:10px 15px !important;
 	height:50px !important;
-	box-shadow:none !important;	
+	box-shadow:none !important;
 }
 
 .product-details .basic-details .bootstrap-touchspin .input-group-btn-vertical > .btn,
 .cart-section .bootstrap-touchspin .input-group-btn-vertical > .btn{
 	padding:12px 10px;
-	background:#f4f5f6;	
+	background:#f4f5f6;
 }
 
 .product-details .bootstrap-touchspin .input-group-btn-vertical i,
 .cart-section .bootstrap-touchspin .input-group-btn-vertical i{
-	top:6px;	
+	top:6px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Product Tabs Style
@@ -9966,12 +9965,12 @@ img{
 }
 
 .product-info-tabs .prod-tabs .tabs-container .tab.active-tab{
-	display:block;	
+	display:block;
 }
 
 .product-info-tabs .prod-tabs .tabs-container .tab p,
 .product-info-tabs .prod-tabs .tabs-container .tab h2{
-	margin-bottom:15px;	
+	margin-bottom:15px;
 }
 
 .product-info-tabs .prod-tabs .tabs-container .tab h3{
@@ -9991,7 +9990,7 @@ img{
 }
 
 .product-info-tabs .prod-tabs .reviews-container{
-	position:relative;	
+	position:relative;
 }
 
 .product-info-tabs .prod-tabs .reviews-container .review-box{
@@ -10017,14 +10016,14 @@ img{
 	display:block;
 	width:80px;
 	height:80px;
-	border-radius:3px;	
+	border-radius:3px;
 }
 
 .product-info-tabs .prod-tabs .reviews-container .rev-content{
 	position:relative;
 	padding:15px;
 	border:1px solid #e0e0e0;
-	background:#ffffff;	
+	background:#ffffff;
 }
 
 .product-info-tabs .prod-tabs .reviews-container .rating{
@@ -10033,7 +10032,7 @@ img{
 }
 
 .product-info-tabs .prod-tabs .reviews-container .rating .fa{
-	margin-right:1px;	
+	margin-right:1px;
 }
 
 .product-info-tabs .prod-tabs .reviews-container .rev-info{
@@ -10054,7 +10053,7 @@ img{
 
 .product-info-tabs .prod-tabs .add-review .rating{
 	position:relative;
-	padding-top:8px;	
+	padding-top:8px;
 }
 
 .product-info-tabs .prod-tabs .add-review .rating .rate-box{
@@ -10062,7 +10061,7 @@ img{
 	display:inline-block;
 	margin-right:10px;
 	font-size:14px;
-	color:#555555;	
+	color:#555555;
 }
 
 .product-info-tabs .prod-tabs .add-review .rating .rate-box:hover,
@@ -10077,18 +10076,18 @@ img{
 	font-size:14px;
 	margin-bottom:5px;
 	font-weight:400;
-	color:#303030;	
+	color:#303030;
 }
 
 .product-info-tabs .prod-tabs .add-review h3{
-	margin-bottom:20px;	
+	margin-bottom:20px;
 	color:#166d95;
 	font-size:28px;
 }
 
 .product-info-tabs .prod-tabs .add-review .form-group{
 	position:relative;
-	margin-bottom:20px;	
+	margin-bottom:20px;
 }
 
 .product-info-tabs .prod-tabs .add-review .form-group input[type="text"],
@@ -10128,10 +10127,10 @@ img{
 }
 
 .product-info-tabs .prod-tabs .add-review button{
-	
+
 }
 
-/*** 
+/***
 
 ====================================================================
 	Related Projects
@@ -10153,7 +10152,7 @@ img{
 	margin-bottom:30px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Cart Section style
@@ -10202,7 +10201,7 @@ img{
 
 .cart-table thead tr{
 	position:relative;
-	width:100%;	
+	width:100%;
 }
 
 .cart-table thead tr th{
@@ -10217,17 +10216,17 @@ img{
 }
 
 .cart-table thead tr th:nth-child(1){
-	border:none !important;	
+	border:none !important;
 }
 
 .cart-table thead tr th .fa{
 	font-size:18px;
-	padding:0px 20px 0px 30px;	
+	padding:0px 20px 0px 30px;
 }
 
 .cart-table thead tr th.prod-column{
 	text-align:left;
-	vertical-align:middle;	
+	vertical-align:middle;
 }
 
 .cart-table tbody tr td{
@@ -10255,7 +10254,7 @@ img{
 	position:absolute;
 	width:100px;
 	left:0px;
-	top:0px;	
+	top:0px;
 }
 
 .cart-table tbody tr .prod-column .column-box .prod-thumb img{
@@ -10284,7 +10283,7 @@ img{
 
 .cart-table tbody tr .prod-column .rating .fa{
 	display:inline-block;
-	margin-right:2px;	
+	margin-right:2px;
 }
 
 .cart-table tbody tr .sub-total,
@@ -10322,16 +10321,16 @@ img{
 }
 
 .cart-table tbody tr{
-	border-bottom:1px solid #e9e9e9;	
+	border-bottom:1px solid #e9e9e9;
 }
 
 .cart-table tbody tr:last-child{
-	border-bottom:none;	
+	border-bottom:none;
 }
 
 .cart-table tbody tr td{
 	vertical-align:middle;
-	border-right:1px solid #e0e0e0;	
+	border-right:1px solid #e0e0e0;
 }
 
 .cart-table tbody tr td .quantity-spinner{
@@ -10341,7 +10340,7 @@ img{
 
 .cart-table tbody .available-info{
 	position:relative;
-	padding-left:50px;	
+	padding-left:50px;
 }
 
 .cart-table tbody .available-info .icon{
@@ -10513,7 +10512,7 @@ img{
 	font-size:22px;
 	font-weight:700;
 	color:#166d95;
-	margin-bottom:20px;	
+	margin-bottom:20px;
 	text-transform:capitalize;
 }
 
@@ -10524,7 +10523,7 @@ img{
 .cart-section .apply-coupon .form-group{
 	position:relative;
 	padding-right:190px;
-	margin-bottom:10px;	
+	margin-bottom:10px;
 }
 
 .cart-section .apply-coupon .form-group input[type="text"]{
@@ -10534,7 +10533,7 @@ img{
 	border:1px solid #e0e0e0;
 	height:50px;
 	width:100%;
-	background:none;	
+	background:none;
 }
 
 .cart-section .apply-coupon .theme-btn{
@@ -10545,7 +10544,7 @@ img{
 }
 
 .cart-section .apply-coupon .theme-btn:hover{
-	
+
 }
 
 .cart-section .totals-table{
@@ -10591,7 +10590,7 @@ img{
 
 .cart-section .totals-table a{
 	color:#33458d;
-	text-decoration:underline;	
+	text-decoration:underline;
 }
 
 .cart-section .update-btn{
@@ -10613,7 +10612,7 @@ img{
 }
 
 .product-details .quantity-spinner{
-	margin-bottom:20px;	
+	margin-bottom:20px;
 }
 
 .quantity-spinner input{
@@ -10655,10 +10654,10 @@ img{
 	font-size:16px;
     background: #ffffff;
 	border-left:1px solid #d0d0d0;
-	z-index:1;	
+	z-index:1;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Checkout Section
@@ -10732,7 +10731,7 @@ img{
 
 .checkout-section .billing-details{
 	position:relative;
-	margin-top:60px;	
+	margin-top:60px;
 }
 
 .checkout-section .billing-details .default-title{
@@ -10749,7 +10748,7 @@ img{
 /*Shop Form*/
 
 .billing-details .checkout-form{
-	position:relative;	
+	position:relative;
 }
 
 .billing-details .checkout-form .form-group{
@@ -10767,7 +10766,7 @@ img{
 	margin-bottom:10px;
 	font-size:14px;
 	text-transform:capitalize;
-	color:#222222;	
+	color:#222222;
 }
 
 .checkout-form .form-group .field-label sup{
@@ -10817,13 +10816,13 @@ img{
 }
 
 .checkout-form select option{
-	text-indent:15px;	
+	text-indent:15px;
 }
 
 .checkout-form textarea{
 	resize:none;
 	margin-bottom:0px;
-	height:170px;	
+	height:170px;
 }
 
 .checkout-form textarea.shiping-address{
@@ -10946,16 +10945,16 @@ img{
 
 .place-order .payment-options{
 	position:relative;
-	margin-bottom:30px;	
+	margin-bottom:30px;
 }
 
 .place-order .payment-options li{
 	position:relative;
-	margin-bottom:15px;	
+	margin-bottom:15px;
 }
 
 .place-order .payment-options li .radio-option{
-	position:relative;		
+	position:relative;
 }
 
 .place-order .payment-options li .radio-option label{
@@ -10973,13 +10972,13 @@ img{
 }
 
 .place-order .payment-options li .radio-option label strong{
-	font-weight:600;	
+	font-weight:600;
 }
 
 .place-order .payment-options li .radio-option input[type="radio"]{
 	position:absolute;
 	left:0px;
-	top:3px;	
+	top:3px;
 }
 
 .place-order .payment-options li .radio-option label .small-text{
@@ -11000,7 +10999,7 @@ img{
 	top:-3px;
 	display:inline-block;
 	max-width:100%;
-	padding-left:30px;	
+	padding-left:30px;
 }
 
 /*Team Page Section*/
@@ -11019,7 +11018,7 @@ img{
 	margin-bottom:50px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Team Single Section
@@ -11205,7 +11204,7 @@ img{
 	margin-top:58px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Blog Grid Section
@@ -11305,7 +11304,7 @@ img{
 }
 
 .gallery-block-two .inner-box .overlay-box .content{
-	
+
 }
 
 .gallery-block-two .inner-box .overlay-box .post-date{
@@ -11450,7 +11449,7 @@ img{
     display: inline-block;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Blog Standard Section
@@ -11945,7 +11944,7 @@ img{
 	font-weight:700;
 	color:#3f3e3e;
 	font-size:16px;
-	padding-top:2px;	
+	padding-top:2px;
 	font-family: 'Lato', sans-serif;
 }
 
@@ -11961,9 +11960,9 @@ img{
 	font-weight:700;
 	color:#3f3e3e;
 	font-size:16px;
-	padding-top:2px;	
+	padding-top:2px;
 	font-family: 'Lato', sans-serif;
-	
+
 }
 
 .blog-single .inner-box .lower-content .post-share-options .socials-icon a{
@@ -12099,7 +12098,7 @@ img{
 }
 
 .sidebar-page-container .comments-area .reply-comment{
-	padding-left:85px;	
+	padding-left:85px;
 }
 
 .sidebar-page-container .comments-area .comment-box .author-thumb{
@@ -12113,13 +12112,13 @@ img{
 }
 
 .sidebar-page-container .comments-area .comment-box .author-thumb img{
-	
+
 }
 
 .sidebar-page-container .comments-area .comment-info{
 	color:#3e5773;
 	line-height:24px;
-	font-size:13px;	
+	font-size:13px;
 }
 
 .sidebar-page-container .comments-area .comment-box strong{
@@ -12145,7 +12144,7 @@ img{
 	color:#888888;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Comment Form
@@ -12229,7 +12228,7 @@ img{
 	padding:15px 50px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Contact Info Section
@@ -12277,7 +12276,7 @@ img{
 	font-family: "Times New Roman", serif;
 }
 
-/*** 
+/***
 
 ====================================================================
 				Contact Info Section
@@ -12293,7 +12292,7 @@ img{
 .contact-form-section .form-column{
 	position:relative;
 	float:left;
-	width:50%;	
+	width:50%;
 }
 
 .contact-form-section .form-column .inner-column{
@@ -12330,7 +12329,7 @@ img{
     width: 100%;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Contact Form
@@ -12410,7 +12409,7 @@ img{
 .contact-form input.error,
 .contact-form select.error,
 .contact-form textarea.error{
-	border-color:#ff0000 !important;	
+	border-color:#ff0000 !important;
 }
 
 .contact-form label.error{
@@ -12420,10 +12419,10 @@ img{
 	text-transform:uppercase;
 	font-size:11px;
 	color:#ff0000;
-	font-weight:500;	
+	font-weight:500;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Error Section
@@ -12527,7 +12526,7 @@ img{
 	border-radius:5px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	News Section Three

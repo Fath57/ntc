@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from t.commonsupport.com/ntc/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Jul 2019 13:03:41 GMT -->
 <head>
     <meta charset="utf-8">
-    <title>NTC - Nouveau Type de Citoyens | Home Main</title>
+    <title>@yield('title')</title>
 
     <!-- Font Awesome -->
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">-->
     <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/css/mdb.min.css" rel="stylesheet">
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/css/mdb.min.css" rel="stylesheet">-->
     <!-- Stylesheets -->
     <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
     <link href="{{asset('plugins/revolution/css/settings.css')}}" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
@@ -25,11 +24,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js')}}"></script><![endif]-->
     <!--[if lt IE 9]><script src="{{asset('js/respond.js')}}"></script><![endif]-->
+    :<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 
 
+<style>
+    .link-blue{
+        color: #166d95;
+    }
+    @media screen and (max-width: 992px) {
+        .sticky-header {
+            display: none;
+        }
+    }
 
+</style>
 
     @yield('css')
+    <meta name="csrf-token" content="{{csrf_token()}}">
 </head>
 
 <body>
@@ -46,13 +57,13 @@
                 <div class="inner-container clearfix">
                     <div class="top-left">
                         <ul class="contact-list clearfix">
-                            <li><a href="#">info@ntc.com</a></li>
-                            <li>+123 456 789 000</li>
+                            <li><a href="mailto:contact@nouveautypedecitoyens.org">contact@nouveautypedecitoyens.org</a></li>
+                            <li><a href="tel:+22967199683">(229) 67 19 96 83</a></li>
                         </ul>
                     </div>
-                    <div class="top-right clearfix">
+                    <div class="clearfix" style="float: right;margin: 5px">
                         <ul class="clearfix">
-                            <li>Language ; </li>
+                          <!--  <li>Language ; </li>
                             <li class="language dropdownn"><a class="btn btn-default dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" href="#">Eng <span class="icon fa fa-caret-down"></span></a>
                                 <ul class="dropdown-menu style-one" aria-labelledby="dropdownMenu1">
                                     <li><a href="#">Arabic</a></li>
@@ -60,7 +71,8 @@
                                     <li><a href="#">German</a></li>
                                     <li><a href="#">French</a></li>
                                 </ul>
-                            </li>
+                            </li>-->
+                            @include('auth.buttons')
                         </ul>
                     </div>
                 </div>
@@ -72,7 +84,7 @@
         <div class="header-upper" style="background-image: url(images/background/1.jpg);">
             <div class="auto-container">
                 <div class="logo-box">
-                    <div class="logo"><a href="index-2.html"><img src="images/logo.png" width="200" alt="" title=""></a></div>
+                    <div class="logo"><a href="/"><img src="images/logo.png" width="200" alt="" title=""></a></div>
                 </div>
 
                 <div class="nav-outer clearfix">
@@ -90,24 +102,6 @@
                         <div class="navbar-collapse collapse clearfix">
                             <ul class="navigation clearfix">
                                 <li class="current_ "><a href="/">Accueil</a>
-                                    <!--<ul>
-                                        <li><a href="index-2.html">Home Main</a></li>
-                                        <li><a href="index-3.html">Volunteer Home</a></li>
-                                        <li><a href="index-4.html">Charity Home</a></li>
-                                        <li><a href="index-5.html">Senior Citizen Home</a></li>
-                                        <li><a href="index-6.html">Ecology Home</a></li>
-
-                                        <li class="dropdown"><a href="#">Header Styles</a>
-                                            <ul>
-                                                <li><a href="index-2.html">Header Style One</a></li>
-                                                <li><a href="index-3.html">Header Style Two</a></li>
-                                                <li><a href="index-4.html">Header Style Three</a></li>
-                                                <li><a href="index-5.html">Header Style Four</a></li>
-                                                <li><a href="index-6.html">Header Style Five</a></li>
-
-                                            </ul>
-                                        </li>
-                                    </ul>-->
                                 </li>
                                 <li ><a href="{{route('become')}}">Devenir NTC</a>
                                     <!--<ul>
@@ -116,14 +110,14 @@
                                         <li><a href="causes-single.html">Cause Details</a></li>
                                     </ul>-->
                                 </li>
-                                <li ><a href="{{route('take')}}">Agir</a>
+                                <li ><a href="{{route('take')}}">S'impliquer</a>
                                     <!--<ul>
                                         <li><a href="event-list.html">Event List View</a></li>
                                         <li><a href="event-grid.html">Event Grid View</a></li>
                                         <li><a href="event-single.html">Event Details</a></li>
                                     </ul>-->
                                 </li>
-                                <li><a href="{{route('empower')}}">Habiliter les citoyens</a>
+                                <li><a href="{{route('empower')}}">Education Citoyenne</a>
                                    <!-- <ul>
                                         <li><a href="about.html">About Us</a></li>
                                         <li class="dropdown"><a href="#">Services</a>
@@ -175,11 +169,11 @@
         <!--End Header Upper-->
 
         <!-- Sticky Header -->
-        <div class="sticky-header">
+            <div class="sticky-header">
             <div class="auto-container clearfix">
                 <!--Logo-->
                 <div class="logo pull-left">
-                    <a href="index-2.html" title=""><img src="images/logo.png" alt="" width="120" title=""></a>
+                    <a href="/" title=""><img src="images/logo.png" alt="" width="120" title=""></a>
                 </div>
                 <!--Right Col-->
                 <div class="pull-right">
@@ -195,8 +189,8 @@
                         </div>
 
                         <div class="navbar-collapse collapse clearfix">
-                            <ul class="navigation clearfix">
-                                <li class="current_ "><a href="/">Accueil</a>
+                            <ul class="navigation clearfix" >
+                                <li class="current_ "><a href="/" class="link-blue" >Accueil</a>
                                     <!--<ul>
                                         <li><a href="index-2.html">Home Main</a></li>
                                         <li><a href="index-3.html">Volunteer Home</a></li>
@@ -216,21 +210,21 @@
                                         </li>
                                     </ul>-->
                                 </li>
-                                <li ><a href="{{route('become')}}">Devenir NTC</a>
+                                <li ><a href="{{route('become')}}" class="link-blue">Devenir NTC</a>
                                     <!--<ul>
                                         <li><a href="causes-grid.html">Causes Grid View</a></li>
                                         <li><a href="causes-list.html">Causes List View</a></li>
                                         <li><a href="causes-single.html">Cause Details</a></li>
                                     </ul>-->
                                 </li>
-                                <li ><a href="{{route('take')}}">Agir</a>
+                                <li ><a href="{{route('take')}}" class="link-blue">S'impliquer</a>
                                     <!--<ul>
                                         <li><a href="event-list.html">Event List View</a></li>
                                         <li><a href="event-grid.html">Event Grid View</a></li>
                                         <li><a href="event-single.html">Event Details</a></li>
                                     </ul>-->
                                 </li>
-                                <li><a href="{{route('empower')}}">Habiliter les citoyens</a>
+                                <li><a href="{{route('empower')}}" class="link-blue">Education Citoyenne</a>
                                     <!-- <ul>
                                          <li><a href="about.html">About Us</a></li>
                                          <li class="dropdown"><a href="#">Services</a>
@@ -260,8 +254,8 @@
                                      </ul>
                                  </li>-->
 
-                                <li><a href="{{route('sponsor')}}">Sponsoriser</a></li>
-                                <li><a href="{{route('contact')}}">Contact</a></li>
+                                <li><a href="{{route('sponsor')}}" class="link-blue">Sponsoriser</a></li>
+                                <li><a href="{{route('contact')}}" class="link-blue">Contact</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -288,81 +282,67 @@
                         <div class="row clearfix">
                             <div class="footer-column col-md-7 col-sm-5 col-xs-12">
                                 <div class="footer-widget adress-widget">
-                                    <h3>Addresses</h3>
-                                    <div class="text">Michael I. Days 3756 <br>Preston Street Wichita, KS 67213 <br>- <a href="#">USA</a></div>
+                                    <h3>Addresse</h3>
+                                    <div class="text">Cotonou, carré N° 430 L, quartier Kpondéhou</div>
                                     <ul>
-                                        <li><a href="#"><span class="theme_color fa fa-phone"></span> &ensp; +123 456 789 000</a></li>
-                                        <li><a href="#"><span class="theme_color fa fa-fax"></span> &ensp; +000 123 456 789</a></li>
-                                        <li><a href="#"><span class="theme_color fa fa-envelope"></span> &ensp; info@ntc.com</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="footer-column col-md-5 col-sm-4 col-xs-12">
-                                <div class="footer-widget donation-widget">
-                                    <h3>Liens utiles</h3>
-                                    <ul class="donation-links">
-                                        <li><a href="#">Lien 1</a></li>
-                                        <li><a href="#">Lien 2</a></li>
-                                        <li><a href="#">Lien 3</a></li>
-
+                                        <li><a href="tel:+22967199683"><span class="theme_color fa fa-phone"></span> &ensp; (229) 67 19 96 83</a></li>
+                                        <li><a href="tel:+22966147189"><span class="theme_color fa fa-fax"></span> &ensp; (229) 66 14 71 89</a></li>
+                                        <li><a href="mailto:contact@nouveautypedecitoyens.org" ><span class="theme_color fa fa-envelope"></span> &ensp; contact@nouveautypedecitoyens.org</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    {{--
-                                            <div class="big-column col-md-7 col-sm-12 col-xs-12">
-                                                <div class="row clearfix">
-                                                    <div class="footer-column col-md-6 col-sm-6 col-xs-12">
-                                                        <!-- Post Widget -->
-                                                        <div class="footer-widget post-widget">
-                                                            <h3>Recent Posts </h3>
-                                                            <ul>
-                                                                <li class="recent-post">
-                                                                    <span class="date">14 May 2019</span>
-                                                                    <div class="text"><a href="blog-single-1.html">Malnutrition is the major cause of infant mortality</a></div>
-                                                                </li>
+                    <div class="big-column col-md-7 col-sm-12 col-xs-12">
+                        <div class="row clearfix">
+                            <div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                                <!-- Post Widget -->
+                                <div class="footer-widget post-widget">
+                                    <h3>Lien utils </h3>
+                                    <ul>
+                                        <li class="recent-post">
+                                            <span class="date">14 May 2019</span>
+                                            <div class="text"><a href="blog-single-1.html">Malnutrition is the major cause of infant mortality</a></div>
+                                        </li>
 
-                                                                <li class="recent-post">
-                                                                    <span class="date">14 May 2019</span>
-                                                                    <div class="text"><a href="blog-single-1.html">Malnutrition is the major cause of infant mortality</a></div>
-                                                                </li>
+                                        <li class="recent-post">
+                                            <span class="date">14 May 2019</span>
+                                            <div class="text"><a href="blog-single-1.html">Malnutrition is the major cause of infant mortality</a></div>
+                                        </li>
 
-                                                                <li class="recent-post">
-                                                                    <span class="date">14 May 2019</span>
-                                                                    <div class="text"><a href="blog-single-1.html">Malnutrition is the major cause of infant mortality</a></div>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
+                                        <li class="recent-post">
+                                            <span class="date">14 May 2019</span>
+                                            <div class="text"><a href="blog-single-1.html">Malnutrition is the major cause of infant mortality</a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                                                    <!--Footer Column-->
-                                                    <div class="footer-column col-md-6 col-sm-6 col-xs-12">
-                                                        <div class="footer-widget tweet-widget">
-                                                            <h3>Tweets</h3>
-                                                            <div class="twitter-post">
-                                                                <div class="name"><span class="fa fa-twitter"></span>@Company_text</div>
-                                                                <div class="text">Iferei te compoen iusquam re,vid eperius aus <span>terravera</span> teri fauten it. Supienitui sente ad fac vesil tatiostrim <span>#escreissimiu</span></div>
-                                                                <span class="date">15 May 2019</span>
-                                                            </div>
+                            <!--Footer Column-->
+                            <div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                                <div class="footer-widget tweet-widget">
+                                    <h3>Tweets</h3>
+                                    <div class="twitter-post">
+                                        <div class="name"><span class="fa fa-twitter"></span>@Company_text</div>
+                                        <div class="text">Iferei te compoen iusquam re,vid eperius aus <span>terravera</span> teri fauten it. Supienitui sente ad fac vesil tatiostrim <span>#escreissimiu</span></div>
+                                        <span class="date">15 May 2019</span>
+                                    </div>
 
-                                                            <div class="twitter-post">
-                                                                <div class="name"><span class="fa fa-twitter"></span>@Company_text</div>
-                                                                <div class="text">Iferei te compoen iusquam re,vid eperius aus <span>terravera</span>. Supienitui sente ad fac vesil tatiostrim <span>#donate</span></div>
-                                                                <span class="date">12 May 2019</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                    --}}
+                                    <div class="twitter-post">
+                                        <div class="name"><span class="fa fa-twitter"></span>@Company_text</div>
+                                        <div class="text">Iferei te compoen iusquam re,vid eperius aus <span>terravera</span>. Supienitui sente ad fac vesil tatiostrim <span>#donate</span></div>
+                                        <span class="date">12 May 2019</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="follow-us clearfix">
-                <h5>Suivez nous sur </h5>
+                <h5>Suivez nous sur</h5>
                 <ul class="social-icon-colored">
                     <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -377,73 +357,12 @@
     <!--Bottom-->
     <div class="footer-bottom">
         <div class="auto-container">
-            <div class="copyright">Copyright <a href="#">NTC</a> &copy; 2019. Tous droits reservés</div>
+            <div class="copyright">Copyright <a href="/">NTC</a> &copy; {{date('Y')}} | Tous droits reservés</div>
         </div>
     </div>
 </footer>
 <!-- End Footer -->
-
-<!-- report result modal -->
-<div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Faire un rapport</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body mx-3">
-                <div class="md-form mb-5">
-                   <!-- <i class="fa fa-user prefix grey-text"></i>-->
-                    <select type="text" id="form34" class="form-control validate">
-                        <option>Reporter des résultats</option>
-                        <option>Reporter ce qui ne marche pas </option>
-                        <option>Féliciter sur ce qui marche</option>
-                    </select>
-                    <!--<label data-error="wrong" data-success="right" for="form34">Your name</label>-->
-                </div>
-
-                <div class="md-form mb-5">
-                    <i class="fa fa-user prefix grey-text"></i>
-                    <input type="text" id="form34" class="form-control validate">
-                    <label data-error="wrong" data-success="right" for="form34">Votre nom</label>
-                </div>
-
-                <div class="md-form mb-5">
-                    <i class="fa fa-envelope prefix grey-text"></i>
-                    <input type="email" id="form29" class="form-control validate">
-                    <label data-error="wrong" data-success="right" for="form29">Votre email</label>
-                </div>
-
-                <div class="md-form mb-5">
-                    <i class="fa fa-tag prefix grey-text"></i>
-                    <input type="text" id="form32" class="form-control validate">
-                    <label data-error="wrong" data-success="right" for="form32">Sujet</label>
-                </div>
-
-                <div class="md-form">
-                    <i class="fa fa-pencil prefix grey-text"></i>
-                    <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
-                    <label data-error="wrong" data-success="right" for="form8">Votre message</label>
-                </div>
-
-                <div class="md-form">
-                    <i class="fa fa-file prefix grey-text"></i>
-                    <input type="file" id="form32" class="form-control validate">
-                   <!-- <label data-error="wrong" data-success="right" for="form8">Join a document</label>-->
-                </div>
-
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <button class="btn btn-unique">Reporter <i class="fa fa-send ml-1"></i></button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
+@yield('modals')
 <!-- report result modal -->
 <div class="modal fade" id="heroModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
@@ -575,6 +494,8 @@
 <script src="{{asset('js/map-script.js')}}"></script>
 <!--End Google Map APi-->
 <script src="{{asset('js/script.js')}}"></script>
+<script src="{{asset('js/sweetalert2.all.min.js')}}"></script>
+
 
 <!-- JQuery -->
 <!-- Bootstrap tooltips -->
@@ -582,7 +503,52 @@
 <!-- Bootstrap core JavaScript -->
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/js/mdb.min.js"></script>
+
+<!-- Cookie policy -->
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+    "content": {
+        "message": "Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site.",
+        "dismiss": "D'accord",
+        "link": "En savoir plus"
+
+    },
+    "palette": {
+    "popup": {
+      "background": "#166d95"
+    },
+    "button": {
+      "background": "transparent",
+      "border": "#fff",
+      "text": "#fff"
+    }
+  }
+});
+</script>
+
+
+@if(session()->get('error'))
+    <script>
+        Swal.fire({
+            title: "Erreur",
+            text: "{{session()->get('error')}}",
+            type: "error",
+
+        });
+    </script>
+@endif
+@if(session()->get('success'))
+    <script>
+        Swal.fire({
+            title: "Confirmation",
+            text: "{{session()->get('success')}}",
+            type: "success",
+
+        });
+    </script>
+@endif
+@yield('scripts')
 </body>
 
-<!-- Mirrored from t.commonsupport.com/ntc/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Jul 2019 13:10:58 GMT -->
 </html>

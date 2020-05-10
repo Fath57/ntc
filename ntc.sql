@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  jeu. 10 oct. 2019 à 11:56
+-- Généré le :  sam. 14 déc. 2019 à 11:50
 -- Version du serveur :  10.4.6-MariaDB
 -- Version de PHP :  7.3.9
 
@@ -29,13 +29,22 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `audios` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `audio_category_id` bigint(20) NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `audios`
+--
+
+INSERT INTO `audios` (`id`, `title`, `path`, `category_id`, `created_at`, `updated_at`) VALUES
+(1, 'Inondation', '[{\"download_link\":\"audios\\/December2019\\/rc9UBcXwGF0sUOyojGcZ.mp4\",\"original_name\":\"Ma\\u00eetre Gims - Pense \\u00e0 moi \\u2551 Lyrics & English Translation.mp4\"}]', 1, '2019-10-17 11:20:00', '2019-12-03 20:42:02'),
+(2, 'Secheresse', 'audio-1571314116-08 - Akon - Against The Grain Ft. Ray Lavender.mp3', 2, '2019-10-17 11:22:00', '2019-12-02 14:56:54'),
+(6, 'Configuration des serveurs', '[{\"download_link\":\"audios\\/December2019\\/L99xUMeHPZsm3AJMvyIx.mp4\",\"original_name\":\"Maitre Gims - Loin Lyrics.mp4\"}]', 1, '2019-12-02 14:47:30', '2019-12-02 14:47:30');
 
 -- --------------------------------------------------------
 
@@ -56,7 +65,8 @@ CREATE TABLE `audio_categories` (
 --
 
 INSERT INTO `audio_categories` (`id`, `code`, `title`, `created_at`, `updated_at`) VALUES
-(1, 'Compta', 'Commande Linux', '2019-10-10 02:22:00', '2019-10-10 02:23:28');
+(1, 'journal', 'Journal en langue local', '2019-10-10 02:22:00', '2019-10-17 10:17:44'),
+(2, 'problem', 'Problème en langue Local', '2019-10-17 10:18:06', '2019-10-17 10:18:06');
 
 -- --------------------------------------------------------
 
@@ -79,8 +89,30 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `parent_id`, `order`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, NULL, 1, 'Category 1', 'category-1', '2019-10-10 00:42:04', '2019-10-10 00:42:04'),
-(2, NULL, 1, 'Category 2', 'category-2', '2019-10-10 00:42:05', '2019-10-10 00:42:05');
+(1, NULL, 1, 'Actualité', 'actualite-1', '2019-10-10 00:42:04', '2019-10-17 11:25:00'),
+(2, NULL, 1, 'Post', 'post-2', '2019-10-10 00:42:05', '2019-10-17 11:24:19');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `courses`
+--
+
+CREATE TABLE `courses` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contents` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `courses`
+--
+
+INSERT INTO `courses` (`id`, `title`, `contents`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Pariatur Qui dolori', '<p>Maiores fugiat provi.</p>', 'published', '2019-10-17 15:47:00', '2019-10-17 15:47:48');
 
 -- --------------------------------------------------------
 
@@ -171,7 +203,46 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (73, 10, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 4),
 (74, 10, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 5),
 (76, 10, 'title', 'text', 'Title', 0, 1, 1, 1, 1, 1, '{}', 3),
-(77, 7, 'problem_hasmany_problems_image_relationship', 'relationship', 'problems_images', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\ProblemsImage\",\"table\":\"problems_images\",\"type\":\"hasMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"path\",\"pivot_table\":\"audio_categories\",\"pivot\":\"0\",\"taggable\":null}', 7);
+(78, 11, 'id', 'hidden', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(79, 11, 'title', 'text', 'Title', 0, 1, 1, 1, 1, 1, '{}', 2),
+(80, 11, 'path', 'file', 'Fichier audio', 0, 1, 1, 1, 1, 1, '{}', 3),
+(82, 11, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5),
+(83, 11, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
+(84, 11, 'audio_belongsto_audio_category_relationship', 'relationship', 'Catégorie', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\AudioCategory\",\"table\":\"audio_categories\",\"type\":\"belongsTo\",\"column\":\"category_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"audio_categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 7),
+(85, 12, 'id', 'hidden', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(86, 12, 'title', 'text', 'Title', 0, 1, 1, 1, 1, 1, '{}', 2),
+(87, 12, 'contents', 'rich_text_box', 'Contents', 0, 1, 1, 1, 1, 1, '{}', 3),
+(88, 12, 'status', 'select_dropdown', 'Status', 0, 1, 1, 1, 1, 1, '{\"default\":\"unpublished\",\"options\":{\"published\":\"Publi\\u00e9\",\"unpublished\":\"Masqu\\u00e9\"}}', 4),
+(89, 12, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5),
+(90, 12, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
+(91, 13, 'id', 'hidden', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(92, 13, 'title', 'text', 'Titre', 0, 1, 1, 1, 1, 1, '{}', 2),
+(93, 13, 'description', 'text_area', 'Description', 0, 1, 1, 1, 1, 1, '{}', 3),
+(94, 13, 'location', 'text', 'Lieu', 0, 1, 1, 1, 1, 1, '{}', 4),
+(95, 13, 'date', 'timestamp', 'Date', 0, 1, 1, 1, 1, 1, '{}', 5),
+(96, 13, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 6),
+(97, 13, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
+(98, 7, 'image', 'image', 'Image', 0, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1000\",\"height\":null},\"quality\":\"70%\",\"upsize\":true,\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\"},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"300\",\"height\":\"250\"}}]}', 7),
+(99, 8, 'image', 'image', 'Image', 0, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":null,\"height\":\"335\"},\"quality\":\"70%\",\"upsize\":true,\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\"},{\"name\":\"cropped\",\"crop\":{\"position\":\"top\",\"width\":\"300\",\"height\":\"250\"}}]}', 9),
+(100, 11, 'category_id', 'text', 'Category Id', 0, 1, 1, 1, 1, 1, '{}', 4),
+(101, 8, 'bio', 'text', 'Bio', 0, 1, 1, 1, 1, 1, '{}', 10),
+(102, 14, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(103, 14, 'slug', 'hidden', 'Slug', 0, 1, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true},\"validation\":{\"rule\":\"unique:posts,slug\"}}', 2),
+(104, 14, 'body', 'rich_text_box', 'Contenu', 0, 1, 1, 1, 1, 1, '{}', 3),
+(105, 14, 'author', 'text', 'Auteur', 0, 1, 1, 1, 1, 1, '{}', 4),
+(106, 14, 'image', 'multiple_images', 'Images', 0, 1, 1, 1, 1, 1, '{}', 5),
+(107, 14, 'title', 'text', 'Titre', 0, 1, 1, 1, 1, 1, '{}', 6),
+(108, 14, 'docs', 'file', 'Document', 0, 1, 1, 1, 1, 1, '{}', 7),
+(109, 14, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 8),
+(110, 14, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 9),
+(111, 15, 'id', 'hidden', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(112, 15, 'slug', 'hidden', 'Slug', 0, 1, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true},\"validation\":{\"rule\":\"unique:posts,slug\"}}', 2),
+(113, 15, 'title', 'text', 'Title', 0, 1, 1, 1, 1, 1, '{}', 3),
+(114, 15, 'body', 'rich_text_box', 'Body', 0, 1, 1, 1, 1, 1, '{}', 4),
+(115, 15, 'type', 'select_dropdown', 'Type', 0, 1, 1, 1, 1, 1, '{\"default\":\"Program on community radio\",\"options\":{\"program_on_community_radio\":\"Program on community radio\",\"town_hall\":\"Town Hall\",\"door_to_door\":\"Door to Door\"}}', 5),
+(116, 15, 'images', 'multiple_images', 'Images', 0, 1, 1, 1, 1, 1, '{}', 6),
+(117, 15, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 7),
+(118, 15, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8);
 
 -- --------------------------------------------------------
 
@@ -207,10 +278,38 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, '', '', 1, 0, NULL, '2019-10-10 00:41:51', '2019-10-10 00:41:51'),
 (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2019-10-10 00:42:03', '2019-10-10 00:42:03'),
 (5, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2019-10-10 00:42:06', '2019-10-10 00:42:06'),
-(7, 'problems', 'problems', 'Problem', 'Problems', 'voyager-anchor', 'App\\Problem', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2019-10-10 01:39:24', '2019-10-10 01:39:24'),
-(8, 'members', 'members', 'Member', 'Members', 'voyager-people', 'App\\Member', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-10-10 01:42:07', '2019-10-10 01:43:59'),
-(9, 'audios', 'audios', 'Audio', 'Audio', 'voyager-music', 'App\\Audio', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2019-10-10 01:53:06', '2019-10-10 01:53:06'),
-(10, 'audio_categories', 'audio-categories', 'Audio Category', 'Audio Categories', 'voyager-book', 'App\\AudioCategory', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-10-10 01:54:47', '2019-10-10 02:03:09');
+(7, 'problems', 'problems', 'Problem', 'Problems', 'voyager-anchor', 'App\\Problem', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-10-10 01:39:24', '2019-10-19 07:48:51'),
+(8, 'members', 'members', 'Member', 'Members', 'voyager-people', 'App\\Member', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-10-10 01:42:07', '2019-12-02 17:24:41'),
+(10, 'audio_categories', 'audio-categories', 'Audio Category', 'Audio Categories', 'voyager-book', 'App\\AudioCategory', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-10-10 01:54:47', '2019-10-10 02:03:09'),
+(11, 'audios', 'audios', 'Audio', 'Audio', 'voyager-music', 'App\\Audio', NULL, 'App\\Http\\Controllers\\Voyager\\VoyagerAudioController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-10-17 09:03:02', '2019-12-02 14:46:56'),
+(12, 'courses', 'courses', 'Course', 'Courses', NULL, 'App\\Models\\Course', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2019-10-17 15:41:06', '2019-10-17 15:41:06'),
+(13, 'events', 'events', 'Event', 'Events', 'voyager-calendar', 'App\\Models\\Event', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2019-10-17 16:13:24', '2019-10-17 16:13:24'),
+(14, 'stories', 'stories', 'Story', 'Stories', 'voyager-lightbulb', 'App\\Models\\Story', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-12-03 16:51:43', '2019-12-03 17:01:24'),
+(15, 'programs', 'programs', 'Program', 'Programs', 'voyager-news', 'App\\Models\\Program', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-12-03 19:25:01', '2019-12-03 19:31:12');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `events`
+--
+
+CREATE TABLE `events` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `events`
+--
+
+INSERT INTO `events` (`id`, `title`, `description`, `location`, `date`, `created_at`, `updated_at`) VALUES
+(1, 'Action pour les enfants dans le besoin', 'lGlobally incubate standards compliant the deliverables whereas web-enabled applications. and-mortar catalysts for changbefore vertical t market-driven best practices.', 'Akpakpa', '2019-12-02 07:05:00', '2019-12-02 14:05:54', '2019-12-02 14:05:54'),
+(2, 'libération', 'Globally incubate standards compliant the deliverables whereas web-enabled applications. and-mortar catalysts for changbefore vertical t market-driven best practices.', 'Come', '2019-12-25 15:06:00', '2019-12-02 14:06:44', '2019-12-02 14:06:44');
 
 -- --------------------------------------------------------
 
@@ -226,8 +325,20 @@ CREATE TABLE `members` (
   `twitter` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `linkedin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bio` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `members`
+--
+
+INSERT INTO `members` (`id`, `firstname`, `lastname`, `facebook`, `twitter`, `linkedin`, `created_at`, `updated_at`, `image`, `bio`) VALUES
+(1, 'Claude', 'JEAN', '#', '#', '#', '2019-12-02 13:50:00', '2019-12-02 17:41:04', 'members/December2019/jKdOzR7ZFpxig3uWM8P9.jpeg', NULL),
+(2, 'Francklin', 'LE RENARD', '#', '#', '#', '2019-12-02 13:51:00', '2019-12-02 17:41:16', 'members/December2019/yh3DyLkiY7pwn6XGjJ9e.jpg', NULL),
+(3, 'Toni', 'ANTOINE', '#', '#', '#', '2019-12-02 13:52:00', '2019-12-02 17:40:40', 'members/December2019/BGEIiWqWUu85uSyEj75W.webp', NULL),
+(4, 'Paula', 'ANAGONOU', '#', '#', '#', '2019-12-02 13:52:00', '2019-12-02 17:40:53', 'members/December2019/VXeoFsjHsyqVEdZfsmq5.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -290,9 +401,13 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (12, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 6, '2019-10-10 00:42:07', '2019-10-10 00:42:07', 'voyager.posts.index', NULL),
 (14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 13, '2019-10-10 00:42:12', '2019-10-10 00:42:12', 'voyager.hooks', NULL),
 (15, 1, 'Problems', '', '_self', 'voyager-anchor', NULL, NULL, 15, '2019-10-10 01:39:24', '2019-10-10 01:39:24', 'voyager.problems.index', NULL),
-(16, 1, 'Members', '', '_self', NULL, NULL, NULL, 16, '2019-10-10 01:42:07', '2019-10-10 01:42:07', 'voyager.members.index', NULL),
-(17, 1, 'Audio', '', '_self', 'voyager-music', NULL, NULL, 17, '2019-10-10 01:53:06', '2019-10-10 01:53:06', 'voyager.audios.index', NULL),
-(18, 1, 'Audio Categories', '', '_self', 'voyager-book', NULL, NULL, 18, '2019-10-10 01:54:48', '2019-10-10 01:54:48', 'voyager.audio-categories.index', NULL);
+(16, 1, 'Members', '', '_self', 'voyager-people', '#000000', NULL, 16, '2019-10-10 01:42:07', '2019-10-17 08:54:13', 'voyager.members.index', 'null'),
+(18, 1, 'Audio Categories', '', '_self', 'voyager-book', NULL, NULL, 18, '2019-10-10 01:54:48', '2019-10-10 01:54:48', 'voyager.audio-categories.index', NULL),
+(19, 1, 'Audio', '', '_self', 'voyager-music', '#000000', NULL, 19, '2019-10-17 09:03:02', '2019-10-17 09:42:43', 'voyager.audios.index', 'null'),
+(20, 1, 'Courses', '', '_self', 'voyager-window-list', '#000000', NULL, 20, '2019-10-17 15:41:08', '2019-10-17 15:45:27', 'voyager.courses.index', 'null'),
+(21, 1, 'Events', '', '_self', 'voyager-calendar', NULL, NULL, 21, '2019-10-17 16:13:24', '2019-10-17 16:13:24', 'voyager.events.index', NULL),
+(22, 1, 'Stories', '', '_self', 'voyager-lightbulb', '#000000', NULL, 22, '2019-12-03 16:51:45', '2019-12-03 17:01:44', 'voyager.stories.index', 'null'),
+(23, 1, 'Programs', '', '_self', 'voyager-news', '#000000', NULL, 23, '2019-12-03 19:25:01', '2019-12-03 19:28:03', 'voyager.programs.index', 'null');
 
 -- --------------------------------------------------------
 
@@ -443,16 +558,36 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (49, 'edit_members', 'members', '2019-10-10 01:42:07', '2019-10-10 01:42:07'),
 (50, 'add_members', 'members', '2019-10-10 01:42:07', '2019-10-10 01:42:07'),
 (51, 'delete_members', 'members', '2019-10-10 01:42:07', '2019-10-10 01:42:07'),
-(52, 'browse_audios', 'audios', '2019-10-10 01:53:06', '2019-10-10 01:53:06'),
-(53, 'read_audios', 'audios', '2019-10-10 01:53:06', '2019-10-10 01:53:06'),
-(54, 'edit_audios', 'audios', '2019-10-10 01:53:06', '2019-10-10 01:53:06'),
-(55, 'add_audios', 'audios', '2019-10-10 01:53:06', '2019-10-10 01:53:06'),
-(56, 'delete_audios', 'audios', '2019-10-10 01:53:06', '2019-10-10 01:53:06'),
 (57, 'browse_audio_categories', 'audio_categories', '2019-10-10 01:54:47', '2019-10-10 01:54:47'),
 (58, 'read_audio_categories', 'audio_categories', '2019-10-10 01:54:47', '2019-10-10 01:54:47'),
 (59, 'edit_audio_categories', 'audio_categories', '2019-10-10 01:54:47', '2019-10-10 01:54:47'),
 (60, 'add_audio_categories', 'audio_categories', '2019-10-10 01:54:47', '2019-10-10 01:54:47'),
-(61, 'delete_audio_categories', 'audio_categories', '2019-10-10 01:54:48', '2019-10-10 01:54:48');
+(61, 'delete_audio_categories', 'audio_categories', '2019-10-10 01:54:48', '2019-10-10 01:54:48'),
+(62, 'browse_audios', 'audios', '2019-10-17 09:03:02', '2019-10-17 09:03:02'),
+(63, 'read_audios', 'audios', '2019-10-17 09:03:02', '2019-10-17 09:03:02'),
+(64, 'edit_audios', 'audios', '2019-10-17 09:03:02', '2019-10-17 09:03:02'),
+(65, 'add_audios', 'audios', '2019-10-17 09:03:02', '2019-10-17 09:03:02'),
+(66, 'delete_audios', 'audios', '2019-10-17 09:03:02', '2019-10-17 09:03:02'),
+(67, 'browse_courses', 'courses', '2019-10-17 15:41:07', '2019-10-17 15:41:07'),
+(68, 'read_courses', 'courses', '2019-10-17 15:41:07', '2019-10-17 15:41:07'),
+(69, 'edit_courses', 'courses', '2019-10-17 15:41:07', '2019-10-17 15:41:07'),
+(70, 'add_courses', 'courses', '2019-10-17 15:41:07', '2019-10-17 15:41:07'),
+(71, 'delete_courses', 'courses', '2019-10-17 15:41:07', '2019-10-17 15:41:07'),
+(72, 'browse_events', 'events', '2019-10-17 16:13:24', '2019-10-17 16:13:24'),
+(73, 'read_events', 'events', '2019-10-17 16:13:24', '2019-10-17 16:13:24'),
+(74, 'edit_events', 'events', '2019-10-17 16:13:24', '2019-10-17 16:13:24'),
+(75, 'add_events', 'events', '2019-10-17 16:13:24', '2019-10-17 16:13:24'),
+(76, 'delete_events', 'events', '2019-10-17 16:13:24', '2019-10-17 16:13:24'),
+(77, 'browse_stories', 'stories', '2019-12-03 16:51:45', '2019-12-03 16:51:45'),
+(78, 'read_stories', 'stories', '2019-12-03 16:51:45', '2019-12-03 16:51:45'),
+(79, 'edit_stories', 'stories', '2019-12-03 16:51:45', '2019-12-03 16:51:45'),
+(80, 'add_stories', 'stories', '2019-12-03 16:51:45', '2019-12-03 16:51:45'),
+(81, 'delete_stories', 'stories', '2019-12-03 16:51:45', '2019-12-03 16:51:45'),
+(82, 'browse_programs', 'programs', '2019-12-03 19:25:01', '2019-12-03 19:25:01'),
+(83, 'read_programs', 'programs', '2019-12-03 19:25:01', '2019-12-03 19:25:01'),
+(84, 'edit_programs', 'programs', '2019-12-03 19:25:01', '2019-12-03 19:25:01'),
+(85, 'add_programs', 'programs', '2019-12-03 19:25:01', '2019-12-03 19:25:01'),
+(86, 'delete_programs', 'programs', '2019-12-03 19:25:01', '2019-12-03 19:25:01');
 
 -- --------------------------------------------------------
 
@@ -471,6 +606,7 @@ CREATE TABLE `permission_role` (
 
 INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (1, 1),
+(1, 3),
 (2, 1),
 (3, 1),
 (4, 1),
@@ -515,16 +651,38 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (49, 1),
 (50, 1),
 (51, 1),
-(52, 1),
-(53, 1),
-(54, 1),
-(55, 1),
-(56, 1),
 (57, 1),
 (58, 1),
 (59, 1),
 (60, 1),
-(61, 1);
+(61, 1),
+(62, 1),
+(63, 1),
+(64, 1),
+(65, 1),
+(66, 1),
+(67, 1),
+(67, 3),
+(68, 1),
+(68, 3),
+(69, 1),
+(70, 1),
+(71, 1),
+(72, 1),
+(73, 1),
+(74, 1),
+(75, 1),
+(76, 1),
+(77, 1),
+(78, 1),
+(79, 1),
+(80, 1),
+(81, 1),
+(82, 1),
+(83, 1),
+(84, 1),
+(85, 1),
+(86, 1);
 
 -- --------------------------------------------------------
 
@@ -572,8 +730,16 @@ CREATE TABLE `problems` (
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `problems`
+--
+
+INSERT INTO `problems` (`id`, `slug`, `title`, `description`, `created_at`, `updated_at`, `image`) VALUES
+(1, 'sed-voluptates-dolor', 'Sed voluptates dolor', '<p>Quae voluptatem et e.</p>', '2019-10-19 07:49:29', '2019-10-19 07:49:29', 'problems/October2019/sJA5avVWT9LWrC9WvBd9.jpg');
 
 -- --------------------------------------------------------
 
@@ -588,6 +754,32 @@ CREATE TABLE `problems_images` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `programs`
+--
+
+CREATE TABLE `programs` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` char(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `body` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `images` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `programs`
+--
+
+INSERT INTO `programs` (`id`, `slug`, `title`, `body`, `type`, `images`, `created_at`, `updated_at`) VALUES
+(1, 'un-titre', 'Un titre', '<p>Un texte explicatif ici</p>', 'program_on_community_radio', '[\"programs\\/December2019\\/1EJ2c2qAYO9QV7pHvfjN.png\",\"programs\\/December2019\\/Uer5gulOiSyTSBR3nOup.jpg\"]', '2019-12-03 20:37:51', '2019-12-03 20:37:51'),
+(2, 'non-et-sed-eius-qui', 'Non et sed eius qui', '<p>Lorem minus velit, i.</p>', 'door_to_door', '[\"programs\\/December2019\\/EKLSfcCeiUC7u88exOtW.jpg\",\"programs\\/December2019\\/vc9LmI52cjSe8qYf4Vch.png\"]', '2019-12-03 22:15:19', '2019-12-03 22:15:19'),
+(3, 'do-nostrum-duis-at-e', 'Do nostrum duis at e', '<p>Molestias eos, aut e.</p>', 'town_hall', '[\"programs\\/December2019\\/vBAWe77HRPHJeJ6w3iXu.jpg\"]', '2019-12-03 22:16:04', '2019-12-03 22:16:04');
 
 -- --------------------------------------------------------
 
@@ -609,7 +801,8 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'Administrator', '2019-10-10 00:41:53', '2019-10-10 00:41:53'),
-(2, 'user', 'Normal User', '2019-10-10 00:41:53', '2019-10-10 00:41:53');
+(2, 'user', 'Normal User', '2019-10-10 00:41:53', '2019-10-10 00:41:53'),
+(3, 'membre', 'Membre', '2019-11-18 23:12:55', '2019-11-18 23:12:55');
 
 -- --------------------------------------------------------
 
@@ -643,6 +836,31 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 (8, 'admin.loader', 'Admin Loader', '', '', 'image', 3, 'Admin'),
 (9, 'admin.icon_image', 'Admin Icon Image', '', '', 'image', 4, 'Admin'),
 (10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', '', '', 'text', 1, 'Admin');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `stories`
+--
+
+CREATE TABLE `stories` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `body` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `author` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `docs` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `stories`
+--
+
+INSERT INTO `stories` (`id`, `slug`, `body`, `author`, `image`, `title`, `docs`, `created_at`, `updated_at`) VALUES
+(1, 'regression', '<p>contenue de la success story.</p>', 'Azeer Momo', '[\"stories\\/December2019\\/VUCbJm2dKnLSZl5lhMWV.jpg\",\"stories\\/December2019\\/EevM3WUp4L1OXRpPFWPM.jpg\"]', 'Regression', '[{\"download_link\":\"stories\\/December2019\\/1ZV2nTU5BTzaBisn82K7.pdf\",\"original_name\":\"cours.pdf\"}]', '2019-12-03 16:53:00', '2019-12-03 17:02:43');
 
 -- --------------------------------------------------------
 
@@ -714,15 +932,22 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `settings` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `birthday` date DEFAULT NULL,
+  `place_of_birth` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `occupation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Admin', 'admin@admin.com', 'users/default.png', NULL, '$2y$10$/WNwIufFQ3j98zf/MDCM3.i2Nsiyw1aGtIme9JtEoxAulkk08apBi', 'Cg3yOlquX5tQDlHV7hXSjX2YAGCSJkiQ4naA2LHCEhse31ofk8jA0ZXaRgQ2', '{\"locale\":\"fr\"}', '2019-10-10 00:42:06', '2019-10-10 00:50:45');
+INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`, `phone`, `birthday`, `place_of_birth`, `occupation`, `address1`, `address2`) VALUES
+(1, 1, 'Admin', 'admin@admin.com', 'users/default.png', NULL, '$2y$10$/WNwIufFQ3j98zf/MDCM3.i2Nsiyw1aGtIme9JtEoxAulkk08apBi', 'C14jMoz4aHQCBT8vKfRtrtxOsaOlvCc5NoX4NMCfb2LmTHn4gc3mt2Wb6lDM', '{\"locale\":\"fr\"}', '2019-10-10 00:42:06', '2019-10-10 00:50:45', NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 3, 'Jean', 'jean@ntc.org', 'users/default.png', NULL, '$2y$10$4ToDWcMaPSMI/GgHjeoq6.s4nhZqMjqcV06VqPN4UXzkViDTiDbF.', NULL, '{\"locale\":\"fr\"}', '2019-11-18 23:23:47', '2019-12-14 09:42:38', '60239380', '2019-02-15', 'Cotonou', 'dev', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -743,7 +968,8 @@ CREATE TABLE `user_roles` (
 -- Index pour la table `audios`
 --
 ALTER TABLE `audios`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `audios_audio_category_id_index` (`category_id`);
 
 --
 -- Index pour la table `audio_categories`
@@ -760,6 +986,12 @@ ALTER TABLE `categories`
   ADD KEY `categories_parent_id_foreign` (`parent_id`);
 
 --
+-- Index pour la table `courses`
+--
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `data_rows`
 --
 ALTER TABLE `data_rows`
@@ -773,6 +1005,12 @@ ALTER TABLE `data_types`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `data_types_name_unique` (`name`),
   ADD UNIQUE KEY `data_types_slug_unique` (`slug`);
+
+--
+-- Index pour la table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `members`
@@ -848,6 +1086,12 @@ ALTER TABLE `problems_images`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `programs`
+--
+ALTER TABLE `programs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `roles`
 --
 ALTER TABLE `roles`
@@ -860,6 +1104,12 @@ ALTER TABLE `roles`
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `settings_key_unique` (`key`);
+
+--
+-- Index pour la table `stories`
+--
+ALTER TABLE `stories`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `translations`
@@ -892,13 +1142,13 @@ ALTER TABLE `user_roles`
 -- AUTO_INCREMENT pour la table `audios`
 --
 ALTER TABLE `audios`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `audio_categories`
 --
 ALTER TABLE `audio_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `categories`
@@ -907,22 +1157,34 @@ ALTER TABLE `categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT pour la table `courses`
+--
+ALTER TABLE `courses`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT pour la table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 
 --
 -- AUTO_INCREMENT pour la table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT pour la table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `menus`
@@ -934,7 +1196,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT pour la table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT pour la table `migrations`
@@ -952,7 +1214,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT pour la table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT pour la table `posts`
@@ -964,7 +1226,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT pour la table `problems`
 --
 ALTER TABLE `problems`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `problems_images`
@@ -973,16 +1235,28 @@ ALTER TABLE `problems_images`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `programs`
+--
+ALTER TABLE `programs`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT pour la table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT pour la table `stories`
+--
+ALTER TABLE `stories`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `translations`
@@ -994,7 +1268,7 @@ ALTER TABLE `translations`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Contraintes pour les tables déchargées

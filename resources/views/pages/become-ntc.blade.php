@@ -1,5 +1,14 @@
-@extends('layouts.layout2')
-
+@extends('layouts.default')
+@section('title')
+    Devenir NTC
+@stop
+@section('css')
+    <style>
+        .cours li a{
+            font-size: 12pt;
+        }
+    </style>
+@stop
 @section('content')
     <!--Main Slider-->
     <section class="main-slider">
@@ -15,7 +24,7 @@
                         <div class="tp-caption"
                              data-paddingbottom="[0,0,0,0]"
                              data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
+                             data-padding="[0,0,0,0]"
                              data-paddingtop="[0,0,0,0]"
                              data-responsive_offset="on"
                              data-type="text"
@@ -35,7 +44,7 @@
                         <div class="tp-caption"
                              data-paddingbottom="[0,0,0,0]"
                              data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
+                             data-padding="[0,0,0,0]"
                              data-paddingtop="[0,0,0,0]"
                              data-responsive_offset="on"
                              data-type="text"
@@ -54,7 +63,7 @@
                         <div class="tp-caption"
                              data-paddingbottom="[0,0,0,0]"
                              data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
+                             data-padding="[0,0,0,0]"
                              data-paddingtop="[0,0,0,0]"
                              data-responsive_offset="on"
                              data-type="text"
@@ -73,7 +82,7 @@
                         <div class="tp-caption"
                              data-paddingbottom="[0,0,0,0]"
                              data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
+                             data-padding="[0,0,0,0]"
                              data-paddingtop="[0,0,0,0]"
                              data-responsive_offset="on"
                              data-type="text"
@@ -100,7 +109,7 @@
                         <div class="tp-caption"
                              data-paddingbottom="[0,0,0,0]"
                              data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
+                             data-padding="[0,0,0,0]"
                              data-paddingtop="[0,0,0,0]"
                              data-responsive_offset="on"
                              data-type="text"
@@ -120,7 +129,7 @@
                         <div class="tp-caption"
                              data-paddingbottom="[0,0,0,0]"
                              data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
+                             data-padding="[0,0,0,0]"
                              data-paddingtop="[0,0,0,0]"
                              data-responsive_offset="on"
                              data-type="text"
@@ -139,7 +148,7 @@
                         <div class="tp-caption"
                              data-paddingbottom="[0,0,0,0]"
                              data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
+                             data-padding="[0,0,0,0]"
                              data-paddingtop="[0,0,0,0]"
                              data-responsive_offset="on"
                              data-type="text"
@@ -160,7 +169,7 @@
                         <div class="tp-caption"
                              data-paddingbottom="[0,0,0,0]"
                              data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
+                             data-padding="[0,0,0,0]"
                              data-paddingtop="[0,0,0,0]"
                              data-responsive_offset="on"
                              data-type="text"
@@ -252,46 +261,34 @@
                 <div class="feature-column col-lg-7 col-md-12 col-sm-12 col-xs-12">
                     <div class="inner-column">
                         <div class="sec-title">
-                            <h2>Devenir NTC</h2>
-                            <div class="text">Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail.  management inside of workflows to establish a framework. Taking seamless key performance</div>
+                            <h2 style="font-size: 20pt">Devenir un Nouveau Type de Citoyen (DNTC)</h2>
+                            <div class="text">
+                                Le programme Devenir un Nouveau Type de Citoyen – DNTC est un programme de formation divisé en deux grandes séries de formations :
+                            </div>
                         </div>
 
                         <div class="row clearfix">
                             <!-- Feature BLock -->
                             <div class="featrue-block col-md-6 col-sm-6 col-xs-12">
                                 <div class="inner-box">
-                                    <div class="icon-box"><span class="flaticon-pay"></span></div>
-                                    <h3><a href="#">Activité</a></h3>
-                                    <div class="text">Keeping your eye on the ball while performing a deep dive on the up mentality to derive</div>
+                                    <div class="icon-box"><span class="flaticon-communication"></span></div>
+                                    <h3><a href="#">La Formation sur le Changement de Mentalité</a></h3>
+                                    <div class="text">Le Mouvement NTC vous offre la possibilité de changer de mentalité en suivant les séries de cours en ligne</div>
                                 </div>
                             </div>
 
                             <!-- Feature BLock -->
                             <div class="featrue-block col-md-6 col-sm-6 col-xs-12">
                                 <div class="inner-box">
-                                    <div class="icon-box"><span class="flaticon-system"></span></div>
-                                    <h3><a href="#">Activité</a></h3>
-                                    <div class="text">Keeping your eye on the ball while performing a deep dive on the up mentality to derive</div>
+                                    <div class="icon-box"><span class="flaticon-request"></span></div>
+                                    <h3><a href="#">La Formation sur la Responsabilité Citoyenne</a></h3>
+                                    <div class="text">Développer la responsabilité citoyenne en suivant les séries de cours en ligne</div>
                                 </div>
                             </div>
 
-                            <!-- Feature BLock -->
-                            <div class="featrue-block col-md-6 col-sm-6 col-xs-12">
-                                <div class="inner-box">
-                                    <div class="icon-box"><span class="flaticon-tshirt"></span></div>
-                                    <h3><a href="#">Activité</a></h3>
-                                    <div class="text">Keeping your eye on the ball while performing a deep dive on the up mentality to derive</div>
-                                </div>
-                            </div>
-
-                            <!-- Feature BLock -->
-                            <div class="featrue-block col-md-6 col-sm-6 col-xs-12">
-                                <div class="inner-box">
-                                    <div class="icon-box"><span class="flaticon-teamwork"></span></div>
-                                    <h3><a href="#">Activité</a></h3>
-                                    <div class="text">Keeping your eye on the ball while performing a deep dive on the up mentality to derive</div>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="row text">
+                            Après avoir suivi avec succès tous les cours contenus dans les deux grandes séries de formations, et après avoir fourni la preuve que vos comportements en tant que citoyen(ne) se sont désormais améliorés dans tous les domaines et ont contribué dès lors à l’avancement de votre pays, vous recevrez un pins-identifiant unique qui vous distingue comme un Nouveau Type de Citoyen (NTC).
                         </div>
                     </div>
                 </div>
@@ -316,12 +313,13 @@
 
         <div class="auto-container">
             <div class="title">
-                <h2>S'inscrire en tant que  NTC</h2>
-                <div class="text">Integer et diam libero. Praesent  varius nisi. Nunc vCapitalize on low hanging fruit to identify a ballpark<br> value added activity to beta test. Override.</div>
+                <h2>Devenir un NTC</h2>
+                <div class="text">
+                    À travers le programme « Devenir un(e) Nouveau Type de Citoyen(ne) – DNTC », le Mouvement NTC vous offre la possibilité de changer de mentalité et de développer la responsabilité citoyenne en suivant les séries de cours en ligne sur le changement de mentalité et sur la citoyenneté, suivis d’exercice d’application sur le terrain.                 </div>
             </div>
             <div class=" text-center">
 
-                <button type="submit" data-toggle="modal" data-target="#modalregisterbecomentc" class="theme-btn btn-style-one">Register</button>
+                <a href="{{route('register')}}"  class="theme-btn btn-style-one">Cliquez ICI pour vous inscrire et démarrer les cours</a>
 
             </div>
         </div>
@@ -329,72 +327,47 @@
     <!-- End Subscribe Section -->
 
     <!-- Organizers Section -->
-    <section class="team-section" style="margin-top: 5%">
-        <div class="title-box" style="background-image: url(images/background/5.jpg);">
-            <div class="auto-container">
-                <div class="sec-title light text-center">
-                    <h2>Organisateurs</h2>
+    <!-- Team members Section -->
+    {{--<section class="causes-section">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <h2>Organisateurs</h2>
+                <div class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore error fugit impedit inventore nemo porro quisquam saepe voluptas?
+                    <br>  Aperiam atque explicabo ipsa laborum libero mollitia quos repellat sapiente tenetur voluptas.
                 </div>
             </div>
+        @include('pages.partials.members')
         </div>
-        <div class="team-box">
-            <div class="auto-container">
-                <div class="row clearfix">
-                    <!-- Team Block -->
-                    <div class="team-block col-md-4 col-sm-6 col-xs-12 wow fadeInUp">
-                        <div class="inner-box">
-                            <div class="image-box"><a href="team-single.html"><img src="images/resource/volunteer-1.jpg" alt=""></a></div>
-                            <div class="info-box">
-                                <ul class="social-links">
-                                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
-                                </ul>
-                                <h4 class="name"><a href="team-single.html">John Smith</a></h4>
-                                <span class="designation"></span>
-                            </div>
-                        </div>
-                    </div>
+    </section>--}}
+    <!--End Organizers Section -->
 
-                    <!-- Team Block -->
-                    <div class="team-block col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="600ms">
-                        <div class="inner-box">
-                            <div class="image-box"><a href="team-single.html"><img src="images/resource/volunteer-2.jpg" alt=""></a></div>
-                            <div class="info-box">
-                                <ul class="social-links">
-                                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
-                                </ul>
-                                <h4 class="name"><a href="team-single.html">Nattasha</a></h4>
-                                <span class="designation"></span>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Event Section Two -->
 
-                    <!-- Team Block -->
-                    <div class="team-block col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="1200ms">
-                        <div class="inner-box">
-                            <div class="image-box"><a href="team-single.html"><img src="images/resource/volunteer-3.jpg" alt=""></a></div>
-                            <div class="info-box">
-                                <ul class="social-links">
-                                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
-                                </ul>
-                                <h4 class="name"><a href="team-single.html">Mick chwla</a></h4>
-                                <span class="designation"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section class="event-section-two" >
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <h2 id="cours-mentalite">Cours sur le changement de mentalité</h2>
+            </div>
+
+            <div class="row">
+                <ol class="row cours list-style-two">
+                    <li class="col-md-4"><a href="#">La Constitution de la République du Bénin </a></li>
+                    <li class="col-md-4"><a href="#">Le Programme d’Action du Gouvernement </a></li>
+                    <li class="col-md-4"><a href="#">Le Programme National de Développement</a></li>
+                    <li class="col-md-4"><a href="#">La Constitution de la République du Bénin </a></li>
+                    <li class="col-md-4"><a href="#">La Constitution de la République du Bénin </a></li>
+                    <li class="col-md-4"><a href="#">La Constitution de la République du Bénin </a></li>
+                    <li class="col-md-4"><a href="#">La Constitution de la République du Bénin </a></li>
+                    <li class="col-md-4"><a href="#">La Constitution de la République du Bénin </a></li>
+                    <li class="col-md-4"><a href="#">La Constitution de la République du Bénin </a></li>
+                    <li class="col-md-4"><a href="#">La Constitution de la République du Bénin </a></li>
+                </ol>
             </div>
         </div>
     </section>
-    <!--End Organizers Section -->
+    <!--End Event Section Two -->
+
 
     <!-- Event Section Two -->
 
@@ -403,90 +376,7 @@
             <div class="sec-title text-center">
                 <h2>Evénement à venir</h2>
             </div>
-
-            <div class="row clearfix">
-                <div class="column col-md-6 col-sm-12 col-xs-12">
-                    <!-- Event Block Two -->
-                    <div class="event-block-two wow fadeIn">
-                        <div class="inner-box">
-                            <div class="date"><strong>04</strong> May</div>
-                            <h4><a href="event-single.html">Let ‘s walk the poor children Education</a></h4>
-                            <ul class="info">
-                                <li><i class="fa fa-clock-o"></i> at 5.00 pm - 7.30 pm</li>
-                                <li><i class="fa fa-map-marker"></i> 25 Newyork City</li>
-                            </ul>
-                            <div class="text">Globally incubate standards compliant  the deliverables whereas web-enabled applications. and-mortar catalysts for changbefore vertical t market-driven best practices.</div>
-                        </div>
-                    </div>
-
-                    <!-- Event Block Two -->
-                    <div class="event-block-two wow fadeIn" data-wow-delay='200ms'>
-                        <div class="inner-box">
-                            <div class="date"><strong>05</strong> May</div>
-                            <h4><a href="event-single.html">Help and Donate from poor children Education</a></h4>
-                            <ul class="info">
-                                <li><i class="fa fa-clock-o"></i> at 5.00 pm - 7.30 pm</li>
-                                <li><i class="fa fa-map-marker"></i> 25 Newyork City</li>
-                            </ul>
-                            <div class="text">Globally incubate standards compliant  the deliverables whereas web-enabled applications. and-mortar catalysts for changbefore vertical t market-driven best practices.</div>
-                        </div>
-                    </div>
-
-                    <!-- Event Block Two -->
-                    <div class="event-block-two wow fadeIn" data-wow-delay='400ms'>
-                        <div class="inner-box">
-                            <div class="date"><strong>07</strong> May</div>
-                            <h4><a href="event-single.html">Marathan 2019 Run For the Cancer people</a></h4>
-                            <ul class="info">
-                                <li><i class="fa fa-clock-o"></i> at 5.00 pm - 7.30 pm</li>
-                                <li><i class="fa fa-map-marker"></i> 25 Newyork City</li>
-                            </ul>
-                            <div class="text">Globally incubate standards compliant  the deliverables whereas web-enabled applications. and-mortar catalysts for changbefore vertical t market-driven best practices.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column col-md-6 col-sm-12 col-xs-12">
-                    <!-- Event Block Two -->
-                    <div class="event-block-two wow fadeIn" data-wow-delay='600ms'>
-                        <div class="inner-box">
-                            <div class="date"><strong>08</strong> May</div>
-                            <h4><a href="event-single.html">Food camp for childran in Africa</a></h4>
-                            <ul class="info">
-                                <li><i class="fa fa-clock-o"></i> at 5.00 pm - 7.30 pm</li>
-                                <li><i class="fa fa-map-marker"></i> 25 Newyork City</li>
-                            </ul>
-                            <div class="text">Globally incubate standards compliant  the deliverables whereas web-enabled applications. and-mortar catalysts for changbefore vertical t market-driven best practices.</div>
-                        </div>
-                    </div>
-
-                    <!-- Event Block Two -->
-                    <div class="event-block-two wow fadeIn" data-wow-delay='800ms'>
-                        <div class="inner-box">
-                            <div class="date"><strong>09</strong> May</div>
-                            <h4><a href="event-single.html">Donate from poor children Education</a></h4>
-                            <ul class="info">
-                                <li><i class="fa fa-clock-o"></i> at 5.00 pm - 7.30 pm</li>
-                                <li><i class="fa fa-map-marker"></i> 25 Newyork City</li>
-                            </ul>
-                            <div class="text">Globally incubate standards compliant  the deliverables whereas web-enabled applications. and-mortar catalysts for changbefore vertical t market-driven best practices.</div>
-                        </div>
-                    </div>
-
-                    <!-- Event Block Two -->
-                    <div class="event-block-two wow fadeIn" data-wow-delay='1000ms'>
-                        <div class="inner-box">
-                            <div class="date"><strong>10</strong> May</div>
-                            <h4><a href="event-single.html">2019 Run For the Cancer people</a></h4>
-                            <ul class="info">
-                                <li><i class="fa fa-clock-o"></i> at 5.00 pm - 7.30 pm</li>
-                                <li><i class="fa fa-map-marker"></i> 25 Newyork City</li>
-                            </ul>
-                            <div class="text">Globally incubate standards compliant  the deliverables whereas web-enabled applications. and-mortar catalysts for changbefore vertical t market-driven best practices.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @include('pages.partials.events')
         </div>
     </section>
     <!--End Event Section Two -->
@@ -504,22 +394,22 @@
 
             <div class="causes-carousel owl-carousel owl-theme">
 
-                @for($i=0;$i<4;$i++)
+                @foreach($stories as $story)
                 <!-- Cause Block Two -->
                 <div class="cause-block-two">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure><img src="images/resource/cause-4.jpg" alt=""></figure>
-                            <div class="overlay-box"><a href="#" class="link">Sponsoriser Maintenant</a></div>
+                            <figure><img src="{{asset('storage/'.json_decode($story->image)[0])}}" alt="{{$story->title}}"></figure>
+                            <!--<div class="overlay-box"><a href="#" class="link">Sponsoriser Maintenant</a></div>-->
                             <div class="title-box">
-                                <div class="progress-bar">
+                               <!-- <div class="progress-bar">
                                     <div class="bar-inner"><div class="bar progress-line" data-width="65"><div class="bar-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="85">0</span>%</div></div></div></div>
-                                </div>
-                                <h3><a href="#">Help 1014 people for education</a></h3>
+                                </div>-->
+                                <h3><a href="#">{{$story->title}}</a></h3>
                             </div>
                         </div>
                         <div class="lower-content">
-                            <div class="text">Integer et diam libero. Praesent  varius nisi. Nunc vCapitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override .</div>
+                            <div class="text">{!!\Illuminate\Support\Str::limit($story->body,100)!!}</div>
                             <h3 class=" text-center">
                                 <a href="#" class="theme-btn btn-style-three" style="border-radius: 0">Plus
                                 </a>
@@ -528,7 +418,7 @@
                     </div>
                 </div>
 
-                    @endfor
+                    @endforeach
 
 
             </div>
@@ -536,7 +426,7 @@
     </section>
     <!-- End Success story Section -->
 
-    <!-- Testimonial Section Two -->
+    {{--<!-- Testimonial Section Two -->
     <section class="testimonial-section-two" style="padding: 15px">
         <div class="auto-container">
             <div class="testimonial-carousel owl-carousel owl-theme">
@@ -568,64 +458,178 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
+@endsection
+@section('modals')
+    <!-- register become-ntc modal -->
+    <div class="modal fade" id="modalregisterbecomentc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center bg-primary">
+                    <h4 class="modal-title w-100 font-weight-bold">Devenir NTC | Inscription</h4>
+                    <a style="color: #fff;float: right"  data-dismiss="modal" aria-label="Close">
+                        Fermer
+                    </a>
+                </div>
+                <form id="register-form">
+                    <div class="modal-body mx-3">
+
+                        <section id="section-1">
+                            <h3>Informations personnelles</h3>
+
+                            <div class="md-form mb-5">
+                                <label data-error="" data-success="" for="nom">Votre nom</label>
+                                <input type="text" id="nom" required class="form-control validate">
+                                <small id="nomHelp" class="form-text"  style="color: red"></small>
+
+                            </div>
+                            <div class="md-form mb-5">
+                                <label data-error="" data-success="" for="prenom">Votre prénom</label>
+                                <input type="text"  id="prenom" name="prenom" class="form-control validate">
+                                <small id="prenomHelp" class="form-text"  style="color: red"></small>
+
+                            </div>
+
+                            <div class="md-form mb-5">
+                                <label data-error="" data-success="" for="dateNaissance">Date de naissance</label>
+                                <input type="date" id="dateNaissance"  name="date_naissance" class="form-control validate">
+                                <small id="dateNaissanceHelp" class="form-text"  style="color: red"></small>
+
+                            </div>
+
+                            <div class="md-form mb-5">
+                                <label data-error="" data-success="" for="lieuNaissance">Lieu de naissance</label>
+                                <input type="text" id="lieuNaissance" name="lieu_naissance" class="form-control validate">
+                                <small id="lieuNaissanceHelp" class="form-text"  style="color: red"></small>
+
+                            </div>
+
+                            <div class="md-form mb-5">
+                                <select type="text" id="pays" class="form-control validate">
+                                    <option>Pays de naissance</option>
+                                    <option>Algerie</option>
+                                    <option>Bénin</option>
+                                    <option>Togo</option>
+                                    <option>Gabon</option>
+                                    <option>Guinée</option>
+                                </select>
+                                <small id="paysHelp" class="form-text"  style="color: red"></small>
+                            </div>
 
 
-        <!--End Testimonial Section Two -->
+                            <div class="md-form mb-5">
+                                <label data-error="" data-success="" for="tel">Tel</label>
+                                <input type="number" name="tel" id="tel" class="form-control validate">
+                                <small id="telHelp" class="form-text"  style="color: red"></small>
 
-   {{-- <!-- Donation Form Section -->
-    <section class="donation-form-section">
-        <div class="auto-container">
-            <!-- Donation Form -->
-            <div class="donation-form">
-                <form  method="post" action="http://t.commonsupport.com/incles/index-2.html">
-                    <div class="row clearfix">
-                        <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                            <input type="radio" name="one-time" id="one-time">
-                            <label for="one-time">One Time</label>
-                            <input type="radio" name="one-time" id="recurring">
-                            <label for="recurring">Recurring</label>
-                        </div>
+                            </div>
 
-                        <div class="form-group col-md-3 col-sm-12 col-xs-12">
-                            <h4>I Want to Donate for</h4>
-                            <select class="custom-select-box">
-                                <option>Educated Childrens</option>
-                                <option>Educated Childrens</option>
-                                <option>Educated Childrens</option>
-                                <option>Educated Childrens</option>
-                            </select>
-                        </div>
+                            <div class="md-form mb-5">
+                                <label data-error="" data-success="" for="numeroWhat">Numéro WhatsApp</label>
+                                <input type="number" id="numeroWhat"  class="form-control validate">
+                                <small id="numeroWhatHelp" class="form-text"  style="color: red"></small>
 
-                        <div class="form-group col-md-3 col-sm-6 col-xs-12">
-                            <h4>Currency</h4>
-                            <select class="custom-select-box">
-                                <option>USD , Us dollers</option>
-                                <option>USD , Us dollers</option>
-                                <option>USD , Us dollers</option>
-                                <option>USD , Us dollers</option>
-                                <option>USD , Us dollers</option>
-                            </select>
-                        </div>
+                            </div>
 
-                        <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                            <h4>How much do you want to donate?</h4>
-                            <select class="custom-select-box">
-                                <option>$1200</option>
-                                <option>$1000</option>
-                                <option>$800</option>
-                                <option>$500</option>
-                                <option>$100</option>
-                            </select>
-                        </div>
+                            <br>
+                            <div class=" text-center">
+                                <button class="btn btn-primary section-btn" id="next1">Suivant</button>
+                            </div>
 
-                        <div class="form-group col-md-2 col-sm-12 col-xs-12 btn-box">
-                            <button type="submit" class="theme-btn btn-style-two">Donate Now</button>
-                        </div>
+                        </section>
+
+                        <section id="section-2"  style="display: none">
+                            <h3>Adresse</h3>
+                            <div class="md-form mb-5">
+                                <label  data-error="" data-success="" for="adress1">Adresse 1*</label>
+                                <input id="adress1" type="text"  class="form-control validate">
+                                <small id="adress1Help" class="form-text"  style="color: red"></small>
+
+                            </div>
+
+                            <div class="md-form mb-5">
+                                <label  data-error="" data-success="" for="adress2">Adresse 2</label>
+                                <input id="adress2" type="text"  class="form-control validate">
+                            </div>
+
+
+                            <div class="md-form mb-5">
+                                <label data-error="" data-success="" for="arrondissement">Arrondissement</label>
+                                <input id="arrondissement" name="arrondissement" type="text"  class="form-control validate">
+                                <small id="arrondissementHelp" class="form-text"  style="color: red"></small>
+
+                            </div>
+
+
+                            <div class="md-form mb-5">
+                                <label data-error="" data-success="" for="quartier">Quartier</label>
+                                <input type="text" id="quartier" name="quartier" class="form-control validate">
+                                <small id="quartierHelp" class="form-text"  style="color: red"></small>
+
+                            </div>
+                            <div class="md-form mb-5">
+                                <label data-error="" data-success="" for="profession">Profession</label>
+                                <input type="text" name="profession" id="profession"  class="form-control validate">
+                                <small id="professionHelp" class="form-text"  style="color: red"></small>
+                            </div>
+                            <div class="md-form mb-5">
+                                <label data-error="" data-success="" for="centre_interet">Centres d'intérêts</label>
+                                <input type="text" name="centre_interet" id="centre_interet" class="form-control validate">
+                                <small id="centre_interetHelp" class="form-text"  style="color: red"></small>
+                            </div>
+
+                            <div class="text-center">
+                                <button class="btn btn-dark section-btn" id="prev2">Retour</button>
+                                <button class="btn btn-primary section-btn" id="next2">Suivant</button>
+                            </div>
+
+                        </section>
+
+                        <section id="section-3"  style="display: none">
+                            <h3>Informations de connexion</h3>
+
+
+                            <div class="md-form mb-5">
+                                <label data-error="" data-success="" for="username">Nom d'utilisateur/Email</label>
+                                <input type="email" name="username" id="username" class="form-control validate">
+                                <small id="usernameHelp" class="form-text"  style="color: red"></small>
+                            </div>
+
+                            <div class="md-form mb-5">
+                                <label data-error=""  data-success="" for="password">Mot de passe</label>
+                                <input type="password" name="password" id="password" class="form-control validate">
+                                <small id="passwordHelp" class="form-text"  style="color: red"></small>
+                            </div>
+
+                            <div class="md-form mb-5">
+                                <label data-error="" data-success="" for="confirm_password">Confirmer mot de password</label>
+                                <input type="password" name="confirm_password" id="confirm_password" class="form-control validate">
+                                <small id="confirm_passwordHelp" class="form-text"  style="color: red"></small>
+                            </div>
+
+                            <div class=" text-center">
+                                <button class="btn btn-dark section-btn" id="prev3">Retour</button>
+                                <button  id="submit-btn" class="btn btn-info waves-effect text-left section-btn" type="submit">
+                                <span class="form-submit-btn">
+                                     S'inscrire
+                                </span>
+                                    <span class="form-loader" style="display: none">
+                                   <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                Inscription en cours...
+                               </span>
+                                </button>
+                            </div>
+                        </section>
                     </div>
                 </form>
+                {{--<div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-unique">Sign Up <i class="fa fa-send ml-1"></i></button>
+                </div>--}}
             </div>
         </div>
-    </section>
-    <!--En Donation Form Section -->--}}
-    @endsection
+    </div>
+@stop
+@section('scripts')
+    @include('scripts.scripts')
+@stop
