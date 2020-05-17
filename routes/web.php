@@ -15,12 +15,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
 
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/devenir-ntc', 'HomeController@become')->name('become');
 
-Route::get('/s-impliquer', 'HomeController@take')->name('take');
+Route::get('/participation-citoyenne', 'HomeController@take')->name('take');
 Route::get('/education-citoyenne', 'HomeController@empower')->name('empower');
 Route::get('/hero', 'HomeController@hero')->name('hero');
 
@@ -38,14 +39,17 @@ Route::post('ntc/register',['as'=>'ntc.register','uses'=>'HomeController@registe
 Route::get('ntc/inscription',['as'=>'ntc.inscription','uses'=>'HomeController@registerForm']);
 
 Route::post('ntc/cj/login',['as'=>'cj.login','uses'=>'HomeController@loginCJ']);
+Route::post('message',['as'=>'message','uses'=>'MailboxController@message']);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
     Route::get('module/{slug}/modules',['as'=>'module.courses','uses'=>"Voyager\VoyagerModuleController@course"]);
     Route::get('course/read/{slug}',['as'=>'courses.read','uses'=>"Voyager\VoyagerController@readCourse"]);
     Route::get('course/finish/{slug}',['as'=>'courses.finish','uses'=>"Voyager\VoyagerController@finishCourse"]);
-    Route::get('module/pass-exam/{slug}',['as'=>'modules.exam','uses'=>"Voyager\VoyagerController@exam"]);
+    Route::get('module/pass-exam/{slug}/{action?}',['as'=>'modules.exam','uses'=>"Voyager\VoyagerController@exam"]);
     Route::get('module/result-exam/{slug}',['as'=>'modules.exam.result','uses'=>"Voyager\VoyagerController@result"]);
     Route::get('module/result-certificate/{slug?}',['as'=>'modules.exam.certificate','uses'=>"Voyager\VoyagerController@getCertificate"]);
     Route::post('module/pass-exam/{slug}',['as'=>'modules.exam.pass','uses'=>"Voyager\VoyagerController@exam"]);
+    Route::get('cours/{category_id?}/{state?}',['as'=>'voyager.modules.index','uses'=>"Voyager\VoyagerModuleController@index"]);
+    Route::get('rapports/soumettre/{slug}',['as'=>'voyager.rapport-tps.soumettre','uses'=>"Voyager\VoyagerController@soumettreRapport"]);
 });

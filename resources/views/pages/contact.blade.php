@@ -5,11 +5,11 @@
     <!--Page Title-->
     <section class="page-title" style="background-image:url(images/background/34.jpg);">
         <div class="auto-container">
-            <div class="title-box">
-                <h1>Contact</h1>
+            <div class="title-box" style="border-radius: 0">
+                <h1>Contactez-nous</h1>
                 <ul class="bread-crumb clearfix">
                     <li><a href="index-2.html">Accueil </a></li>
-                    <li>Contact</li>
+                    <li>Contactez-nous</li>
                 </ul>
             </div>
         </div>
@@ -27,7 +27,7 @@
                         <div class="icon-box wow zoomIn">
                             <span class="icon fa fa-map-marker"></span>
                         </div>
-                        <div class="text">184 Collins Street West <br> Victoria, United States, 8007</div>
+                        <div class="text">Lot 430, Parcelle L,<br>  Quartier Kpondéhou, Cotonou</div>
                     </div>
                 </div>
 
@@ -37,7 +37,7 @@
                         <div class="icon-box wow zoomIn" data-wow-delay="300ms">
                             <span class="icon fa fa-phone"></span>
                         </div>
-                        <div class="text">(229) 96 88 00 00 <br> (229) 98 88 00 00</div>
+                        <div class="text"><a href="tel:+22967199683"><span class="theme_color fa fa-phone"></span> &ensp; (229) 67 19 96 83</a> <br><a href="tel:+22966147189"><span class="theme_color fa fa-fax"></span> &ensp; (229) 66 14 71 89</a></div>
                     </div>
                 </div>
 
@@ -47,7 +47,7 @@
                         <div class="icon-box wow zoomIn" data-wow-delay="600ms">
                             <span class="icon fa fa-envelope"></span>
                         </div>
-                        <div class="text">info@ntc.com <br> support@ntc.com</div>
+                        <div class="text"><a href="mailto:contact@nouveautypedecitoyens.org" ><span class="theme_color fa fa-envelope"></span> &ensp; contact@nouveautypedecitoyens.org</a></div>
                     </div>
                 </div>
 
@@ -63,15 +63,17 @@
             <!--Form Column-->
             <div class="form-column clearfix">
                 <div class="inner-column">
-                    <h2>Laisser un message</h2>
+                    <h2>Laisser nous un message</h2>
+                    <div class="alert alert-danger form-error" style="display: none"></div>
+                    <div id="message-loader" style="font-size: 12pt;display: none">Envoie de votre message en cours...</div>
 
                     <!-- Contact Form -->
                     <div class="contact-form">
                         <!--Comment Form-->
-                        <form method="post" action="http://t.commonsupport.com/ntc/sendemail.php" id="contact-form">
+                        <form method="post"  id="contact-form">
                             <div class="row clearfix">
                                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                    <input type="text" name="username" placeholder="Nom" required>
+                                    <input type="text" name="name" placeholder="Notre nom" required>
                                 </div>
 
                                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">
@@ -79,7 +81,7 @@
                                 </div>
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <textarea name="message" placeholder="Message"></textarea>
+                                    <textarea name="message" placeholder="Votre message"></textarea>
                                 </div>
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
@@ -100,13 +102,13 @@
                 <!--Map Canvas-->
                 <div class="map-canvas"
                      data-zoom="12"
-                     data-lat="-37.817085"
-                     data-lng="144.955631"
+                     data-lat="6.385662"
+                     data-lng="2.451443"
                      data-type="roadmap"
                      data-hue="#ffc400"
-                     data-title="Envato"
+                     data-title="Nouveau Type de Citoyens"
                      data-icon-path="images/icons/map-marker.png"
-                     data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>">
+                     data-content="Quartier Kpondéhou, Cotonou<br><a href='mailto: contact@nouveautypedecitoyens.org'> contact@nouveautypedecitoyens.org</a>">
                 </div>
             </div>
 
@@ -115,4 +117,52 @@
     <!-- End Contact Info Section -->
 
 
+@endsection
+
+@section('scripts')
+
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $(document).ready( function(e) {
+            $(document).on('submit', '#contact-form', function (e) {
+                e.preventDefault();
+                let loader = $('#message-loader')
+                loader.fadeIn('slow')
+
+                let form = $(this);
+                let data = form.serialize();
+                let url = '{{route('message')}}';
+                $.ajax({
+                    url: url,
+                    method: 'POST',
+                    data: data,
+                    success: function (data) {
+                        console.log(data)
+                        $('#message-loader').css({"display":"none"});
+
+                        if(!data.error){
+                            form.trigger('reset')
+                            swal.fire('Message',data.message,'success')
+
+                        }else{
+                            $('.form-error').html(`<span class="text-danger">`+data.message+`</span>`);
+                            $('.form-error').slideDown();
+                        }
+
+                    },
+                    error: function (error) {
+                        console.log(error)
+                        $('#message-loader').css({"display":"none"});
+
+
+                    }
+
+                })
+            })
+        })
+    </script>
 @endsection

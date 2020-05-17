@@ -141,6 +141,8 @@ class VoyagerRapportTpController extends BaseVoyagerUserController
         if(Auth::user()->role->name!="ntc_admin" && Auth::user()->role->name!="admin"){
             //evenement des  Cj du coordonnateur
             $dataTypeContent = $dataTypeContent->where('user_id',Auth::id());
+        }else{
+            $dataTypeContent = $dataTypeContent->where('soumis',1);
         }
 
 

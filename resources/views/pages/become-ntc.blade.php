@@ -18,175 +18,13 @@
 
                     <!-- Slide 1 -->
                     <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1688" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-2.jpg" data-title="Slide Title" data-transition="parallaxvertical">
-
                         <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="images/main-slider/image-2.jpg">
 
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-padding="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['600','600','600','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['-150','-150','-150','-180']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-
-                            <h4 class="text-center">Become an NTC</h4>
-                        </div>
-
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-padding="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['650','650','650','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['-50','-50','-50','-80']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                            <h2 class="text-center">Be Our Community</h2>
-                        </div>
-
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-padding="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['600','600','600','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['60','60','60','60']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                            <div class="text text-center">Must explain to you how all this mistaken idea of denouncing pleasure & praising, Join over 24 million people supporting charity and personal causes.</div>
-                        </div>
-
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-padding="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['600','600','600','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['160','160','190','190']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                            <div class="text-center">
-                                <a href="#" class="theme-btn btn-style-one"><span>En savoir plus</span></a>
-                                <a href="#" class="theme-btn btn-style-two"><span>Contactez nous</span></a>
-                            </div>
-                        </div>
                     </li>
 
                     <!-- Slide 2 -->
                     <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-10.jpg" data-title="Slide Title" data-transition="parallaxvertical">
                         <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="images/main-slider/image-10.jpg">
-
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-padding="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['600','600','600','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['-150','-150','-150','-180']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-
-                            <h4 class="text-center">Lorem ipsum</h4>
-                        </div>
-
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-padding="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['650','650','650','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['-50','-50','-50','-80']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                            <h2 class="text-center">Lorem ipsum</h2>
-                        </div>
-
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-padding="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['600','600','600','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['60','60','60','60']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                            <div class="text text-center">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aut, corporis dignissimos dolor dolore dolores labore, nemo non porro quaerat quis recusandae sit unde vel. Earum nisi quo voluptate.
-                            </div>
-                        </div>
-
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-padding="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['600','600','600','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['160','160','190','190']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                            <div class="text-center">
-                                <a href="#" class="theme-btn btn-style-one"><span>En savoir plus</span></a>
-                                <a href="#" class="theme-btn btn-style-two"><span>Contactez nous</span></a>
-                            </div>
-                        </div>
                     </li>
 
                 </ul>
@@ -194,7 +32,7 @@
         </div>
     </section>
     <!--End Main Slider-->
-
+{{--
     <!--Fun Facts Section-->
     <div class="fun-fact-section push-up">
         <div class="auto-container">
@@ -252,64 +90,98 @@
             </div>
         </div>
     </div>
-    <!--End Fun Facts Section-->
+    <!--End Fun Facts Section-->--}}
 
-    <!-- Become Volunteer -->
-    <section class="become-volunteer">
-        <div class="auto-container">
-            <div class="row clearfix">
-                <div class="feature-column col-lg-7 col-md-12 col-sm-12 col-xs-12">
-                    <div class="inner-column">
-                        <div class="sec-title">
-                            <h2 style="font-size: 20pt">Devenir un Nouveau Type de Citoyen (DNTC)</h2>
-                            <div class="text">
-                                Le programme Devenir un Nouveau Type de Citoyen – DNTC est un programme de formation divisé en deux grandes séries de formations :
+    <!-- Who We Are -->
+    <section class="who-we-are" >
+        <div class="inner-container">
+            <!-- Packeges Tabs -->
+            <div class="services-tabs tabs-box clearfix">
+
+                <ul class="tab-buttons">
+                    <li style="font-size: 15pt" data-tab="#service-1" class="tab-btn active-btn"><i class="fa fa-angle-right"></i> Introduction au Programme DNTC</li>
+                    @foreach($modules as $module)
+                    <li style="font-size: 15pt" data-tab="#course-cat-{{$module->id}}" class="tab-btn "><i class="fa fa-angle-right"></i> {{$module->title}} </li>
+                    @endforeach
+                </ul>
+
+                <!--Tabs Container-->
+                <div class="tabs-content" style="margin-top: 5%">
+
+                    <!--Tab / Active Tab-->
+                    <div class="tab active-tab" id="service-1">
+                        <div class="outer-box clearfix col-md-12">
+                            <!-- Content Column -->
+                            <div class="col-md-12">
+                                <div class="sec-title">
+                                    <div class="text">
+                                        <div class="inner-column">
+                                            <div class="sec-title">
+                                                <h2 style="font-size: 20pt">Introduction au Programme DNTC</h2>
+                                                <div class="text">
+                                                    Le programme Devenir un Nouveau Type de Citoyen (DNTC) est un programme d’éducation divisé en deux grandes séries de formations.                            </div>
+                                            </div>
+
+                                            <div class="row clearfix">
+                                                <!-- Feature BLock -->
+                                                @foreach($modules as $module)
+                                                <div class="featrue-block col-md-6 col-sm-6 col-xs-12">
+                                                    <div class="inner-box">
+                                                        <div class="icon-box"><span><img style="width: 15%;border-radius: 20%" src="{{asset("storage/".$module->image)}}" alt="{{$module->title}}"></span></div>
+                                                        <h3><a href="#">{{$module->title}}</a></h3>
+                                                        <div class="text">{{$module->description}}</div>
+                                                    </div>
+                                                </div>
+                                                @endforeach
+
+
+                                            </div>
+                                            <div class="row text">
+                                                Après avoir suivi avec succès tous les cours contenus dans les deux grandes séries de formations, et après avoir fourni la preuve que vos comportements en tant que citoyen(ne) se sont désormais améliorés dans tous les domaines et ont contribué dès lors à l’avancement de votre pays, vous recevrez un pins-identifiant unique qui vous distingue comme un Nouveau Type de Citoyen (NTC).
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
                             </div>
-                        </div>
 
-                        <div class="row clearfix">
-                            <!-- Feature BLock -->
-                            <div class="featrue-block col-md-6 col-sm-6 col-xs-12">
-                                <div class="inner-box">
-                                    <div class="icon-box"><span class="flaticon-communication"></span></div>
-                                    <h3><a href="#">La Formation sur le Changement de Mentalité</a></h3>
-                                    <div class="text">Le Mouvement NTC vous offre la possibilité de changer de mentalité en suivant les séries de cours en ligne</div>
+
+                        </div>
+                    </div>
+
+                    @foreach($modules as $module)
+                    <!--Tab / Active Tab-->
+                    <div class="tab" id="course-cat-{{$module->id}}">
+                        <div class="outer-box clearfix">
+                            <!-- Content Column -->
+                            <div class="col-md-12">
+                                <div class="sec-title">
+                                    <h2 style="font-size: 20pt">{{$module->title}}</h2>
+                                    <div class="text row" style="margin: 15px">
+                                        <ol class="row cours list-style-two">
+                                            @foreach($module->courses as $course)
+                                            <li class="col-md-4"><a href="{{route('courses.read',$course->slug)}}">{{$course->title}} </a></li>
+                                                @endforeach
+                                        </ol>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- Feature BLock -->
-                            <div class="featrue-block col-md-6 col-sm-6 col-xs-12">
-                                <div class="inner-box">
-                                    <div class="icon-box"><span class="flaticon-request"></span></div>
-                                    <h3><a href="#">La Formation sur la Responsabilité Citoyenne</a></h3>
-                                    <div class="text">Développer la responsabilité citoyenne en suivant les séries de cours en ligne</div>
-                                </div>
-                            </div>
 
                         </div>
-                        <div class="row text">
-                            Après avoir suivi avec succès tous les cours contenus dans les deux grandes séries de formations, et après avoir fourni la preuve que vos comportements en tant que citoyen(ne) se sont désormais améliorés dans tous les domaines et ont contribué dès lors à l’avancement de votre pays, vous recevrez un pins-identifiant unique qui vous distingue comme un Nouveau Type de Citoyen (NTC).
-                        </div>
                     </div>
-                </div>
+                        @endforeach
 
-                <!-- Image column -->
-                <div class="image-column col-lg-5 col-md-12 col-sm-12 col-xs-12">
-                    <div class="inner-column wow fadeInUp" data-wow-delay="600ms">
-                        <figure><img src="images/resource/image-3.jpg" alt=""></figure>
                     </div>
+
                 </div>
-
-
             </div>
-        </div>
     </section>
-    <!--End Become Volunteer -->
-
-
+    <!--End Who We Are -->
 
     <!-- Subscribe Section -->
-    <section class="subscribe-section" style="background-image: url(images/background/4.jpg);">
+    {{--<section class="subscribe-section" style="background-image: url({{asset('images/background/4.jpg')}});">
 
         <div class="auto-container">
             <div class="title">
@@ -323,28 +195,11 @@
 
             </div>
         </div>
-    </section>
+    </section>--}}
     <!-- End Subscribe Section -->
 
-    <!-- Organizers Section -->
-    <!-- Team members Section -->
-    {{--<section class="causes-section">
-        <div class="auto-container">
-            <div class="sec-title text-center">
-                <h2>Organisateurs</h2>
-                <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore error fugit impedit inventore nemo porro quisquam saepe voluptas?
-                    <br>  Aperiam atque explicabo ipsa laborum libero mollitia quos repellat sapiente tenetur voluptas.
-                </div>
-            </div>
-        @include('pages.partials.members')
-        </div>
-    </section>--}}
-    <!--End Organizers Section -->
 
-    <!-- Event Section Two -->
-
-    <section class="event-section-two" >
+    {{--<section class="event-section-two" >
         <div class="auto-container">
             <div class="sec-title text-center">
                 <h2 id="cours-mentalite">Cours sur le changement de mentalité</h2>
@@ -365,12 +220,9 @@
                 </ol>
             </div>
         </div>
-    </section>
-    <!--End Event Section Two -->
-
+    </section>--}}
 
     <!-- Event Section Two -->
-
     <section class="event-section-two" style="margin-top: -10%">
         <div class="auto-container">
             <div class="sec-title text-center">
@@ -388,8 +240,8 @@
     <section class="causes-section-two" style="margin-top: -10%">
         <div class="auto-container">
             <div class="sec-title text-center">
-                <h2>Histoires</h2>
-                <div class="text">You can help lots of people by donating little.Leverage agile frameworks to provide a robust synopsis for <br> Organically grow the holistic world view of disruptive innovation via workplace</div>
+                <h2>Les NTC racontent leurs Histoires</h2>
+                <div class="text"></div>
             </div>
 
             <div class="causes-carousel owl-carousel owl-theme">
@@ -426,39 +278,6 @@
     </section>
     <!-- End Success story Section -->
 
-    {{--<!-- Testimonial Section Two -->
-    <section class="testimonial-section-two" style="padding: 15px">
-        <div class="auto-container">
-            <div class="testimonial-carousel owl-carousel owl-theme">
-                <!-- Testimonial Block Two -->
-                <div class="testimonial-block-two">
-                    <div class="inner-box">
-                        <h3 class="name">Amanda Stephens</h3>
-                        <div class="text">“ Capitalize on low hanging fruit to identify a ballpark value added  to beta test. override strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world v”</div>
-                        <span class="sign"><img src="images/resource/sign-2.png" alt=""></span>
-                    </div>
-                </div>
-
-                <!-- Testimonial Block Two -->
-                <div class="testimonial-block-two">
-                    <div class="inner-box">
-                        <h3 class="name">Amanda Stephens</h3>
-                        <div class="text">“ Capitalize on low hanging fruit to identify a ballpark value added  to beta test. override strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world v”</div>
-                        <span class="sign"><img src="images/resource/sign-2.png" alt=""></span>
-                    </div>
-                </div>
-
-                <!-- Testimonial Block Two -->
-                <div class="testimonial-block-two">
-                    <div class="inner-box">
-                        <h3 class="name">Amanda Stephens</h3>
-                        <div class="text">“ Capitalize on low hanging fruit to identify a ballpark value added  to beta test. override strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world v”</div>
-                        <span class="sign"><img src="images/resource/sign-2.png" alt=""></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>--}}
 @endsection
 @section('modals')
     <!-- register become-ntc modal -->

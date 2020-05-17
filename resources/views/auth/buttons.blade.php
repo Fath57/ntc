@@ -14,11 +14,11 @@
         </form>
 @else
     <a class="btn btn-success" style="color: #fff;font-weight: bold;margin-right: 35px;border-radius: 0" href="{{route('ntc.inscription')}}">
-        <i class="fa fa-user-plus"></i>&nbsp; Devenir NTC
+        <i class="fa fa-user-plus"></i>&nbsp; Créer un compte
     </a>
 
      <a class="btn btn-success" style="color: #fff;font-weight: bold;border-radius: 0" href="{{route('voyager.login')}}">
-        <i class="fa fa-user"></i> &nbsp; Connexion
+        <i class="fa fa-user"></i> &nbsp; Se connecter
     </a>
 @endif
 </li>

@@ -55,7 +55,7 @@
                         @endif
                         <div class="copy animated fadeIn">
                             <h1>{{ Voyager::setting('admin.title', 'Voyager') }}</h1>
-                            <p>Connectez vous pour accéder au talbeau de bord</p>
+                            <p>Connectez vous pour accéder au tableeau de bord</p>
                         </div>
                     </div> <!-- .logo-title-container -->
                 </div>
@@ -66,7 +66,14 @@
 
             <div class="login-container">
 
-                <p>{{ __('voyager::login.signin_below') }}</p>
+                <p>Connexion</p>
+                @if(session()->get('message_validation'))
+                    <div class="alert alert-red">
+                        <ul class="list-unstyled">
+                            <li>{{ session()->get('message_validation') }}</li>
+                        </ul>
+                    </div>
+                @endif
 
                 <form action="{{ route('voyager.login') }}" method="POST">
                     {{ csrf_field() }}
@@ -84,21 +91,22 @@
                         </div>
                     </div>
 
-                    <div class="form-group" id="rememberMeGroup">
-                        <div class="controls">
-                        <input type="checkbox" name="remember" id="remember" value="1"><label for="remember" class="remember-me-text">{{ __('voyager::generic.remember_me') }}</label>
-                        </div>
-                    </div>
                     
                     <button type="submit" class="btn btn-block login-button">
                         <span class="signingin hidden"><span class="voyager-refresh"></span> {{ __('voyager::login.loggingin') }}...</span>
-                        <span class="signin">{{ __('voyager::generic.login') }}</span>
+                        <span class="signin">Connexion</span>
                     </button>
-
               </form>
-
               <div style="clear:both"></div>
-
+                <p>
+                    <a href="{{ route('password.request') }}" class="txt2 bo1 m-l-5">
+                        Mot de passe Oublié ?
+                    </a>
+                    |
+                    <a href="{{ route('ntc.inscription') }}" class="txt2 bo1 m-l-5">
+                        Nouveau sur le site ? Inscription
+                    </a>
+                </p>
               @if(!$errors->isEmpty())
               <div class="alert alert-red">
                 <ul class="list-unstyled">

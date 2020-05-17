@@ -17,8 +17,8 @@
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="{{asset('css/responsive.css')}}" rel="stylesheet">
 
-    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
-    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('images/logo.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('images/logo.png')}}" type="image/x-icon">
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -36,7 +36,19 @@
             display: none;
         }
     }
+    .image-press {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 10px;
 
+        object-fit: cover;
+        object-position: top right;
+    }
+    .center {
+        margin: 0 auto;
+        width: 90%;
+    }
 </style>
 
     @yield('css')
@@ -84,7 +96,7 @@
         <div class="header-upper" style="background-image: url(images/background/1.jpg);">
             <div class="auto-container">
                 <div class="logo-box">
-                    <div class="logo"><a href="/"><img src="images/logo.png" width="200" alt="" title=""></a></div>
+                    <div class="logo"><a href="/"><img src="{{asset('images/logo.png')}}" width="300" alt="logo" title=""></a></div>
                 </div>
 
                 <div class="nav-outer clearfix">
@@ -110,45 +122,18 @@
                                         <li><a href="causes-single.html">Cause Details</a></li>
                                     </ul>-->
                                 </li>
-                                <li ><a href="{{route('take')}}">S'impliquer</a>
-                                    <!--<ul>
-                                        <li><a href="event-list.html">Event List View</a></li>
-                                        <li><a href="event-grid.html">Event Grid View</a></li>
-                                        <li><a href="event-single.html">Event Details</a></li>
-                                    </ul>-->
-                                </li>
-                                <li><a href="{{route('empower')}}">Education Citoyenne</a>
-                                   <!-- <ul>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li class="dropdown"><a href="#">Services</a>
-                                            <ul>
-                                                <li><a href="services.html">Services Type 01</a></li>
-                                                <li><a href="services-2.html">Services Type 02</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown"><a href="#">Team</a>
-                                            <ul>
-                                                <li><a href="team.html">Team</a></li>
-                                                <li><a href="team-single.html">Team Single</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                    </ul>-->
-                                </li>
-                               <!-- <li class="dropdown"><a href="#">Blogs</a>
-                                    <ul>
-                                        <li><a href="blog-grid.html">Blog Three Column</a></li>
-                                        <li><a href="blog-standard.html">Blog Standard</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog left Sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                        <li><a href="blog-single-1.html">Blog Post Details 01</a></li>
-                                        <li><a href="blog-single-2.html">Blog Post Details 02</a></li>
-                                        <li><a href="error-page.html">404 Page</a></li>
-                                    </ul>
-                                </li>-->
+                                 <li class="dropdown"><a href="#">Nos Programmes</a>
+                                <ul>
+                                    <li ><a href="{{route('cj')}}">Cercles des jeunes</a></li>
+                                    <li ><a href="{{route('take')}}">Participation Citoyenne</a></li>
+                                    <li><a href="{{route('empower')}}">Education Communautaire</a></li>
+                                    <li><a href="{{route('hero')}}">Héros d’un Village</a></li>
+                                </ul>
+                            </li>
 
-                                <li><a href="{{route('sponsor')}}">Sponsoriser</a></li>
-                                <li><a href="{{route('contact')}}">Contact</a></li>
+                                </li>
+                                <li><a href="{{route('sponsor')}}">Sponsoriser-nous</a></li>
+                                <li><a href="{{route('contact')}}">Contactez-nous</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -173,7 +158,7 @@
             <div class="auto-container clearfix">
                 <!--Logo-->
                 <div class="logo pull-left">
-                    <a href="/" title=""><img src="images/logo.png" alt="" width="120" title=""></a>
+                    <a href="/" title=""><img src="images/logo.png" alt="" width="140" title=""></a>
                 </div>
                 <!--Right Col-->
                 <div class="pull-right">
@@ -189,73 +174,28 @@
                         </div>
 
                         <div class="navbar-collapse collapse clearfix">
-                            <ul class="navigation clearfix" >
-                                <li class="current_ "><a href="/" class="link-blue" >Accueil</a>
-                                    <!--<ul>
-                                        <li><a href="index-2.html">Home Main</a></li>
-                                        <li><a href="index-3.html">Volunteer Home</a></li>
-                                        <li><a href="index-4.html">Charity Home</a></li>
-                                        <li><a href="index-5.html">Senior Citizen Home</a></li>
-                                        <li><a href="index-6.html">Ecology Home</a></li>
-
-                                        <li class="dropdown"><a href="#">Header Styles</a>
-                                            <ul>
-                                                <li><a href="index-2.html">Header Style One</a></li>
-                                                <li><a href="index-3.html">Header Style Two</a></li>
-                                                <li><a href="index-4.html">Header Style Three</a></li>
-                                                <li><a href="index-5.html">Header Style Four</a></li>
-                                                <li><a href="index-6.html">Header Style Five</a></li>
-
-                                            </ul>
-                                        </li>
-                                    </ul>-->
+                            <ul class="navigation clearfix">
+                                <li class="current_ "><a href="/">Accueil</a>
                                 </li>
-                                <li ><a href="{{route('become')}}" class="link-blue">Devenir NTC</a>
+                                <li ><a href="{{route('become')}}">Devenir NTC</a>
                                     <!--<ul>
                                         <li><a href="causes-grid.html">Causes Grid View</a></li>
                                         <li><a href="causes-list.html">Causes List View</a></li>
                                         <li><a href="causes-single.html">Cause Details</a></li>
                                     </ul>-->
                                 </li>
-                                <li ><a href="{{route('take')}}" class="link-blue">S'impliquer</a>
-                                    <!--<ul>
-                                        <li><a href="event-list.html">Event List View</a></li>
-                                        <li><a href="event-grid.html">Event Grid View</a></li>
-                                        <li><a href="event-single.html">Event Details</a></li>
-                                    </ul>-->
+                                <li class="dropdown"><a href="#">Nos Programmes</a>
+                                    <ul>
+                                        <li ><a href="{{route('cj')}}">Cercles des jeunes</a></li>
+                                        <li ><a href="{{route('take')}}">Participation Citoyenne</a></li>
+                                        <li><a href="{{route('empower')}}">Education Communautaire</a></li>
+                                        <li><a href="{{route('hero')}}">Héros d’un Village</a></li>
+                                    </ul>
                                 </li>
-                                <li><a href="{{route('empower')}}" class="link-blue">Education Citoyenne</a>
-                                    <!-- <ul>
-                                         <li><a href="about.html">About Us</a></li>
-                                         <li class="dropdown"><a href="#">Services</a>
-                                             <ul>
-                                                 <li><a href="services.html">Services Type 01</a></li>
-                                                 <li><a href="services-2.html">Services Type 02</a></li>
-                                             </ul>
-                                         </li>
-                                         <li class="dropdown"><a href="#">Team</a>
-                                             <ul>
-                                                 <li><a href="team.html">Team</a></li>
-                                                 <li><a href="team-single.html">Team Single</a></li>
-                                             </ul>
-                                         </li>
-                                         <li><a href="gallery.html">Gallery</a></li>
-                                     </ul>-->
-                                </li>
-                                <!-- <li class="dropdown"><a href="#">Blogs</a>
-                                     <ul>
-                                         <li><a href="blog-grid.html">Blog Three Column</a></li>
-                                         <li><a href="blog-standard.html">Blog Standard</a></li>
-                                         <li><a href="blog-left-sidebar.html">Blog left Sidebar</a></li>
-                                         <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                         <li><a href="blog-single-1.html">Blog Post Details 01</a></li>
-                                         <li><a href="blog-single-2.html">Blog Post Details 02</a></li>
-                                         <li><a href="error-page.html">404 Page</a></li>
-                                     </ul>
-                                 </li>-->
 
-                                <li><a href="{{route('sponsor')}}" class="link-blue">Sponsoriser</a></li>
-                                <li><a href="{{route('contact')}}" class="link-blue">Contact</a></li>
+                                </li>
+                                <li><a href="{{route('sponsor')}}">Sponsoriser-nous</a></li>
+                                <li><a href="{{route('contact')}}">Contactez-nous</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -274,7 +214,7 @@
 <!--Main Footer-->
 <footer class="main-footer">
     <!--Upper-->
-    <div class="footer-upper">
+    <div class="footer-upper" style="padding: 40px">
         <div class="auto-container">
             <div class="outer-box">
                 <div class="row clearfix">
@@ -283,7 +223,7 @@
                             <div class="footer-column col-md-7 col-sm-5 col-xs-12">
                                 <div class="footer-widget adress-widget">
                                     <h3>Addresse</h3>
-                                    <div class="text">Cotonou, carré N° 430 L, quartier Kpondéhou</div>
+                                    <div class="text"> Lot 430, Parcelle L, Quartier Kpondéhou, Cotonou </div>
                                     <ul>
                                         <li><a href="tel:+22967199683"><span class="theme_color fa fa-phone"></span> &ensp; (229) 67 19 96 83</a></li>
                                         <li><a href="tel:+22966147189"><span class="theme_color fa fa-fax"></span> &ensp; (229) 66 14 71 89</a></li>
@@ -299,7 +239,7 @@
                             <div class="footer-column col-md-6 col-sm-6 col-xs-12">
                                 <!-- Post Widget -->
                                 <div class="footer-widget post-widget">
-                                    <h3>Lien utils </h3>
+                                    <h3>Lien utiles </h3>
                                     <ul>
                                         <li class="recent-post">
                                             <span class="date">14 May 2019</span>

@@ -15,6 +15,10 @@ class Module extends Model
         return $this->hasMany(Course::class);
     }
 
+    public function category(){
+       return $this->belongsTo(CourseCategory::class);
+    }
+
     public function users(){
        return $this->belongsToMany(Progress::class);
     }
@@ -38,7 +42,7 @@ class Module extends Model
 
 
     function rapportModuleSoumis($module_id, $user_id){
-        $rapport =RapportTp::where('user_id',$user_id)->where('module_id',$module_id)->first();
+        $rapport =RapportTp::where('user_id',$user_id)->where('module_id',$module_id)->where('soumis',1)->first();
         return ($rapport!=null)?$rapport:false;
     }
 

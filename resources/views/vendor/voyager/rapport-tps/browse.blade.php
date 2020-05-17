@@ -104,6 +104,9 @@
                                             @endif
                                         </th>
                                         @endforeach
+                                            @if (auth()->user()->role->name!=\App\User::NTC_ADMIN)
+                                            <th>Etat</th>
+                                            @endif
                                         <th class="actions text-right">{{ __('voyager::generic.actions') }}</th>
                                     </tr>
                                 </thead>
@@ -254,13 +257,29 @@
                                                         @endif
                                                     </td>
                                                 @endif
+
                                         @endforeach
+                                            @if (auth()->user()->role->name!=\App\User::NTC_ADMIN)
+                                                <td>
+                                                    @if ($data->soumis==0)
+                                                        <a class="btn btn-success" href="{{route('voyager.rapport-tps.soumettre',$data->id)}}"><i class="voyager-check"></i><span class="hidden-xs hidden-sm"> Soumettre</span></a>
+                                                        @else
+                                                        <span class="badge badge-success">Rapport déjà soumis</span>
+                                                    @endif
+                                                </td>
+                                            @endif
+
                                         <td class="no-sort no-click" id="bread-actions">
-                                            @foreach($actions as $action)
-                                                @if (!method_exists($action, 'massAction'))
-                                                    @include('voyager::bread.partials.actions', ['action' => $action])
-                                                @endif
-                                            @endforeach
+                                            @if ((auth()->user()->role->name!=\App\User::NTC_ADMIN && auth()->user()->role->name!=\App\User::ADMIN) && $data->soumis==1)
+                                                <a class="btn btn-warning" href="{{route('voyager.rapport-tps.show',$data->id)}}"><i class="voyager-eye"></i><span class="hidden-xs hidden-sm"> Voir</span></a>
+                                            @else
+                                                @foreach($actions as $action)
+                                                    @if (!method_exists($action, 'massAction'))
+                                                        @include('voyager::bread.partials.actions', ['action' => $action])
+                                                    @endif
+                                                @endforeach
+                                            @endif
+
                                         </td>
                                     </tr>
                                     @endforeach

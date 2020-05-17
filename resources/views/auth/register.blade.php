@@ -1,79 +1,4 @@
 @extends('layouts.app')
-{{--@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection--}}
 
 @section('content')
     <div class="info">
@@ -83,26 +8,12 @@
 
 
 
-    <!-- Modal -info -->
-    <div class="container">
-        <div id="modal-3" class="modal" data-modal-effect="slide-top">
-            <div class="modal-content">
-                <h2 class="fs-title">Score Index</h2>
-                <h3 class="fs-subtitle">Getting the most out of your data</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis consectetur ligula. Morbi dapibus tellus a ipsum sollicitudin aliquet. Phasellus id est lacus. Pellentesque a elementum velit, a tempor nulla. Mauris mauris lectus, tincidunt et purus rhoncus, eleifend convallis turpis. Nunc ullamcorper bibendum diam, vitae tempus dolor hendrerit iaculis. Phasellus tellus elit, feugiat vel mi et, euismod varius augue. Nulla a porttitor sapien. Donec vestibulum ac nisl sed bibendum. Praesent neque ipsum, commodo eget venenatis vel, tempus sit amet ante. Curabitur vel odio eget urna dapibus imperdiet sit amet eget felis. Vestibulum eros velit, posuere a metus eget, aliquam euismod purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                <input type="button" name="next" class="next action-button modal-close" value="Got it!">
-            </div>
-        </div>
-    </div>
-
     <form method="post" id="register-form" class="steps" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="">
         <ul id="progressbar">
             <li class="active">Informations Personnelles</li>
             <li>Adresses</li>
             <li>Informations de connexion</li>
         </ul>
-
-
 
         <!-- USER INFORMATION FIELD SET -->
         <fieldset>
@@ -130,14 +41,14 @@
              </span>
             </div>
             <div class="hs_lieuNaissance field hs-form-field">
-                <label for="lieuNaissance">Lieu de naissance</label>
-                <input id="lieuNaissance" name="lieu_naissance"  type="text" value="" placeholder="" data-rule-required="false" data-msg-required="Votre prenom est requis" >
+                <label for="lieuNaissance">Lieu de naissance (Pays)</label>
+                <input id="lieuNaissance" name="lieu_naissance"  type="text" value="" placeholder="" data-rule-required="true" data-msg-required="ce champ est requis" >
                 <span class="error1" style="display: none;">
               <i class="error-log fa fa-exclamation-triangle"></i>
              </span>
             </div>
             <div class="hs_pays field hs-form-field">
-                <label for="pays">Pays de provenance</label>
+                <label for="pays">Pays de residence</label>
                 <select type="text" id="pays" class="form-control validate" data-rule-required="true" data-msg-required="Votre pays est requis">
                     <option>Algerie</option>
                     <option  selected="selected">Bénin</option>
@@ -403,14 +314,14 @@
             </div>
             <div class="hs_tel field hs-form-field">
                 <label for="tel">Numéro de téléphone</label>
-                <input id="tel" name="tel"  type="number" value="" placeholder="" data-rule-required="true" data-msg-required="Votre numéro de téléphone est requis" >
+                <input id="tel" name="tel"  type="number" value="" placeholder=""  minlength="8" data-rule-required="true" data-msg-required="Votre numéro de téléphone est requis" >
                 <span class="error1" style="display: none;">
               <i class="error-log fa fa-exclamation-triangle"></i>
              </span>
             </div>
             <div class="hs_numeroWhat field hs-form-field">
                 <label for="numeroWhat">Numéro WhatsApp</label>
-                <input id="numeroWhat" name="whatsapp_tel"  type="number" value="" placeholder="" data-rule-required="false" data-msg-required="Votre numéro de téléphone est requis" >
+                <input id="numeroWhat" name="whatsapp_tel"  type="number" value="" minlength="8" placeholder="" data-rule-required="false" data-msg-required="Votre numéro de téléphone est requis" >
                 <span class="error1" style="display: none;">
               <i class="error-log fa fa-exclamation-triangle"></i>
              </span>
@@ -426,40 +337,40 @@
             <h3 class="fs-subtitle"></h3>
 
             <div class="hs_adress1 field hs-form-field">
-                <label for="adress1">Votre adresse 1 *</label>
-                <input id="adress1" name="address" required="required" type="text" value="" placeholder="" data-rule-required="true" data-msg-required="Votre nom est requis" >
+                <label for="adress1">Adresse de résidence *</label>
+                <input id="adress1" name="address" required="required" type="text" value="" placeholder="Exp : Carré XXX, Maison XXX, Quartier XXX" data-rule-required="true" data-msg-required="Ce champ est requis" >
                 <span class="error1" style="display: none;">
               <i class="error-log fa fa-exclamation-triangle"></i>
              </span>
             </div>
-
-            <div class="hs_arrondissement field hs-form-field">
-                <label for="arrondissement">Arrondissement  *</label>
-                <input id="arrondissement" name="arrondissement" required="required" type="text" value="" placeholder="" data-rule-required="true" data-msg-required="Votre arrondissement est requis" >
-                <span class="error1" style="display: none;">
-              <i class="error-log fa fa-exclamation-triangle"></i>
-             </span>
-            </div>
-
             <div class="hs_quartier field hs-form-field">
-                <label for="quartier">Quartier  *</label>
+                <label for="quartier">Quartier ou Village  *</label>
                 <input id="quartier" name="quartier" required="required" type="text" value="" placeholder="" data-rule-required="true" data-msg-required="Votre quartier est requis" >
                 <span class="error1" style="display: none;">
               <i class="error-log fa fa-exclamation-triangle"></i>
              </span>
             </div>
 
+            <div class="hs_arrondissement field hs-form-field">
+                <label for="arrondissement">Arrondissement  </label>
+                <input id="arrondissement" name="arrondissement" required="required" type="text" value="" placeholder="" data-rule-required="false" data-msg-required="Votre arrondissement est requis" >
+                <span class="error1" style="display: none;">
+              <i class="error-log fa fa-exclamation-triangle"></i>
+             </span>
+            </div>
+
+
             <div class="hs_profession field hs-form-field">
                 <label for="profession">Profession  *</label>
-                <input id="profession" name="profession" required="required" type="text" value="" placeholder="" data-rule-required="true" data-msg-required="Votre profession est requis" >
+                <input id="profession" name="profession" required="required" type="text"  value="" placeholder="" data-rule-required="true" data-msg-required="Votre profession est requis" >
                 <span class="error1" style="display: none;">
               <i class="error-log fa fa-exclamation-triangle"></i>
              </span>
             </div>
 
             <div class="hs_centre_interet field hs-form-field">
-                <label for="centre_interet">Vos centre d'intérêt  *</label>
-                <input id="centre_interet" name="centre_interet" required="required" type="text" value="" placeholder="" data-rule-required="false" data-msg-required="Votre profession est requis" >
+                <label for="centre_interet">Vos Centres d’Intérêt  *</label>
+                <input id="centre_interet" name="centre_interet" required="required" type="text" value="" placeholder="" data-rule-required="true" data-msg-required="Ce champ est requis" >
                 <span class="error1" style="display: none;">
               <i class="error-log fa fa-exclamation-triangle"></i>
              </span>

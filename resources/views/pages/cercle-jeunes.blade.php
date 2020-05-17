@@ -1,4 +1,4 @@
-@extends('layouts.layout2')
+@extends('layouts.default')
 @section('title')
     Cercle Des Jeunes
 @stop
@@ -14,168 +14,12 @@
 
                         <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="images/main-slider/image-2.jpg">
 
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['600','600','600','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['-150','-150','-150','-180']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                            <h4 class="text-center">Initiative</h4>
-                        </div>
-
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['650','650','650','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['-50','-50','-50','-80']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                            <h2 class="text-center">Cercle des Jeunes</h2>
-                        </div>
-
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['600','600','600','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['60','60','60','60']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                            <div class="text text-center">Must explain to you how all this mistaken idea of denouncing pleasure & praising, Join over 24 million people supporting charity and personal causes.</div>
-                        </div>
-
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['600','600','600','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['160','160','190','190']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                            <div class="text-center">
-                                <a href="#" class="theme-btn btn-style-one"><span>Know More</span></a>
-                                <a href="{{route('sponsor')}}" class="theme-btn btn-style-two"><span>Sponsor Us</span></a>
-                            </div>
-                        </div>
                     </li>
 
                     <!-- Slide 2 -->
                     <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-10.jpg" data-title="Slide Title" data-transition="parallaxvertical">
                         <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="images/main-slider/image-10.jpg">
 
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['600','600','600','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['-150','-150','-150','-180']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                            <h4 class="text-center">Change your mind</h4>
-                        </div>
-
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['650','650','650','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['-50','-50','-50','-80']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                            <h2 class="text-center">With CJ</h2>
-                        </div>
-
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['600','600','600','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['60','60','60','60']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                            <div class="text text-center">Must explain to you how all this mistaken idea of denouncing pleasure & praising, Join over 24 million people supporting charity and personal causes.</div>
-                        </div>
-
-                        <div class="tp-caption"
-                             data-paddingbottom="[0,0,0,0]"
-                             data-paddingleft="[0,0,0,0]"
-                             data-paddingright="[0,0,0,0]"
-                             data-paddingtop="[0,0,0,0]"
-                             data-responsive_offset="on"
-                             data-type="text"
-                             data-height="auto"
-                             data-whitespace="normal"
-                             data-fontsize="['64','40','36','24']"
-                             data-width="['600','600','600','500']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['160','160','190','190']"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                            <div class="text-center">
-                                <a href="#" class="theme-btn btn-style-one"><span>Know More</span></a>
-                                <a href="content.html" class="theme-btn btn-style-two"><span>Sponsor Us</span></a>
-                            </div>
-                        </div>
                     </li>
 
                 </ul>
@@ -184,7 +28,7 @@
     </section>
     <!--End Main Slider-->
 
-    <!--Fun Facts Section-->
+  {{--  <!--Fun Facts Section-->
     <div class="fun-fact-section push-up">
         <div class="auto-container">
             <div class="fact-counter">
@@ -240,7 +84,7 @@
             </div>
         </div>
     </div>
-    <!--End Fun Facts Section-->
+    <!--End Fun Facts Section-->--}}
 
     <!-- Become Volunteer -->
     <section class="become-volunteer">
@@ -318,16 +162,16 @@
                 @foreach($cjs as $cj)
                 <!-- Single -->
                 <div class="gallery-block-two col-lg-4 col-md-4 col-sm-6 col-xs-12 wow fadeIn" >
-                    <div class="inner-box" >
+                    <div class="inner-box" style="border-radius: 0">
                         <div class="image" style="min-height: 350px">
                             <img src="{{asset('storage/'.$cj->image)}}" alt="" />
                             <div class="overlay-box">
                                 <div class="content">
-                                    <div class="post-date">{{$cj->name}}</div>
-                                    <a href="{{asset('storage/'.$cj->image)}}" data-fancybox="images" data-caption="" class="plus-icon lightbox-image"></a>
-                                    <div class="lower-content">
+                                    <div class="post-date"><a style="color: white;font-size: 14pt" href="{{route('cj.detail',$cj->slug)}}">{{$cj->name}}</a></div>
+                                    <!--<a href="{{asset('storage/'.$cj->image)}}" data-fancybox="images" data-caption="" class="plus-icon lightbox-image"></a>-->
+                                    <div class="lower-content" >
                                         <h3><a href="{{route('cj.detail',$cj->slug)}}">{!! \Illuminate\Support\Str::limit($cj->about,100)!!}</a></h3>
-                                        <ul class="post-info">
+                                        <ul class="post-info" style="border-radius: 0">
                                             <li><a href="{{route('cj.detail',$cj->slug)}}"><span class="icon fa fa-user"></span>Par <br> {{$cj->coordonnateur->name}}</a></li>
                                             <!--<li><a href="blog-single-1.html"><span class="icon fa fa-heart-o"></span>35 <br> Likes</a></li>-->
                                             <li><a href="{{route('cj.detail',$cj->slug)}}"><span class="icon fa fa-newspaper-o"></span>{{$cj->events->count()}} <br> Événements</a></li>

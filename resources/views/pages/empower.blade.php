@@ -96,40 +96,37 @@
     <section class="news-section" style="margin-top: -10%">
         <div class="auto-container">
 
-            <div class="row text-center">
+            <div class="row">
                 <div class="sec-title text-center">
                     <h2 style="font-size: 15pt">Radios Communautaires</h2>
                 </div>
 
-                <div class="row "style="margin-left:10%;text-align: center">
+                <div class="row justify-content-center">
+                    <div class="center">
                     @foreach($radios as $radio)
                         @php
                             $image = $radio->logo;
                             $imagename = \Illuminate\Support\Str::replaceLast('.','-medium.',$image)
                         @endphp
-                        <div class="col-md-3" style="margin: 10px;padding: 10px">
+                        <div class="col-md-3 col-sm-12">
                             <div class="cours row">
-                                <div class="col-md-3 col-sm-12" style="background: url('{{asset('storage/'.$imagename)}}');background-size: contain;background-repeat: no-repeat;background-position: center; height: 150px;">
-                                </div>
-                                <div class="col-md-9 col-sm-12 pt-2">
+                                <div class="col-md-12 col-sm-12 text-center"> <img class="image-press" src="{{asset('storage/'.$imagename)}}" alt="{{$radio->name}}"></div>
+                                <div class="col-md-12 col-sm-12 pt-2 text-center">
                                     <h3 style="color: #4f5e6b;">{{$radio->name}}</h3>
-                                    <ul class="list-unstyled">
-                                        <li><a style="font-size: 11pt" href="mailto:{{$radio->email}}"><i style="font-size: 15pt;margin-right: 5px" class="fa fa-envelope"></i>&nbsp;{{$radio->email}}</a></li>
-                                        <li><a style="font-size: 11pt" href="tel:{{$radio->phone}}">   <i style="font-size: 15pt;margin-right: 5px" class="fa fa-phone"></i>&nbsp; {{$radio->phone}}</a></li>
-                                    </ul>
                                 </div>
-                                <div class=" badge-primary col-md-12" style="margin-top: -10%">Adresse : {{$radio->adress}}</div>
+                                <ul class="list-unstyled text-center">
+                                    <li><a style="font-size: 11pt" href="mailto:{{$radio->email}}">Email : &nbsp;{{$radio->email}}</a></li>
+                                    <li><a style="font-size: 11pt" href="tel:{{$radio->phone}}">   Téléphone : &nbsp; {{$radio->phone}}</a></li>
+                                </ul>
+                                <div class=" badge-primary col-md-12 text-center" style="margin-top: 10%">Adresse : {{$radio->adress}}</div>
                             </div>
 
                         </div>
 
                     @endforeach
-
+                </div>
                 </div>
             </div>
-
-
-
         </div>
     </section>
     <!--End community radio Section -->
@@ -285,12 +282,12 @@
                     <h2 style="font-size: 15pt">Explications des problèmes dans les langues locales</h2>
                 </div>
 
-                <div class="row "style="margin-left:10%;text-align: center">
+                <div class="row justify-content-center" style="text-align: center">
                     @foreach($problemLocaux as $problem)
                         @php
                         $path = json_decode($problem->path)[0]->download_link;
                         @endphp
-                        <div class="col-md-4" style="margin: 10px;padding: 10px">
+                        <div class="col-md-4">
                             <div class="cours row">
                                 <!--<div class="col-md-3 col-sm-12" style="background: url('{{asset('images/logo-ctn.jpeg')}}');background-size: contain;background-repeat: no-repeat;background-position: center; height: 150px;">
                                 </div>-->
@@ -334,12 +331,12 @@
                     <h2 style="font-size: 15pt">Actualité en langue locale</h2>
                 </div>
 
-                <div class="row "style="margin-left:15%;text-align: center">
+                <div class="row justify-content-center" style="text-align: center">
                     @foreach($journauxLocaux as $journal)
                         @php
                             $path = json_decode($journal->path)[0]->download_link;
                         @endphp
-                        <div class="col-md-4" style="margin: 10px;padding: 10px">
+                        <div class="col-md-4">
                             <div class="cours row">
                             <!--<div class="col-md-3 col-sm-12" style="background: url('{{asset('images/logo-ctn.jpeg')}}');background-size: contain;background-repeat: no-repeat;background-position: center; height: 150px;">
                                 </div>-->

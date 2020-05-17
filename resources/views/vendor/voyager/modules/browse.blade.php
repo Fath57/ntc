@@ -36,6 +36,10 @@
             @endif
         @endforeach
         @include('voyager::multilingual.language-selector')
+            @foreach($categories as $category)
+               <a class="{{($category_id==$category->slug)?'btn btn-dark':'btn btn-success'}}" href="{{route('voyager.modules.index',['category_id'=>\Illuminate\Support\Str::slug($category->title)])}}">{{$category->title}}</a>
+            @endforeach
+
     </div>
 @stop
 
@@ -79,7 +83,7 @@
                         @endif
 
                             <div class="row">
-                                @foreach($dataTypeContent as $data)
+                            @foreach($dataTypeContent as $data)
                                     @if (auth()->user()->role->name == \App\User::MEMBRE)
                                         @if ($data->online ==1)
                                             @php
@@ -97,13 +101,17 @@
                                                                 {{\Illuminate\Support\Str::limit($data->summary,100)}}
                                                             </p>
                                                             <h5>
-                                                                Pré Evaluation : <a href="{{asset("storage/".json_decode($data->pre_evaluation)[0]->download_link)}}"> <i class="fa fa-file-pdf-o"></i> {{json_decode($data->pre_evaluation)[0]->original_name}}</a>
+
+
+                                                                @if(count(json_decode($data->pre_evaluation))>0)
+                                                                <a href="{{asset("storage/".json_decode($data->pre_evaluation)[0]->download_link)}}" style="font-size: 15pt"> Pré Evaluation </a>
+                                                                    @endif
                                                             </h5>
 
                                                             <h5>
-                                                                <span>Nombre de cours : {{$data->courses->count()}}</span> |
-                                                                <span><i class="fa fa-clock-o"></i> {{$data->duree}}</span> |
-                                                                <span><i class="fa fa-bar-chart-o"></i> {{$data->level  }}</span>
+                                                                <span>Nombre de modules : {{$data->courses->count()}}</span> |
+                                                               <span> Ce cours vous prendra : {{$data->duree}}</span>
+                                                                <!--<span><i class="fa fa-bar-chart-o"></i> {{$data->level  }}</span>-->
                                                             </h5>
 
                                                             @if ($progress)
@@ -113,27 +121,42 @@
                                                                 </div>
                                                             @endif
                                                             <h5>
-                                                                <a href="{{route('module.courses',$data->slug)}}" class="btn btn-success"><i class="glyphicon glyphicon-book"></i> Consulter les cours </a>
+                                                                <a href="{{route('module.courses',$data->slug)}}" class="btn btn-success"><i class="glyphicon glyphicon-book"></i> Consulter le cours </a>
                                                                 @if($progress && $progress->progress == 100)
-                                                                @if ($progress->examinated==1)
-                                                                  <a href="{{route('modules.exam.result',$data->slug)}}" title="Cliquer pour consulter le résultat" class="btn btn-info">Vous avez déjà passé l'examen le {{\Carbon\Carbon::parse($progress->exam_date)->format("d/m/Y")}} </a>
+                                                                @if ($progress->examinated==1 && $progress->exam_result>=80)
+                                                                  <a href="{{route('modules.exam.result',$data->slug)}}" title="Cliquer pour consulter le résultat" class="btn btn-info">Vous avez déjà passé l'évaluation le {{\Carbon\Carbon::parse($progress->exam_date)->format("d/m/Y")}} </a>
                                                                   @if ($data->rapportModuleSoumis($data->id,auth()->id()))
-                                                                            <a href="{{route('modules.exam.certificate',$data->slug)}}" title="Cliquer pour télécharger votre certificat" class="btn btn-warning"><i class="fa fa-graduation-cap"></i> Certificat </a>
+                                                                            <a href="{{route('modules.exam.certificate',$data->slug)}}" title="Cliquer pour télécharger votre certificat" class="btn btn-warning"><i class="fa fa-graduation-cap"></i> Télécharger votre certificat </a>
                                                                        @else
-                                                                      <br>
-                                                                      <small class="text-danger">Vous devez faire les travaux pratique pour avoir votre certificat</small>
-                                                                        <br>
-                                                                            <a href="{{asset("storage/".json_decode($data->consigne_tp)[0]->download_link)}}" target="_blank" class="btn btn-warning"><i class="fa fa-industry"></i> Travaux pratique</a>
+                                                                             <br>
+                                                                             <small class="text-danger">Vous devez faire les travaux pratique pour avoir votre certificat</small>
+                                                                              <br>
+                                                                        @if (count(json_decode($data->consigne_tp))>0)
+                                                                                <a href="{{asset("storage/".json_decode($data->consigne_tp)[0]->download_link)}}" target="_blank" class="btn btn-warning"><i class="fa fa-industry"></i> Travaux pratique</a>
+                                                                            @endif
                                                                         @endif
                                                                 @else
-                                                                    <a href="{{route('modules.exam',$data->slug)}}" class="btn btn-info">Passer l'examen final</a>
+                                                                    @if ($progress->nombre_exam==0)
+                                                                            <a href="{{route('modules.exam',$data->slug)}}" class="btn btn-info">Examen final</a>
+                                                                            @else
+                                                                            @if ($progress->nombre_exam<env('NOMBRE_TENTATIVE_EXAMEN'))
+                                                                            <a href="{{route('modules.exam',[$data->slug,'reprendre'])}}" class="btn btn-info">Reprendre l'évaluation final</a>
+                                                                                @else
+                                                                                <a onclick="return false;" class="btn btn-danger">Vous avez raté cette évaluation</a>
+                                                                            @endif
+                                                                        @endif
                                                                 @endif
+                                                                    <div>
+                                                                        <a href="{{route('voyager.rapport-tps.index')}}" class="btn btn-default">Rapport à soumettre</a>
+
+                                                                    </div>
                                                                 @endif
+
                                                             </h5>
 
                                                         </div>
                                                     </div>
-                                                    <p class="card-text"><small class="text-muted">Ajouté {{\Carbon\Carbon::parse($data->created_at)->diffForHumans()}}</small></p>
+                                                  <!--  <p class="card-text"><small class="text-muted">Ajouté {{\Carbon\Carbon::parse($data->created_at)->diffForHumans()}}</small></p>-->
                                                   <!--  <div  class="no-sort no-click" id="bread-actions">
                                                         @foreach($actions as $action)
                                                             @if (!method_exists($action, 'massAction'))
@@ -155,26 +178,32 @@
                                                 </div>
                                                 <div class="col-md-8">
                                                     <div class="card-body">
-                                                        <h4 class="card-title">{{$data->titre}}
+                                                        <h4 class="card-title">{{$data->titre}} <br>
+                                                            @if($data->course_category_id)
+                                                            <span class="badge badge-dark">{{getCategoryById($data->course_category_id)->title}}</span> |
+                                                            @endif
                                                             <span>  @if($data->online==1)<span class="badge badge-success">En ligne</span>@else <span class="badge badge-danger"> Hors ligne </span>@endif</span>
                                                         </h4>
                                                         <p class="card-text">
                                                             {{\Illuminate\Support\Str::limit($data->summary,100)}}
                                                         </p>
                                                         <h5>
-                                                            Pré Evaluation : <a href="{{asset("storage/".json_decode($data->pre_evaluation)[0]->download_link)}}"> <i class="fa fa-file-pdf-o"></i> {{json_decode($data->pre_evaluation)[0]->original_name}}</a>
+
+                                                            @if (count(json_decode($data->pre_evaluation))>0 )
+                                                                <a href="{{asset("storage/".json_decode($data->pre_evaluation)[0]->download_link)}}" style="font-size: 15pt">Pré Evaluation</a>
+                                                            @endif
                                                         </h5>
                                                         <h5>
-                                                            <a href="{{route('module.courses',$data->slug)}}" class="btn btn-info">Consulter | Ajouter les cours </a>
+                                                            <a href="{{route('module.courses',$data->slug)}}" class="btn btn-info">Consulter | Ajouter des modules </a>
                                                         </h5>
                                                         <h5>
-                                                            <span>Nombre de cours : {{$data->courses->count()}}</span> |
-                                                            <span><i class="fa fa-clock-o"></i> {{$data->duree}}</span> |
-                                                            <span><i class="fa fa-bar-chart-o"></i> {{$data->level  }}</span>
+                                                            <span>Nombre de modules : {{$data->courses->count()}}</span> |
+                                                            <span>Ce cours vous prendra : {{$data->duree}}</span>
+                                                           <!-- <span><i class="fa fa-bar-chart-o"></i> {{$data->level  }}</span>-->
                                                         </h5>
                                                     </div>
                                                 </div>
-                                                <p class="card-text"><small class="text-muted">Ajouté {{\Carbon\Carbon::parse($data->created_at)->diffForHumans()}}</small></p>
+                                              <!--  <p class="card-text"><small class="text-muted">Ajouté {{\Carbon\Carbon::parse($data->created_at)->diffForHumans()}}</small></p>-->
                                                 <div  class="no-sort no-click" id="bread-actions">
                                                     @foreach($actions as $action)
                                                         @if (!method_exists($action, 'massAction'))

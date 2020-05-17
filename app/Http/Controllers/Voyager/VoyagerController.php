@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\CourseProgress;
 use App\Models\Module;
 use App\Models\Progress;
+use App\Models\RapportTp;
 use App\Models\Result;
 use App\User;
 use Carbon\Carbon;
@@ -77,26 +78,46 @@ class VoyagerController extends BaseVoyagerController
         return back();
     }
 
-    public function exam(Request $request,$slug){
+    public function exam(Request $request,$slug,$action=null){
         $module = Module::with("questions")->where("slug",$slug)->first();
         $questions = $module->questions()->orderBy("numero","asc")->get();
         $progress = Progress::where('user_id',Auth::id())->where('module_id',$module->id)->first();
-
-
-
+        if ($progress->nombre_exam==env('NOMBRE_TENTATIVE_EXAMEN'))
+            return back();
+        if ($action==null){
+            $results=null;
+        }else{
+            $results = Result::where('user_id',Auth::id())
+                ->whereIn('question_id',$module->questions()->pluck('id')->toArray())
+                ->get();
+        }
         if ($request->isMethod("get")){
-            return view("vendor.voyager.exams.exam",compact("questions","module"));
+            if (count($questions)==0){
+                return back()->with(["message"=>"L'examen final n'est pas encore disponible",'alert-type'=>'error']);
+            }
+                else{
+
+                    return view("vendor.voyager.exams.exam",compact("questions","module",'results'));
+                }
         }else{
             foreach ($questions as $question){
                 $correctAnswer = $question->reponse;
                 $userAnswer = $request->input("question_".$question->id);
                 $state = (strtolower($correctAnswer)==strtolower($userAnswer))?Result::SUCCESS:Result::FAILED;
-                Result::create([
-                    "reponse"=>$userAnswer,
-                    "user_id"=>Auth::id(),
-                    "question_id"=>$question->id,
-                    "state"=>$state
-                ]);
+               $result = Result::where('user_id',Auth::id())->where('question_id',$question->id)->first();
+               if ($result==null){
+                   Result::create([
+                       "reponse"=>$userAnswer,
+                       "user_id"=>Auth::id(),
+                       "question_id"=>$question->id,
+                       "state"=>$state
+                   ]);
+               }else{
+                   $result->reponse = $userAnswer;
+                   $result->state = $state;
+                   $result->save();
+               }
+
             }
             $userPassResults = Result::where('user_id',Auth::id())
                 ->whereIn('question_id',$module->questions()->pluck('id')->toArray())
@@ -107,6 +128,7 @@ class VoyagerController extends BaseVoyagerController
             $progress->examinated = 1;
             $progress->exam_date= Carbon::now();
             $progress->exam_result = $percentage;
+            $progress->nombre_exam +=1;
             $progress->save();
 
             return redirect()->to(route("modules.exam.result",$module->slug));
@@ -134,8 +156,9 @@ class VoyagerController extends BaseVoyagerController
             ->orderByDesc('created_at')
             ->get();
 
+        $progress = Progress::where('user_id',Auth::id())->where('module_id',$module->id)->first();
 
-        return view("vendor.voyager.exams.result",compact("percentage","questions","results","userPassResults"));
+        return view("vendor.voyager.exams.result",compact("percentage","questions","results","userPassResults","module","progress"));
     }
 
     public function readCourse($slug){
@@ -169,6 +192,18 @@ class VoyagerController extends BaseVoyagerController
 
     }
 
+public function soumettreRapport($id)
+{
+    $rapport = RapportTp::find($id);
+    if ($rapport->module_id!=null ||$rapport->module_id!=0){
+        $rapport->soumis = 1;
+        $rapport->save();
+        return back()->with(["message"=>"Rapport soumis avec succès",'alert-type'=>'success']);
+    }else{
+        return back()->with(["message"=>"Veuillez sellectionner le cours pour lequel vous soumettez le rapport",'alert-type'=>'error']);
+
+    }
 
 
+}
 }

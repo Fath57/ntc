@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Audio;
 use App\AudioCategory;
+use App\Mail\InscriptionMail;
 use App\Member;
 use App\Models\Cj;
+use App\Models\CourseCategory;
 use App\Models\Event;
+use App\Models\Module;
 use App\Models\Presse;
 use App\Models\Program;
 use App\Models\Story;
@@ -17,6 +20,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use TCG\Voyager\Models\Post;
 use TCG\Voyager\Models\Role;
@@ -54,7 +58,8 @@ class HomeController extends Controller
         $members = Member::all();
         $events  = Event::all();
         $stories = Story::all();
-        return view('pages.become-ntc',compact('members','events','stories'));
+        $modules = CourseCategory::with('courses')->get();
+        return view('pages.become-ntc',compact('members','events','stories','modules'));
     }
 
     public function take()
@@ -152,11 +157,18 @@ class HomeController extends Controller
            /* if (isset($request->cj)){
                 Cj::create(['user_id'=>$user->id]);
             }*/
+            $admin = User::all()->where('role_id',Role::where('name',User::NTC_ADMIN)->first()->id)->first();
+            $emailUser = new InscriptionMail($user,"Validation de compte",'mails.inscription');
+            $emailAdmin = new InscriptionMail($admin,"Nouvelle inscription",'mails.inscription-admin');
+            Mail::to($user)->send($emailUser);
+            Mail::to($admin)->send($emailAdmin);
             return ['error'=>false,'message'=>'Inscription effectuée avec succès','user'=>$user];
         }catch (\Exception $exception){
-            return ['error'=>true,'message'=>"Oops! une erreur s'est produite, veuillez réessayer svp."];
+            return ['error'=>true,'message'=>$exception->getMessage()];
+           // return ['error'=>true,'message'=>"Oops! une erreur s'est produite, veuillez réessayer svp."];
 
         }
+
 
 
     }

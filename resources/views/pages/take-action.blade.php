@@ -14,6 +14,7 @@
         .cours:hover{
             box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
         }
+
     </style>
 @endsection
 
@@ -90,10 +91,7 @@
                 <h2></h2>
             </div>
 
-            <p class="btn-column text-center text-white">
-                rien
-
-            </p>
+            <p class="btn-column text-center text-white"></p>
             <center style="margin-top: 1%">
                 <a href="{{route('voyager.rapports-activismes.create')}}" class="btn btn-primary btn-lg text-center" style="border-radius: 0;padding: 15px;font-size: 15pt">Faire votre rapport</a>
             </center>
@@ -108,7 +106,7 @@
     <!--End Call To Action -->
 
 
-    <!-- engage section -->
+   {{-- <!-- engage section -->
     <section class="news-section">
         <div class="auto-container">
 
@@ -209,10 +207,10 @@
         </div>
     </section>
     <!--End engage Section -->
-
+--}}
 
     <!-- press section -->
-    <section class="news-section" style="margin-top: -10%">
+    <section class="news-section">
         <div class="auto-container">
 
             <div class="sec-title text-center">
@@ -225,30 +223,32 @@
                 </div>
 
 
-                <div class="row "style="margin-left:10%;text-align: center">
+                <div class="row">
+                    <div class="center">
+
                     @foreach($presses as $press)
                         @php
                             $image = $press->logo;
                             $imagename = \Illuminate\Support\Str::replaceLast('.','-medium.',$image)
                         @endphp
-                        <div class="col-md-3" style="margin: 10px;padding: 10px">
+                        <div class="col-md-3 col-sm-12">
                             <div class="cours row">
-                                <div class="col-md-3 col-sm-12" style="background: url('{{asset('storage/'.$imagename)}}');background-size: contain;background-repeat: no-repeat;background-position: center; height: 150px;">
-                                </div>
-                                <div class="col-md-9 col-sm-12 pt-2">
+                                <div class="col-md-12 col-sm-12 text-center"> <img class="image-press" src="{{asset('storage/'.$imagename)}}" alt="{{$press->name}}"></div>
+                                <div class="col-md-12 col-sm-12 pt-2 text-center">
                                     <h3 style="color: #4f5e6b;">{{$press->name}}</h3>
-                                    <ul class="list-unstyled">
-                                        <li><a style="font-size: 11pt" href="mailto:{{$press->email}}"><i style="font-size: 15pt;margin-right: 5px" class="fa fa-envelope"></i>&nbsp;{{$press->email}}</a></li>
-                                        <li><a style="font-size: 11pt" href="tel:{{$press->phone}}">   <i style="font-size: 15pt;margin-right: 5px" class="fa fa-phone"></i>&nbsp; {{$press->phone}}</a></li>
-                                    </ul>
                                 </div>
-                                <div class=" badge-primary col-md-12" style="margin-top: -10%">Adresse : {{$press->adress}}</div>
+                                <ul class="list-unstyled text-center">
+                                    <li><a style="font-size: 11pt" href="mailto:{{$press->email}}">Email : &nbsp;{{$press->email}}</a></li>
+                                    <li><a style="font-size: 11pt" href="tel:{{$press->phone}}">   Téléphone : &nbsp; {{$press->phone}}</a></li>
+                                </ul>
+                                <div class=" badge-primary col-md-12 text-center" style="margin-top: 10%">Adresse : {{$press->adress}}</div>
                             </div>
 
                         </div>
 
                     @endforeach
 
+                </div>
                 </div>
 
                     </div>

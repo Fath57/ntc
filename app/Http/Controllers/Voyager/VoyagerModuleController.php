@@ -2,24 +2,23 @@
 
 namespace App\Http\Controllers\Voyager;
 
-use App\AudioCategory;
 use App\Models\Course;
+use App\Models\CourseCategory;
 use App\Models\Module;
 use App\Models\Progress;
-use Dotenv\Validator;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use Illuminate\View\View;
 use TCG\Voyager\Database\Schema\SchemaManager;
 use TCG\Voyager\Events\BreadDataAdded;
+use TCG\Voyager\Events\BreadDataUpdated;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\VoyagerUserController as BaseVoyagerUserController;
 
 class VoyagerModuleController extends BaseVoyagerUserController
 {
-    public function index(Request $request)
+    public function index(Request $request,$category_id=null,$state=null)
     {
         // GET THE SLUG, ex. 'posts', 'pages', etc.
         $slug = $this->getSlug($request);
@@ -138,6 +137,11 @@ class VoyagerModuleController extends BaseVoyagerUserController
             $view = "voyager::$slug.browse";
         }
 
+
+        $categories = CourseCategory::all();
+        if ($category_id!=null)
+        $catId = $categories->where('slug',$category_id)->first()->id;
+        $dataTypeContent = ($category_id==null)?$dataTypeContent : Module::where('course_category_id',$catId)->paginate(15);
         return Voyager::view($view, compact(
             'actions',
             'dataType',
@@ -151,7 +155,9 @@ class VoyagerModuleController extends BaseVoyagerUserController
             'isServerSide',
             'defaultSearchKey',
             'usesSoftDeletes',
-            'showSoftDeleted'
+            'showSoftDeleted',
+            'categories',
+            'category_id'
         ));
     }
 
@@ -312,9 +318,8 @@ class VoyagerModuleController extends BaseVoyagerUserController
         $val = $this->validateBread($request->all(), $dataType->addRows)->validate();
         $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
 
-        //liaison de la music à l'artiste
         if ($data->slug == null){
-            $data->slug = Str::slug($data->title);
+            $data->slug = Str::slug($data->titre);
         }
 
         $data->save();
@@ -337,4 +342,49 @@ class VoyagerModuleController extends BaseVoyagerUserController
         }
     }
 
+    public function update(Request $request, $id)
+    {
+
+
+        $slug = $this->getSlug($request);
+
+        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+
+        // Compatibility with Model binding.
+        $id = $id instanceof \Illuminate\Database\Eloquent\Model ? $id->{$id->getKeyName()} : $id;
+
+        $model = app($dataType->model_name);
+        if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope'.ucfirst($dataType->scope))) {
+            $model = $model->{$dataType->scope}();
+        }
+        if ($model && in_array(SoftDeletes::class, class_uses_recursive($model))) {
+            $data = $model->withTrashed()->findOrFail($id);
+        } else {
+            $data = call_user_func([$dataType->model_name, 'findOrFail'], $id);
+        }
+        if ($data->slug == null){
+            $module = Module::find($data->id);
+            $module->slug = Str::slug($request->titre);
+            $module->save();
+        }
+
+        // Check permission
+        $this->authorize('edit', $data);
+
+        // Validate fields with ajax
+        $val = $this->validateBread($request->all(), $dataType->editRows, $dataType->name, $id)->validate();
+        $this->insertUpdateData($request, $slug, $dataType->editRows, $data);
+
+        event(new BreadDataUpdated($dataType, $data));
+
+        if (auth()->user()->can('browse', $model)) {
+            $redirect = redirect()->route("voyager.{$dataType->slug}.index");
+        } else {
+            $redirect = redirect()->back();
+        }
+
+        return $redirect->with([
+            'message'    => __('voyager::generic.successfully_updated')." {$dataType->getTranslatedAttribute('display_name_singular')}",
+            'alert-type' => 'success',
+        ]);    }
 }

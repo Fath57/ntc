@@ -4,16 +4,15 @@
 
 @section('page_header')
     <div class="container-fluid">
-        <h1 class="page-title">
+        <!--<h1 class="page-title">
             <i class="{{ $dataType->icon }}"></i> {{ $dataType->getTranslatedAttribute('display_name_plural') }}
-        </h1>
-
-        <div class="row" style="padding: 5px">
+        </h1>-->
             <a href="{{route('voyager.modules.index')}}" class="btn btn-warning">
-                <span class="glyphicon glyphicon-list"></span>&nbsp;
-                Retourner aux modules
+                <span class="glyphicon glyphicon-arrow-left"></span>
+                Retour à la page précédente
             </a>
             @if(isset($progress) && $progress->progress == 100)
+            <div class="row" style="padding: 5px;display: inline-block;margin-left: 10px">
                 @if ($progress->examinated==1)
 
                     <a  href="{{route('modules.exam.result',$module->slug)}}" title="Cliquer pour consulter le résultat" class="btn btn-info ">Vous avez déjà passé l'examen le {{\Carbon\Carbon::parse($progress->exam_date)->format("d/m/Y")}} </a>
@@ -23,10 +22,10 @@
                         <a href="{{asset("storage/".json_decode($module->consigne_tp)[0]->download_link)}}" target="_blank" class="btn btn-warning"><i class="fa fa-industry"></i> Travaux pratique</a>
                     @endif
                 @else
-                    <a href="{{route('modules.exam',$module->slug)}}" class="btn btn-success">Passer l'examen final</a>
+                    <a href="{{route('modules.exam',$module->slug)}}" class="btn btn-success">Passer l’Évaluation Finale</a>
                 @endif
-            @endif
         </div>
+            @endif
 
 
         @can('add', app($dataType->model_name))
@@ -118,15 +117,15 @@
                                                         @endphp
 
                                                         <h5>
-                                                            <a class="btn btn-primary" href="{{route('courses.read',$data->slug)}}">Lire le cours </a>
+                                                            <a class="btn btn-primary" href="{{route('courses.read',$data->slug)}}">Suivre ce module </a>
                                                         </h5>
-                                                        <h5>
+                                                        <!--<h5>
                                                             <span>Nombre de chapitre : {{$data->nombre_chapitre}}</span>
-                                                        </h5>
+                                                        </h5>-->
                                                         @if ($progress)
                                                             <h6>
                                                                 @if ($progress->end_date!=null)
-                                                                    <span class="badge badge-success" style="padding: 2px;color: #FFF;border-radius: 0"><i class="glyphicon glyphicon-check"></i> Vous avez terminé ce cours</span><br>
+                                                                    <span class="badge badge-success" style="padding: 2px;color: #FFF;border-radius: 0"><i class="glyphicon glyphicon-check"></i> Vous avez terminé ce module</span><br>
                                                                 @endif
 
                                                                 <br>
@@ -139,11 +138,11 @@
 
                                                     </div>
                                                 </div>
-                                                <p class="card-text"><small class="text-muted">Ajouté {{\Carbon\Carbon::parse($data->created_at)->diffForHumans()}}</small></p>
+                                               <!-- <p class="card-text"><small class="text-muted">Ajouté {{\Carbon\Carbon::parse($data->created_at)->diffForHumans()}}</small></p>-->
                                                 <div  class="no-sort no-click" id="bread-actions">
                                                     @if ($progress && $progress->end_date== null)
                                                         <a style="margin: 5px" href="{{route('courses.finish',$data->slug)}}" title="Marquer le cours comme fini" class="btn btn-sm btn-info pull-right view">
-                                                            <span class="hidden-xs hidden-sm">J'ai terminé ce cours</span>
+                                                            <span class="hidden-xs hidden-sm">J'ai terminé ce module</span>
                                                         </a>
                                                     @endif
                                                     @foreach($actions as $action)
@@ -167,15 +166,15 @@
                                                         {{\Illuminate\Support\Str::limit($data->summary,500)}}
                                                     </p>
                                                     <h5>
-                                                        <a class="btn btn-primary" href="{{route('courses.read',$data->slug)}}">Lire le cours </a>
+                                                        <a class="btn btn-primary" href="{{route('courses.read',$data->slug)}}">Suivre ce module </a>
                                                     </h5>
-                                                    <h5>
+                                                    <!--<h5>
                                                         <span>Nombre de chapitre : {{$data->nombre_chapitre}}</span>
-                                                    </h5>
+                                                    </h5>-->
 
                                                 </div>
                                             </div>
-                                            <p class="card-text"><small class="text-muted">Ajouté {{\Carbon\Carbon::parse($data->created_at)->diffForHumans()}}</small></p>
+                                            <!--<p class="card-text"><small class="text-muted">Ajouté {{\Carbon\Carbon::parse($data->created_at)->diffForHumans()}}</small></p>-->
                                             <div  class="no-sort no-click" id="bread-actions">
 
                                                 @foreach($actions as $action)

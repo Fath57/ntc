@@ -15,17 +15,17 @@
                 Retour
             </a>
         </div>
-        <h5  class="col-md-6 ">{{$course->title}} | <span style="font-weight: lighter">({{$course->nombre_chapitre. ' Chapitre (s)'}})</span></h5>
+        <h5  class="col-md-6 ">{{$course->title}} </h5>
 
-        <div class="col-md-2">
+        <div class="col-md-3">
             @if ($progress && $progress->end_date== null)
 
                 <a style="margin: 5px" href="{{route('courses.finish',$course->slug)}}" title="Marquer le cours comme fini" class="btn btn-info col-sm-12">
-                    <span class="">J'ai terminé ce cours</span>
+                    <span class="">J'ai terminé ce module</span>
                 </a>
             @else
                 <a disabled onclick="return false;" style="margin: 5px" href="{{route('courses.finish',$course->slug)}}" title="Marquer le cours comme fini" class="btn  btn-success">
-                    <i class="glyphicon glyphicon-check"></i> Cours terminé</span>
+                    <i class="glyphicon glyphicon-check"></i> Module terminé</span>
                 </a>
             @endif
         </div>

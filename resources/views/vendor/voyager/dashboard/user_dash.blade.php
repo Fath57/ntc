@@ -15,20 +15,25 @@
         </div>
         <div class="collapse-content collapse in" id="links">
             <div class="row">
-                <div class="col-md-4"  style="margin-bottom: 15px">
+                <div class="col-md-6"  style="margin-bottom: 15px">
                     <a href="{{route("voyager.modules.index")}}"  class="voyager-link" style="background-image:url('{{ voyager_asset('images/compass/voyager-home.jpg') }}')">
-                        <span class="resource_label"><i class="voyager-documentation"></i> <span class="copy">{{$totalModuleProgress}} Module(s) en cours</span></span>
+                        <span class="resource_label"><i class="voyager-documentation"></i> <span class="copy">{{count(getCurrentCourses(auth()->id()))}} COURS EN PROGRÈS</span></span>
                     </a>
                 </div>
 
-                <div class="col-md-4" style="margin-bottom: 15px">
+                <div class="col-md-6" style="margin-bottom: 15px">
                     <a href="{{route("voyager.modules.index")}}"  class="voyager-link" style="background-image:url('{{ voyager_asset('images/compass/documentation.jpg') }}')">
-                        <span class="resource_label"><i class="voyager-archive"></i> <span class="copy">{{$totalModuleFinished}} Module(s) terminé(s)</span></span>
+                        <span class="resource_label"><i class="voyager-archive"></i> <span class="copy">{{count(getFinishedCourses(auth()->id()))}} COURS TERMINÉS</span></span>
+                    </a>
+                </div>
+                <div class="col-md-6" style="margin-bottom: 15px">
+                    <a href="{{route("voyager.modules.index")}}"  class="voyager-link" style="background-image:url('{{ voyager_asset('images/compass/documentation.jpg') }}')">
+                        <span class="resource_label"><i class="voyager-archive"></i> <span class="copy">{{count(getOtherCourses(auth()->id()))}} COURS À  SUIVRE</span></span>
                     </a>
                 </div>
 
-                <div class="col-md-4"  style="margin-bottom: 15px">
-                    <a href="https://larapack.io" target="_blank" class="voyager-link" style="background-image:url('{{ voyager_asset('images/compass/hooks.jpg') }}')">
+                <div class="col-md-6"  style="margin-bottom: 15px">
+                    <a href="#" onclick="return false;" class="voyager-link" style="background-image:url('{{ voyager_asset('images/compass/hooks.jpg') }}')">
                         <span class="resource_label"><i class="voyager-certificate"></i> <span class="copy">{{$totalCertificate}} Certificat(s)</span></span>
                     </a>
                 </div>

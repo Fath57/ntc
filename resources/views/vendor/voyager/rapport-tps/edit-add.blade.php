@@ -9,7 +9,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         .control-label{
-            font-size: 16pt;
+            font-size: 14pt;
+            margin: 20px;
 
         }
     </style>

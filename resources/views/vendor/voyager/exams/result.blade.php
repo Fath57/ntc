@@ -25,7 +25,7 @@
                     <div class="panel-body">
                         <div class="row text-center">
                             <div>
-                                @if ($percentage<50)
+                                @if ($percentage<80)
                                     <img src="{{asset("images/smileys/bad.png")}}" width="300">
                                 @else
                                     <img src="{{asset("images/smileys/good.png")}}" width="300">
@@ -33,7 +33,18 @@
                             </div>
                         </div>
                         <div class="row" style="font-size: 45pt; text-align: center">
-                            {{count($userPassResults) ."/".count($questions)}} <!--soit {{$percentage}} %-->
+                            {{count($userPassResults) ."/".count($questions)}} | {{$percentage}} %
+                        </div>
+                        <div style="text-align: center;margin: 20px">
+                            @if ($percentage<80)
+                                @if ($progress->nombre_exam<env('NOMBRE_TENTATIVE_EXAMEN'))
+                                    <strong style="color: #FF0000">Vous avez encore {{(5-$progress->nombre_exam)}} tentatives</strong>
+                                    @else
+                                    <strong style="color: #FF0000">Désolé vous avez échoué à cette évaluation</strong>
+                                @endif
+                            @else
+                                <strong class="text-success" style="font-size: 12pt">Félicitations ! Vous pouvez passer à l’étape suivante, qui est celle des Travaux Pratiques. </strong>
+                            @endif
                         </div>
 
                         <div class="row">
@@ -42,8 +53,10 @@
                                     <thead>
                                     <tr>
                                         <th>Questions</th>
-                                        <th>Votre réponse</th>
-                                        <th>Réponse correcte</th>
+                                        <th>Vos Réponses</th>
+                                        @if ($percentage==100)
+                                            <th>Réponses Correctes</th>
+                                        @endif
                                         <th>Résultat</th>
                                     </tr>
                                     </thead>
@@ -55,7 +68,9 @@
                                             <tr>
                                               <td>{{$question->numero}}</td>
                                               <td>{{$result->reponse}}</td>
-                                              <td>{{$question->reponse}}</td>
+                                                @if ($percentage==100)
+                                                    <td>{{$question->reponse}}</td>
+                                                @endif
                                               <td>
                                                   @if ($result->state==\App\Models\Result::FAILED)
                                                       <img src="{{asset("images/marks/no.png")}}" width="10">
@@ -68,7 +83,9 @@
                                     </tbody>
                                 </table>
                             </div>
-
+                            @if($percentage<80 && $progress->nombre_exam<env('NOMBRE_TENTATIVE_EXAMEN'))
+                                <a href="{{route('modules.exam',[$module->slug,'reprendre'])}}" class="btn btn-warning">Reprendre l'exame</a>
+                            @endif
                         </div>
 
                     </div>
@@ -76,5 +93,6 @@
             </div>
         </div>
     </div>
-        @stop
+
+@stop
 
